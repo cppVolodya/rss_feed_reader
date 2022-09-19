@@ -6,6 +6,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
+
 set(CMAKE_PREFIX_PATH "C:/FilesUsers/Qt/6.3.1/mingw_64")
 
 find_package(Qt6 COMPONENTS
@@ -14,7 +16,14 @@ find_package(Qt6 COMPONENTS
              Widgets
              REQUIRED)
 
-add_executable(rss_feed_reader WIN32 sources/main.cpp)
+include_directories(headers)
+
+add_executable(rss_feed_reader WIN32
+               sources/main.cpp
+               sources/main_window.cpp
+               headers/main_window.h
+               forms/main_window.ui)
+
 target_link_libraries(rss_feed_reader
                       Qt::Core
                       Qt::Gui

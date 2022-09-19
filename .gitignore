@@ -1,2 +1,9 @@
-*.exe
-random_text.txt
+# ignore files
+CPPLINT.cfg
+adjust_files_for_pvs_studio.sh
+
+# ignore directories
+.PVS-Studio/
+build/
+program/
+additional_files_for_project/
