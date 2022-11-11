@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+	this->setWindowIcon( QIcon(":/resources/rss_feed_reader_window_icon.ico") );
 }
 
 MainWindow::~MainWindow()

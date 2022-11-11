@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>RSS Feed Reader</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>../images/.ico/rss_feed_reader_window_icon.ico</normaloff>../images/.ico/rss_feed_reader_window_icon.ico</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

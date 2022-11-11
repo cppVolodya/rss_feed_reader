@@ -1,5 +1,5 @@
-#ifndef RSS_FEED_READER_MAIN_WINDOW_H
-#define RSS_FEED_READER_MAIN_WINDOW_H
+#ifndef RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
+#define RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
 
 #include <QMainWindow>
 
@@ -7,22 +7,19 @@
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
-    class MainWindow;
+	class MainWindow;
 }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
 Q_OBJECT
-
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+	explicit MainWindow(QWidget *parent = nullptr);
 
-    ~MainWindow() override;
-
+	~MainWindow() override;
 private:
-    Ui::MainWindow *ui;
-
+	Ui::MainWindow *ui;
 };
 
-#endif //RSS_FEED_READER_MAIN_WINDOW_H
+#endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
