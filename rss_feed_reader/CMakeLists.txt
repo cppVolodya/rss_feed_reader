@@ -1,34 +1,60 @@
 cmake_minimum_required(VERSION 3.23)
-project(rss_feed_reader)
+
+project(rss_feed_reader VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CSS_STANDARD_REQUIRED ON)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+if (WIN32)
+    message("--- OS Windows!")
+    set(CMAKE_PREFIX_PATH "C:/user_programs/Qt/6.4.0/mingw_64")
+    set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/config/rss_feed_reader.rc")
+elseif (UNIX)
+    message("--- OS Unix!")
+    set(CMAKE_PREFIX_PATH "/user_files_volodya/qt/6.4.0/gcc_64/")
+endif()
+
 set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
 
-set(CMAKE_PREFIX_PATH "C:/FilesUsers/Qt/6.3.1/mingw_64")
-
 find_package(Qt6 COMPONENTS
-             Core
-             Gui
-             Widgets
-             REQUIRED)
+                 Core
+                 Gui
+                 Widgets
+                 REQUIRED)
 
 include_directories(headers)
 
-add_executable(rss_feed_reader WIN32
-               sources/main.cpp
-               sources/main_window.cpp
-               headers/main_window.h
-               forms/main_window.ui)
+if (WIN32)
+    add_executable(rss_feed_reader
+                   sources/main.cpp
+                   sources/main_window.cpp
+                   headers/main_window.h
+                   forms/main_window.ui
+                   resources.qrc
+                   ${app_icon_resource_windows})
+elseif (UNIX)
+    add_executable(rss_feed_reader
+                   sources/main.cpp
+                   sources/main_window.cpp
+                   headers/main_window.h
+                   forms/main_window.ui
+                   resources.qrc)
+endif()
 
 target_link_libraries(rss_feed_reader
-                      Qt::Core
-                      Qt::Gui
-                      Qt::Widgets)
+                      PRIVATE Qt::Core
+                      PRIVATE Qt::Gui
+                      PRIVATE Qt::Widgets)
 
+if (WIN32)
+    set_target_properties(rss_feed_reader PROPERTIES WIN32_EXECUTABLE ON)
+endif()
+
+# Default block of code!
 if (WIN32)
     set(DEBUG_SUFFIX)
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")

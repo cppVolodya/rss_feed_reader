@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/resources" lang="C++">
+        <file alias="rss_feed_reader_window_icon.ico">images/.ico/rss_feed_reader_window_icon.ico</file>
+        <file alias="rss_feed_reader_window_icon.png">images/.png/rss_feed_reader_window_icon.png</file>
+    </qresource>
+</RCC>
