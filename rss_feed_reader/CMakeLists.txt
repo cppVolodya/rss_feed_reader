@@ -21,7 +21,7 @@ set(CMAKE_AUTOUIC ON)
 # set build directive depending on os
 if (WIN32)
     message("--- OS Windows!")
-    set(CMAKE_PREFIX_PATH "C:/user_programs/Qt/6.4.0/mingw_64")
+    set(CMAKE_PREFIX_PATH "C:/user_programs/Qt/6.4.1/msvc2019_64")
     set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/config/rss_feed_reader.rc")
 elseif (UNIX)
     message("--- OS Unix!")
