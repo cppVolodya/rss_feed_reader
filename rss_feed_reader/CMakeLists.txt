@@ -1,14 +1,24 @@
+# --------------------------------------------------------------------------- #
+# basic settings
 cmake_minimum_required(VERSION 3.23)
 
 project(rss_feed_reader VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CSS_STANDARD_REQUIRED ON)
+# --------------------------------------------------------------------------- #
 
+
+# --------------------------------------------------------------------------- #
+# enable settings for Qt
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+# --------------------------------------------------------------------------- #
 
+
+# --------------------------------------------------------------------------- #
+# set build directive depending on os
 if (WIN32)
     message("--- OS Windows!")
     set(CMAKE_PREFIX_PATH "C:/user_programs/Qt/6.4.0/mingw_64")
@@ -17,17 +27,29 @@ elseif (UNIX)
     message("--- OS Unix!")
     set(CMAKE_PREFIX_PATH "/user_files_volodya/qt/6.4.0/gcc_64/")
 endif()
+# --------------------------------------------------------------------------- #
 
-set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
 
+# --------------------------------------------------------------------------- #
+# find Qt
 find_package(Qt6 COMPONENTS
                  Core
                  Gui
                  Widgets
                  REQUIRED)
+# --------------------------------------------------------------------------- #
+
+
+# --------------------------------------------------------------------------- #
+# settings directories
+set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
 
 include_directories(headers)
+# --------------------------------------------------------------------------- #
 
+
+# --------------------------------------------------------------------------- #
+# executable(program) settings
 if (WIN32)
     add_executable(rss_feed_reader
                    sources/main.cpp
@@ -49,12 +71,19 @@ target_link_libraries(rss_feed_reader
                       PRIVATE Qt::Core
                       PRIVATE Qt::Gui
                       PRIVATE Qt::Widgets)
+# --------------------------------------------------------------------------- #
 
+
+# --------------------------------------------------------------------------- #
+# special settings
 if (WIN32)
     set_target_properties(rss_feed_reader PROPERTIES WIN32_EXECUTABLE ON)
 endif()
+# --------------------------------------------------------------------------- #
 
-# Default block of code!
+
+# --------------------------------------------------------------------------- #
+# default settings
 if (WIN32)
     set(DEBUG_SUFFIX)
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
@@ -83,3 +112,4 @@ if (WIN32)
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
 endif ()
+# --------------------------------------------------------------------------- #
