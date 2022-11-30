@@ -54,7 +54,13 @@ if (WIN32)
     add_executable(rss_feed_reader
                    sources/main.cpp
                    sources/main_window.cpp
+                   sources/main_window_with_rounded_border.cpp
+                   sources/main_window_is_borderless.cpp
+                   sources/rounded_border_for_main_window.cpp
                    headers/main_window.h
+                   headers/main_window_with_rounded_border.h
+                   headers/main_window_is_borderless.h
+                   headers/rounded_border_for_main_window.h
                    forms/main_window.ui
                    resources.qrc
                    ${app_icon_resource_windows})
@@ -62,7 +68,13 @@ elseif (UNIX)
     add_executable(rss_feed_reader
                    sources/main.cpp
                    sources/main_window.cpp
+                   sources/main_window_with_rounded_border.cpp
+                   sources/main_window_is_borderless.cpp
+                   sources/rounded_border_for_main_window.cpp
                    headers/main_window.h
+                   headers/main_window_with_rounded_border.h
+                   headers/main_window_is_borderless.h
+                   headers/rounded_border_for_main_window.h
                    forms/main_window.ui
                    resources.qrc)
 endif()
