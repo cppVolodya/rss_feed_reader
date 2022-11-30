@@ -7,3 +7,9 @@ MainWindowWithRoundedBorder::MainWindowWithRoundedBorder(QWidget *parent)
 	central_widget = new MainWindowIsBorderless    (this);
 	rounded_bord   = new RoundedBorderForMainWindow(this);
 }
+
+void MainWindowWithRoundedBorder::Show()
+{
+	central_widget->show();
+	rounded_bord  ->show();
+}

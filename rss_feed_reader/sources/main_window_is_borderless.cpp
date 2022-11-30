@@ -4,4 +4,5 @@
 MainWindowIsBorderless::MainWindowIsBorderless(QWidget *parent)
 	: QMainWindow(parent)
 {
+	this->setWindowFlag(Qt::FramelessWindowHint, true);
 }
