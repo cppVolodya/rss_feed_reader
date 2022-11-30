@@ -42,8 +42,6 @@ find_package(Qt6 COMPONENTS
 
 # --------------------------------------------------------------------------- #
 # settings directories
-set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
-
 include_directories(headers)
 # --------------------------------------------------------------------------- #
 
@@ -61,7 +59,6 @@ if (WIN32)
                    headers/main_window_with_rounded_border.h
                    headers/main_window_is_borderless.h
                    headers/rounded_border_for_main_window.h
-                   forms/main_window.ui
                    resources.qrc
                    ${app_icon_resource_windows})
 elseif (UNIX)
@@ -75,7 +72,6 @@ elseif (UNIX)
                    headers/main_window_with_rounded_border.h
                    headers/main_window_is_borderless.h
                    headers/rounded_border_for_main_window.h
-                   forms/main_window.ui
                    resources.qrc)
 endif()
 

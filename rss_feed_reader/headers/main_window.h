@@ -1,25 +1,13 @@
 #ifndef RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
 #define RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
 
-#include <QMainWindow>
+#include "main_window_with_rounded_border.h"
 
 
-QT_BEGIN_NAMESPACE
-namespace Ui
+class MainWindow : public MainWindowWithRoundedBorder
 {
-	class MainWindow;
-}
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
-{
-Q_OBJECT
 public:
 	explicit MainWindow(QWidget *parent = nullptr);
-
-	~MainWindow() override;
-private:
-	Ui::MainWindow *ui;
 };
 
 #endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_

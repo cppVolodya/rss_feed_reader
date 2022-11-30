@@ -7,7 +7,7 @@
 class RoundedBorderForMainWindow : public QMainWindow
 {
 public:
-	explicit RoundedBorderForMainWindow(QWidget *);
+	explicit RoundedBorderForMainWindow(QWidget *parent = nullptr);
 };
 
 

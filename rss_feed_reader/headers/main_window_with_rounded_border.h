@@ -14,7 +14,7 @@ private:
 	RoundedBorderForMainWindow *rounded_bord;
 
 public:
-	explicit MainWindowWithRoundedBorder(QWidget *);
+	explicit MainWindowWithRoundedBorder(QWidget *parent = nullptr);
 };
 
 #endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_WITH_ROUNDED_BORDER_H_
