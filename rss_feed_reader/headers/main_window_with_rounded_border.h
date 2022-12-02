@@ -3,20 +3,20 @@
 
 #include <QMainWindow>
 
-#include "main_window_is_borderless.h"
-#include "rounded_border_for_main_window.h"
+#include "central_part_of_main_window.h"
+#include "rounded_border_of_main_window.h"
 
 
 class MainWindowWithRoundedBorder : public QMainWindow
 {
 private:
-	MainWindowIsBorderless     *central_widget;
-	RoundedBorderForMainWindow *rounded_bord;
+	CentralPartOfMainWindow   *m_central_widget;
+	RoundedBorderOfMainWindow *m_rounded_bord;
 
 public:
 	explicit MainWindowWithRoundedBorder(QWidget *parent = nullptr);
 
-	void Show();
+	void Show();  // show child windows
 };
 
 #endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_WITH_ROUNDED_BORDER_H_

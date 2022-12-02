@@ -53,12 +53,14 @@ if (WIN32)
                    sources/main.cpp
                    sources/main_window.cpp
                    sources/main_window_with_rounded_border.cpp
-                   sources/main_window_is_borderless.cpp
-                   sources/rounded_border_for_main_window.cpp
+                   sources/central_part_of_main_window.cpp
+                   sources/rounded_border_of_main_window.cpp
+                   sources/border_of_main_window.cpp
                    headers/main_window.h
                    headers/main_window_with_rounded_border.h
-                   headers/main_window_is_borderless.h
-                   headers/rounded_border_for_main_window.h
+                   headers/central_part_of_main_window.h
+                   headers/rounded_border_of_main_window.h
+                   headers/border_of_main_window.h
                    resources.qrc
                    ${app_icon_resource_windows})
 elseif (UNIX)
@@ -66,12 +68,14 @@ elseif (UNIX)
                    sources/main.cpp
                    sources/main_window.cpp
                    sources/main_window_with_rounded_border.cpp
-                   sources/main_window_is_borderless.cpp
-                   sources/rounded_border_for_main_window.cpp
+                   sources/central_part_of_main_window.cpp
+                   sources/rounded_border_of_main_window.cpp
+                   sources/border_of_main_window.cpp
                    headers/main_window.h
                    headers/main_window_with_rounded_border.h
-                   headers/main_window_is_borderless.h
-                   headers/rounded_border_for_main_window.h
+                   headers/central_part_of_main_window.h
+                   headers/rounded_border_of_main_window.h
+                   headers/border_of_main_window.h
                    resources.qrc)
 endif()
 
