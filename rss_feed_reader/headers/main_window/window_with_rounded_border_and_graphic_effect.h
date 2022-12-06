@@ -1,0 +1,16 @@
+#ifndef RSS_FEED_READER_HEADERS_MAIN_WINDOW_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECT_H_
+#define RSS_FEED_READER_HEADERS_MAIN_WINDOW_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECT_H_
+
+#include "central_part_of_window_with_graphic_effect.h"
+#include "rounded_border_of_window.h"
+
+
+class WindowWithRoundedBorderAndGraphicEffect : public CentralPartOfWindowWithGraphicEffect
+{
+public:
+	explicit WindowWithRoundedBorderAndGraphicEffect(QWidget *parent = nullptr);
+private:
+	RoundedBorderOfWindow *m_rounded_bord;
+};
+
+#endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECT_H_

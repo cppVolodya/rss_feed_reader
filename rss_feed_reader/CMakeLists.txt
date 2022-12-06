@@ -42,7 +42,7 @@ find_package(Qt6 COMPONENTS
 
 # --------------------------------------------------------------------------- #
 # settings directories
-include_directories(headers)
+include_directories(headers/main_window)
 # --------------------------------------------------------------------------- #
 
 
@@ -50,32 +50,60 @@ include_directories(headers)
 # executable(program) settings
 if (WIN32)
     add_executable(rss_feed_reader
-                   sources/main.cpp
-                   sources/main_window.cpp
-                   sources/main_window_with_rounded_border.cpp
-                   sources/central_part_of_main_window.cpp
-                   sources/rounded_border_of_main_window.cpp
-                   sources/border_of_main_window.cpp
-                   headers/main_window.h
-                   headers/main_window_with_rounded_border.h
-                   headers/central_part_of_main_window.h
-                   headers/rounded_border_of_main_window.h
-                   headers/border_of_main_window.h
+                   sources/main_window/main.cpp
+                   sources/main_window/main_window.cpp
+                   sources/main_window/window_with_rounded_border_and_graphic_effect.cpp
+                   sources/main_window/central_part_of_window_with_graphic_effect.cpp
+                   sources/main_window/rounded_border_of_window.cpp
+                   sources/main_window/characteristic_of_rounded_border_of_window.cpp
+                   sources/main_window/roundness_of_rounded_border_of_window.cpp
+                   sources/main_window/thickness_of_rounded_border_of_window.cpp
+            sources/main_window/painter_of_rounded_border.cpp
+            sources/main_window/painter_of_rounded_border.cpp
+            sources/main_window/painter_of_external_rounded_border.cpp
+            sources/main_window/painter_of_internal_rounded_border.cpp
+
+                   headers/main_window/main_window.h
+                   headers/main_window/window_with_rounded_border_and_graphic_effect.h
+                   headers/main_window/central_part_of_window_with_graphic_effect.h
+                   headers/main_window/rounded_border_of_window.h
+                   headers/main_window/characteristic_of_rounded_border_of_window.h
+                   headers/main_window/roundness_of_rounded_border_of_window.h
+                   headers/main_window/thickness_of_rounded_border_of_window.h
+            headers/main_window/painter_of_rounded_border.h
+            headers/main_window/painter_of_rounded_border.h
+            headers/main_window/painter_of_external_rounded_border.h
+            headers/main_window/painter_of_internal_rounded_border.h
+
                    resources.qrc
                    ${app_icon_resource_windows})
 elseif (UNIX)
     add_executable(rss_feed_reader
-                   sources/main.cpp
-                   sources/main_window.cpp
-                   sources/main_window_with_rounded_border.cpp
-                   sources/central_part_of_main_window.cpp
-                   sources/rounded_border_of_main_window.cpp
-                   sources/border_of_main_window.cpp
-                   headers/main_window.h
-                   headers/main_window_with_rounded_border.h
-                   headers/central_part_of_main_window.h
-                   headers/rounded_border_of_main_window.h
-                   headers/border_of_main_window.h
+                   sources/main_window/main.cpp
+                   sources/main_window/main_window.cpp
+                   sources/main_window/window_with_rounded_border_and_graphic_effect.cpp
+                   sources/main_window/central_part_of_window_with_graphic_effect.cpp
+                   sources/main_window/rounded_border_of_window.cpp
+                   sources/main_window/characteristic_of_rounded_border_of_window.cpp
+                   sources/main_window/roundness_of_rounded_border_of_window.cpp
+                   sources/main_window/thickness_of_rounded_border_of_window.cpp
+            sources/main_window/painter_of_rounded_border.cpp
+            sources/main_window/painter_of_rounded_border.cpp
+            sources/main_window/painter_of_external_rounded_border.cpp
+            sources/main_window/painter_of_internal_rounded_border.cpp
+
+                   headers/main_window/main_window.h
+                   headers/main_window/window_with_rounded_border_and_graphic_effect.h
+                   headers/main_window/central_part_of_window_with_graphic_effect.h
+                   headers/main_window/rounded_border_of_window.h
+                   headers/main_window/characteristic_of_rounded_border_of_window.h
+                   headers/main_window/roundness_of_rounded_border_of_window.h
+                   headers/main_window/thickness_of_rounded_border_of_window.h
+            headers/main_window/painter_of_rounded_border.h
+            headers/main_window/painter_of_rounded_border.h
+            headers/main_window/painter_of_external_rounded_border.h
+            headers/main_window/painter_of_internal_rounded_border.h
+
                    resources.qrc)
 endif()
 
