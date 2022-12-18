@@ -1,5 +1,6 @@
 # --------------------------------------------------------------------------- #
 # basic settings
+
 cmake_minimum_required(VERSION 3.23)
 
 project(rss_feed_reader VERSION 1.0.0 LANGUAGES CXX)
@@ -11,6 +12,7 @@ set(CMAKE_CSS_STANDARD_REQUIRED ON)
 
 # --------------------------------------------------------------------------- #
 # enable settings for Qt
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -19,11 +21,12 @@ set(CMAKE_AUTOUIC ON)
 
 # --------------------------------------------------------------------------- #
 # set build directive depending on os
-if (WIN32)
+
+if(WIN32)
     message("--- OS Windows!")
-    set(CMAKE_PREFIX_PATH "C:/user_programs/Qt/6.4.1/msvc2019_64")
+    set(CMAKE_PREFIX_PATH "C:/user_programs/qt/6.4.1/mingw_64")
     set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/config/rss_feed_reader.rc")
-elseif (UNIX)
+elseif(UNIX)
     message("--- OS Unix!")
     set(CMAKE_PREFIX_PATH "/user_files_volodya/qt/6.4.0/gcc_64/")
 endif()
@@ -32,6 +35,7 @@ endif()
 
 # --------------------------------------------------------------------------- #
 # find Qt
+
 find_package(Qt6 COMPONENTS
                  Core
                  Gui
@@ -42,69 +46,85 @@ find_package(Qt6 COMPONENTS
 
 # --------------------------------------------------------------------------- #
 # settings directories
-include_directories(headers/main_window)
+
+include_directories(headers/main_window
+                    headers/window_with_rounded_border_and_graphic_effects
+                    headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window
+                    headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget
+                    headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget
+                    headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget)
+# --------------------------------------------------------------------------- #
+
+
+# --------------------------------------------------------------------------- #
+# variable for 'settings executable(program)'
+
+# source files
+set(SOURCE_MAIN sources/main.cpp)
+
+set(SOURCE_MAIN_WINDOW sources/main_window/main_window.cpp)
+
+set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.cpp
+
+                                                          sources/window_with_rounded_border_and_graphic_effects/component_parts_of_window/central_part_of_window_with_graphic_effects.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/component_parts_of_window/rounded_border_of_window.cpp
+
+                                                          sources/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.cpp
+
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.cpp)
+
+# header files
+set(HEADER_MAIN_WINDOW headers/main_window/main_window.h)
+
+set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.h
+
+                                                          headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window/central_part_of_window_with_graphic_effects.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window/rounded_border_of_window.h
+
+                                                          headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.h
+
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.h)
+
+# other files
+set(OTHER_WIN32 resources.qrc
+                ${app_icon_resource_windows})
+
+set(OTHER_UNIX resources.qrc)
 # --------------------------------------------------------------------------- #
 
 
 # --------------------------------------------------------------------------- #
 # executable(program) settings
-if (WIN32)
+if(WIN32)
     add_executable(rss_feed_reader
-                   sources/main_window/main.cpp
-                   sources/main_window/main_window.cpp
-                   sources/main_window/window_with_rounded_border_and_graphic_effect.cpp
-                   sources/main_window/central_part_of_window_with_graphic_effect.cpp
-                   sources/main_window/rounded_border_of_window.cpp
-                   sources/main_window/characteristic_of_rounded_border_of_window.cpp
-                   sources/main_window/roundness_of_rounded_border_of_window.cpp
-                   sources/main_window/thickness_of_rounded_border_of_window.cpp
-            sources/main_window/painter_of_rounded_border.cpp
-            sources/main_window/painter_of_rounded_border.cpp
-            sources/main_window/painter_of_external_rounded_border.cpp
-            sources/main_window/painter_of_internal_rounded_border.cpp
+                   ${SOURCE_MAIN}
+                   ${SOURCE_MAIN_WINDOW}
+                   ${SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
 
-                   headers/main_window/main_window.h
-                   headers/main_window/window_with_rounded_border_and_graphic_effect.h
-                   headers/main_window/central_part_of_window_with_graphic_effect.h
-                   headers/main_window/rounded_border_of_window.h
-                   headers/main_window/characteristic_of_rounded_border_of_window.h
-                   headers/main_window/roundness_of_rounded_border_of_window.h
-                   headers/main_window/thickness_of_rounded_border_of_window.h
-            headers/main_window/painter_of_rounded_border.h
-            headers/main_window/painter_of_rounded_border.h
-            headers/main_window/painter_of_external_rounded_border.h
-            headers/main_window/painter_of_internal_rounded_border.h
+                   ${HEADER_MAIN_WINDOW}
+                   ${HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
 
-                   resources.qrc
-                   ${app_icon_resource_windows})
-elseif (UNIX)
+                   ${OTHER_WIN32})
+elseif(UNIX)
     add_executable(rss_feed_reader
-                   sources/main_window/main.cpp
-                   sources/main_window/main_window.cpp
-                   sources/main_window/window_with_rounded_border_and_graphic_effect.cpp
-                   sources/main_window/central_part_of_window_with_graphic_effect.cpp
-                   sources/main_window/rounded_border_of_window.cpp
-                   sources/main_window/characteristic_of_rounded_border_of_window.cpp
-                   sources/main_window/roundness_of_rounded_border_of_window.cpp
-                   sources/main_window/thickness_of_rounded_border_of_window.cpp
-            sources/main_window/painter_of_rounded_border.cpp
-            sources/main_window/painter_of_rounded_border.cpp
-            sources/main_window/painter_of_external_rounded_border.cpp
-            sources/main_window/painter_of_internal_rounded_border.cpp
+                   ${SOURCE_MAIN}
+                   ${SOURCE_MAIN_WINDOW}
+                   ${SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
 
-                   headers/main_window/main_window.h
-                   headers/main_window/window_with_rounded_border_and_graphic_effect.h
-                   headers/main_window/central_part_of_window_with_graphic_effect.h
-                   headers/main_window/rounded_border_of_window.h
-                   headers/main_window/characteristic_of_rounded_border_of_window.h
-                   headers/main_window/roundness_of_rounded_border_of_window.h
-                   headers/main_window/thickness_of_rounded_border_of_window.h
-            headers/main_window/painter_of_rounded_border.h
-            headers/main_window/painter_of_rounded_border.h
-            headers/main_window/painter_of_external_rounded_border.h
-            headers/main_window/painter_of_internal_rounded_border.h
+                   ${HEADER_MAIN_WINDOW}
+                   ${HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
 
-                   resources.qrc)
+                   ${OTHER_UNIX})
 endif()
 
 target_link_libraries(rss_feed_reader
@@ -116,7 +136,7 @@ target_link_libraries(rss_feed_reader
 
 # --------------------------------------------------------------------------- #
 # special settings
-if (WIN32)
+if(WIN32)
     set_target_properties(rss_feed_reader PROPERTIES WIN32_EXECUTABLE ON)
 endif()
 # --------------------------------------------------------------------------- #
@@ -124,19 +144,19 @@ endif()
 
 # --------------------------------------------------------------------------- #
 # default settings
-if (WIN32)
+if(WIN32)
     set(DEBUG_SUFFIX)
-    if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
+    if(MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
         set(DEBUG_SUFFIX "d")
-    endif ()
+    endif()
     set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
-    if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
+    if(NOT EXISTS "${QT_INSTALL_PATH}/bin")
         set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
+        if(NOT EXISTS "${QT_INSTALL_PATH}/bin")
             set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        endif ()
-    endif ()
-    if (EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
+        endif()
+    endif()
+    if(EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
@@ -144,12 +164,12 @@ if (WIN32)
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
-    endif ()
-    foreach (QT_LIB Core Gui Widgets)
+    endif()
+    foreach(QT_LIB Core Gui Widgets)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/bin/Qt6${QT_LIB}${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
-endif ()
+endif()
 # --------------------------------------------------------------------------- #

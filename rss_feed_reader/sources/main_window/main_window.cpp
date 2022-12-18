@@ -2,7 +2,7 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-	: WindowWithRoundedBorderAndGraphicEffect(parent)
+	: WindowWithRoundedBorderAndGraphicEffects(parent)
 {
 	this->setWindowIcon(QIcon(":/resources/rss_feed_reader_window_icon.ico"));
 }
