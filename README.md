@@ -1,3 +1,1 @@
-Tasks on the topic: "Text"
-
-The task was taken from github: https://gist.github.com/martinusso/9ed37f4ffd5cbd4810f22f7076e95059
+RSS Feed Reader – A program which can read in text from other sources and put it in RSS or Atom news format for syndication.
