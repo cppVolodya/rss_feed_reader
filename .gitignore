@@ -1,8 +1,8 @@
 # ignore files
-CPPLINT.cfg
 adjust_files_for_pvs_studio.sh
 
 # ignore directories
+.idea/
 .PVS-Studio/
 build/
 program/
