@@ -1,6 +1,11 @@
 <RCC>
     <qresource prefix="/resources" lang="C++">
-        <file alias="rss_feed_reader_window_icon.ico">images/.ico/rss_feed_reader_window_icon.ico</file>
-        <file alias="rss_feed_reader_window_icon.png">images/.png/rss_feed_reader_window_icon.png</file>
+        <file alias="window_icon_of_rss_feed_reader.ico">images/.ico/window_icon_of_rss_feed_reader.ico</file>
+        <file alias="cursor_icon_of_arrow.ico">images/.ico/cursor_icon_of_arrow.ico</file>
+        <file alias="cursor_icon_of_size_all.ico">images/.ico/cursor_icon_of_size_all.ico</file>
+        <file alias="cursor_icon_of_size_horizontal.ico">images/.ico/cursor_icon_of_size_horizontal.ico</file>
+        <file alias="cursor_icon_of_size_vertical.ico">images/.ico/cursor_icon_of_size_vertical.ico</file>
+        <file alias="cursor_icon_of_size_right_diagonal.ico">images/.ico/cursor_icon_of_size_right_diagonal.ico</file>
+        <file alias="cursor_icon_of_size_left_diagonal.ico">images/.ico/cursor_icon_of_size_left_diagonal.ico</file>
     </qresource>
 </RCC>
