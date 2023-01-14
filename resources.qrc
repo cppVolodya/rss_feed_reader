@@ -1,11 +1,12 @@
 <RCC>
     <qresource prefix="/resources" lang="C++">
-        <file alias="window_icon_of_rss_feed_reader.ico">images/.ico/window_icon_of_rss_feed_reader.ico</file>
-        <file alias="cursor_icon_of_arrow.ico">images/.ico/cursor_icon_of_arrow.ico</file>
-        <file alias="cursor_icon_of_size_all.ico">images/.ico/cursor_icon_of_size_all.ico</file>
-        <file alias="cursor_icon_of_size_horizontal.ico">images/.ico/cursor_icon_of_size_horizontal.ico</file>
-        <file alias="cursor_icon_of_size_vertical.ico">images/.ico/cursor_icon_of_size_vertical.ico</file>
-        <file alias="cursor_icon_of_size_right_diagonal.ico">images/.ico/cursor_icon_of_size_right_diagonal.ico</file>
-        <file alias="cursor_icon_of_size_left_diagonal.ico">images/.ico/cursor_icon_of_size_left_diagonal.ico</file>
+        <file alias="window_image_of_rss_feed_reader.ico">images/.ico/image_of_window/window_image_of_rss_feed_reader.ico</file>
+
+        <file alias="cursor_image_of_arrow.png">images/.png/image_of_cursors/cursor_image_of_arrow.png</file>
+        <file alias="cursor_image_of_size_all.png">images/.png/image_of_cursors/cursor_image_of_size_all.png</file>
+        <file alias="cursor_image_of_size_horizontal.png">images/.png/image_of_cursors/cursor_image_of_size_horizontal.png</file>
+        <file alias="cursor_image_of_size_vertical.png">images/.png/image_of_cursors/cursor_image_of_size_vertical.png</file>
+        <file alias="cursor_image_of_size_right_diagonal.png">images/.png/image_of_cursors/cursor_image_of_size_right_diagonal.png</file>
+        <file alias="cursor_image_of_size_left_diagonal.png">images/.png/image_of_cursors/cursor_image_of_size_left_diagonal.png</file>
     </qresource>
 </RCC>

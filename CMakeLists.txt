@@ -47,12 +47,8 @@ find_package(Qt6 COMPONENTS
 # --------------------------------------------------------------------------- #
 # settings directories
 
-include_directories(headers/main_window
-                    headers/window_with_rounded_border_and_graphic_effects
-                    headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window
-                    headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget
-                    headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget
-                    headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget)
+include_directories(headers/main_window/
+                    headers/window_with_rounded_border_and_graphic_effects/)
 # --------------------------------------------------------------------------- #
 
 
@@ -65,35 +61,32 @@ set(SOURCE_MAIN sources/main.cpp)
 set(SOURCE_MAIN_WINDOW sources/main_window/main_window.cpp)
 
 set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/rounded_border_of_window.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/central_part_of_window_with_graphic_effects.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/cursors_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.cpp)
 
-                                                          sources/window_with_rounded_border_and_graphic_effects/component_parts_of_window/central_part_of_window_with_graphic_effects.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/component_parts_of_window/rounded_border_of_window.cpp
-
-                                                          sources/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.cpp
-
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.cpp)
 
 # header files
 set(HEADER_MAIN_WINDOW headers/main_window/main_window.h)
 
 set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/rounded_border_of_window.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_size_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/central_part_of_window_with_graphic_effects.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_external_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_internal_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/roundness_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/thickness_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/cursors_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.h)
 
-                                                          headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window/central_part_of_window_with_graphic_effects.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/component_parts_of_window/rounded_border_of_window.h
-
-                                                          headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/characteristic_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.h
-
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.h)
 
 # other files
 set(OTHER_WIN32 resources.qrc
