@@ -5,7 +5,7 @@
 #include <QPointF>
 #include <QRectF>
 
-#include "layout_of_size_border_of_widget.h"
+#include "layout_of_external_and_internal_rounded_border_of_widget.h"
 
 
 using distance = qreal;
@@ -20,7 +20,7 @@ public:
 public:
 	inline ChangingSizeOfWidget() noexcept;
 
-	[[nodiscard]] inline LayoutOfSizeBorderOfWidget& GetLayout() noexcept;
+	[[nodiscard]] inline LayoutOfExternalAndInternalRoundedBorderOfWidget& GetLayout() noexcept;
 
 	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 
@@ -34,7 +34,7 @@ private:
 
 	enum class StateOfWidgetResize;
 private:
-	LayoutOfSizeBorderOfWidget m_layout_of_size_border;
+	LayoutOfExternalAndInternalRoundedBorderOfWidget m_layout_of_size_border;
 
 	StateOfWidgetResize m_state_of_widget_resize;
 
@@ -142,7 +142,7 @@ inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 	SetDefaultSettings();
 }
 
-[[nodiscard]] inline LayoutOfSizeBorderOfWidget& ChangingSizeOfWidget::GetLayout() noexcept
+[[nodiscard]] inline LayoutOfExternalAndInternalRoundedBorderOfWidget& ChangingSizeOfWidget::GetLayout() noexcept
 {
 	return this->m_layout_of_size_border;
 }

@@ -75,14 +75,14 @@ set(HEADER_MAIN_WINDOW headers/main_window/main_window.h)
 
 set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.h
                                                           headers/window_with_rounded_border_and_graphic_effects/rounded_border_of_window.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_size_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/central_part_of_window_with_graphic_effects.h
                                                           headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/layout_of_external_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/layout_of_internal_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/roundness_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_external_and_internal_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/roundness_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/thickness_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/cursors_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.h)
