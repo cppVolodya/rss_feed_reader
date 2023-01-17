@@ -1,3 +1,5 @@
+#include <qdebug.h>
+
 #include "changing_size_of_widget.h"
 
 
@@ -83,9 +85,13 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOf
 	case StateOfWidgetResize::IDLE_RESIZE:
 		new_geometry_of_widget = geometry_of_widget;
 		break;
+	default:
+		qDebug() << "A different widget resizing state is selected!";
+		new_geometry_of_widget = geometry_of_widget;
 	}
 
-	this->m_old_mouse_position = new_mouse_position;
+	this->SetMousePosition(new_mouse_position);
+
 	return new_geometry_of_widget;
 }
 

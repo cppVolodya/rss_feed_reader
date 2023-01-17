@@ -1,3 +1,5 @@
+#include <qdebug.h>
+
 #include "cursors_of_widget.h"
 
 
@@ -63,6 +65,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 	case Qt::CursorShape::SizeFDiagCursor:
 		return this->GetCursorOfSizeLeftDiagonal();
 	default:
+		qDebug() << "A different cursor shape is selected!";
 		return { Qt::ArrowCursor };
 	}
 }
