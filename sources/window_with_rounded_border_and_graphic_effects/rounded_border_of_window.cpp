@@ -76,7 +76,7 @@ void RoundedBorderOfWindow::DrawOfRoundedBorder()
 
 inline void RoundedBorderOfWindow::CustomizeChangingSizeOfWidget()
 {
-	this->m_changing_size_of_widget.GetLayout().Customize(this->rect().toRectF());
+	this->m_changing_size_of_widget.CustomizeLayoutOfSizeBorder(this->rect().toRectF());
 }
 
 void RoundedBorderOfWindow::SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)

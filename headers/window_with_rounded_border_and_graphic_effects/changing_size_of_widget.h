@@ -20,7 +20,7 @@ public:
 public:
 	inline ChangingSizeOfWidget() noexcept;
 
-	[[nodiscard]] constexpr inline LayoutOfExternalAndInternalRoundedBorderOfWidget& GetLayout() noexcept;
+	inline void CustomizeLayoutOfSizeBorder(const QRectF &);
 
 	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 
@@ -142,9 +142,9 @@ inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 	SetDefaultSettings();
 }
 
-[[nodiscard]] constexpr inline LayoutOfExternalAndInternalRoundedBorderOfWidget& ChangingSizeOfWidget::GetLayout() noexcept
+inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geometry_of_widget)
 {
-	return this->m_layout_of_size_border;
+	this->m_layout_of_size_border.Customize(geometry_of_widget);
 }
 
 inline void ChangingSizeOfWidget::SetDefaultSettings() noexcept
