@@ -10,12 +10,6 @@
 
 class ChangingSizeOfWidget
 {
-	using t_distance = qreal;
-public:
-	const static RoundnessOfRoundedBorderOfWidget C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER;
-	const static ThicknessOfRoundedBorderOfWidget C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER;
-
-	constexpr static t_distance C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL{ 10.0 };
 public:
 	inline ChangingSizeOfWidget() noexcept;
 
@@ -137,8 +131,8 @@ inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geom
 
 inline void ChangingSizeOfWidget::SetDefaultSettings() noexcept
 {
-	this->m_layout_of_size_border.SetRoundness(C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER);
-	this->m_layout_of_size_border.SetThickness(C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER);
+	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0		  ));
+	this->m_layout_of_size_border.SetThickness(ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
 }
 
 inline void ChangingSizeOfWidget::SetMousePosition(const QPointF &mouse_position) noexcept

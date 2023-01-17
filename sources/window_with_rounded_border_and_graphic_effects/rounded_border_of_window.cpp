@@ -2,11 +2,6 @@
 #include "layout_of_external_rounded_border_of_widget.h"
 
 
-const QSizeF  						    RoundedBorderOfWindow::C_S_DEFAULT_SIZE	    { 500.0, 500.0 	      };
-const QColor  						    RoundedBorderOfWindow::C_S_DEFAULT_COLOR	{ Qt::white 		  };
-const RoundnessOfRoundedBorderOfWidget  RoundedBorderOfWindow::C_S_DEFAULT_ROUNDNESS{ 10.0, 10.0 		  };
-const ThicknessOfRoundedBorderOfWidget  RoundedBorderOfWindow::C_S_DEFAULT_THICKNESS{ 30.0, 5.0, 5.0, 5.0 };
-
 RoundedBorderOfWindow::RoundedBorderOfWindow(QWidget *parent)
 	: QWidget(parent, Qt::Window),
 	  m_left_mouse_button_is_pressed(false)
@@ -23,11 +18,15 @@ void RoundedBorderOfWindow::SetDefaultSettings()
 {
 	this->m_painter_of_rounded_border.SetLayout(new LayoutOfExternalRoundedBorderOfWidget());
 
-	this->resize					(C_S_DEFAULT_SIZE.toSize()		     );
-	this->SetColor					(C_S_DEFAULT_COLOR				     );
-	this->SetRoundness				(C_S_DEFAULT_ROUNDNESS			     );
-	this->SetThickness			    (C_S_DEFAULT_THICKNESS			     );
-	this->SetDisplacementCoefficient(C_S_DEFAULT_DISPLACEMENT_COEFFICIENT);
+	this->resize(500.0, 500.0);
+
+	this->SetColor(Qt::white);
+
+	this->SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0));
+
+	this->SetThickness(ThicknessOfRoundedBorderOfWidget(30.0, 5.0, 5.0, 5.0));
+
+	this->SetDisplacementCoefficient(8.0);
 }
 
 void RoundedBorderOfWindow::paintEvent(QPaintEvent *paint_event)

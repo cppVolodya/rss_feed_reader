@@ -14,12 +14,6 @@ using t_pressed = bool;
 class RoundedBorderOfWindow : public QWidget
 {
 public:
-	const 	  static QSizeF  						  C_S_DEFAULT_SIZE;
-	const 	  static QColor  						  C_S_DEFAULT_COLOR;
-	const 	  static RoundnessOfRoundedBorderOfWidget C_S_DEFAULT_ROUNDNESS;
-	const     static ThicknessOfRoundedBorderOfWidget C_S_DEFAULT_THICKNESS;
-	constexpr static t_displacement 				  C_S_DEFAULT_DISPLACEMENT_COEFFICIENT{ 8.0 };
-public:
 	explicit RoundedBorderOfWindow(QWidget *parent = nullptr);
 
 	void SetDefaultSettings();

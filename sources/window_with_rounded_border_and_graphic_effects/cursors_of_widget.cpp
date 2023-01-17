@@ -3,20 +3,6 @@
 #include "cursors_of_widget.h"
 
 
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW		      { ":/resources/cursor_image_of_arrow.png" 			  };
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL			  { ":/resources/cursor_image_of_size_all.png" 			  };
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL    { ":/resources/cursor_image_of_size_horizontal.png"     };
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL	  { ":/resources/cursor_image_of_size_vertical.png"       };
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL{ ":/resources/cursor_image_of_size_right_diagonal.png" };
-const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL { ":/resources/cursor_image_of_size_left_diagonal.png"  };
-
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW			   {  5,  2 };
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL		   { -1, -1 };
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL	   { -1, -1 };
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL	   { -1, -1 };
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL{ -1, -1 };
-const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL { -1, -1 };
-
 CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 	: m_system_cursors_is_selected(system_cursor_is_selected)
 {
@@ -25,22 +11,22 @@ CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 
 void CursorsOfWidget::SetDefaultOfImagesOfCursors() noexcept
 {
-	this->m_current_cursor_image_of_arrow				= C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
-	this->m_current_cursor_image_of_size_all			= C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
-	this->m_current_cursor_image_of_size_horizontal	    = C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
-	this->m_current_cursor_image_of_size_vertical		= C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
-	this->m_current_cursor_image_of_size_right_diagonal = C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
-	this->m_current_cursor_image_of_size_left_diagonal  = C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
+	this->m_current_cursor_image_of_arrow				= ":/resources/cursor_image_of_arrow.png";
+	this->m_current_cursor_image_of_size_all			= ":/resources/cursor_image_of_size_all.png";
+	this->m_current_cursor_image_of_size_horizontal	    = ":/resources/cursor_image_of_size_horizontal.png";
+	this->m_current_cursor_image_of_size_vertical		= ":/resources/cursor_image_of_size_vertical.png";
+	this->m_current_cursor_image_of_size_right_diagonal = ":/resources/cursor_image_of_size_right_diagonal.png";
+	this->m_current_cursor_image_of_size_left_diagonal  = ":/resources/cursor_image_of_size_left_diagonal.png";
 }
 
 void CursorsOfWidget::SetDefaultOfHotSpotsOfCursors() noexcept
 {
-	this->m_current_hot_spot_of_cursor_of_arrow 			  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;
-	this->m_current_hot_spot_of_cursor_of_size_all 			  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;
-	this->m_current_hot_spot_of_cursor_of_size_horizontal 	  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL;
-	this->m_current_hot_spot_of_cursor_of_size_vertical 	  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL;
-	this->m_current_hot_spot_of_cursor_of_size_right_diagonal = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;
-	this->m_current_hot_spot_of_cursor_of_size_left_diagonal  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;
+	this->m_current_hot_spot_of_cursor_of_arrow 			  = QPoint( 5,  2 );
+	this->m_current_hot_spot_of_cursor_of_size_all 			  = QPoint(-1, -1 );
+	this->m_current_hot_spot_of_cursor_of_size_horizontal 	  = QPoint(-1, -1 );
+	this->m_current_hot_spot_of_cursor_of_size_vertical 	  = QPoint(-1, -1 );
+	this->m_current_hot_spot_of_cursor_of_size_right_diagonal = QPoint(-1, -1 );
+	this->m_current_hot_spot_of_cursor_of_size_left_diagonal  = QPoint(-1, -1 );
 }
 
 void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) noexcept

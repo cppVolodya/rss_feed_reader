@@ -3,9 +3,6 @@
 #include "changing_size_of_widget.h"
 
 
-const RoundnessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER{ 15.0, 15.0 	    };
-const ThicknessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER{ 8.0, 8.0, 8.0, 8.0 };
-
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
 {
 	Characteristic characteristics{};
@@ -107,15 +104,17 @@ void ChangingSizeOfWidget::SetCharacteristic(Characteristic &characteristics, co
 
 	characteristics.m_displacement_coefficient = this->m_layout_of_size_border.GetDisplacementCoefficient();
 
+	constexpr qreal minimum_distance_for_cursor_of_size_diagonal{ 10.0 };
+
 	characteristics.m_distance_of_x_for_cursor_of_size_diagonal =
-		(this->m_layout_of_size_border.GetRoundnessOfX() >= C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL)
+		(this->m_layout_of_size_border.GetRoundnessOfX() > minimum_distance_for_cursor_of_size_diagonal)
 		? this->m_layout_of_size_border.GetRoundnessOfX()
-		: C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL;
+		: minimum_distance_for_cursor_of_size_diagonal;
 
 	characteristics.m_distance_of_y_for_cursor_of_size_diagonal =
-		(this->m_layout_of_size_border.GetRoundnessOfY() >= C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL)
+		(this->m_layout_of_size_border.GetRoundnessOfY() > minimum_distance_for_cursor_of_size_diagonal)
 		? this->m_layout_of_size_border.GetRoundnessOfY()
-		: C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL;
+		: minimum_distance_for_cursor_of_size_diagonal;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics)

@@ -11,20 +11,6 @@ class CursorsOfWidget
 {
 	using t_image = QString;
 public:
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
-	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
-
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL;
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL;
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;
-public:
 	explicit CursorsOfWidget(bool system_cursor_is_selected = false) noexcept;
 
 #pragma region SetDefaultSettings [functions]
