@@ -9,8 +9,8 @@ using roundness = qreal;
 class RoundnessOfRoundedBorderOfWidget
 {
 public:
-	explicit inline RoundnessOfRoundedBorderOfWidget(roundness roundness_of_x = 1.0,            // x
-													 roundness roundness_of_y = 1.0) noexcept;  // y
+	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(roundness roundness_of_x = 1.0,            // x
+													 		   roundness roundness_of_y = 1.0) noexcept;  // y
 
 #pragma region GetRoundness [functions]
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;  // x
@@ -28,8 +28,8 @@ private:
 #pragma endregion Roundness [members]
 };
 
-inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const roundness roundness_of_x,           // x
-																		   const roundness roundness_of_y) noexcept  // y
+constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const roundness roundness_of_x,           // x
+																		  			 const roundness roundness_of_y) noexcept  // y
 	: m_roundness_of_x(roundness_of_x),  // x
 	  m_roundness_of_y(roundness_of_y)   // y
 {

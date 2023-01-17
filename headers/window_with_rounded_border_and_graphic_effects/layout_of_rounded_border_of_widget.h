@@ -34,13 +34,13 @@ public:
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;  // left
 #pragma endregion GetThickness [functions]
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
+	[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
 
-	[[nodiscard]] inline displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] constexpr inline displacement GetDisplacementCoefficient() const noexcept;
 
-	[[nodiscard]] inline QSizeF GetSize() const noexcept;
+	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
 #pragma region SetRoundness [functions]
 	inline void SetRoundnessOfX(roundness) noexcept;  // x
@@ -112,22 +112,22 @@ inline void LayoutOfRoundedBorderOfWidget::Customize(const QRectF &geometry_of_w
 }
 #pragma endregion GetThickness [functions]
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget LayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget LayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_shape.GetThickness();
 }
 
-[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget LayoutOfRoundedBorderOfWidget::GetRoundness() const noexcept
+[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget LayoutOfRoundedBorderOfWidget::GetRoundness() const noexcept
 {
 	return this->m_roundness;
 }
 
-[[nodiscard]] inline displacement LayoutOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] constexpr inline displacement LayoutOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
 {
 	return this->m_shape.GetDisplacementCoefficient();
 }
 
-[[nodiscard]] inline QSizeF LayoutOfRoundedBorderOfWidget::GetSize() const noexcept
+[[nodiscard]] constexpr inline QSizeF LayoutOfRoundedBorderOfWidget::GetSize() const noexcept
 {
 	return this->m_shape.GetSize();
 }

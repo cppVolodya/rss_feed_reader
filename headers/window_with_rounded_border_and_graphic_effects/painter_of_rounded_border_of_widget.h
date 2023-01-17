@@ -36,11 +36,11 @@ public:
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;  // left
 #pragma endregion GetThickness [functions]
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
+	[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
 
-	[[nodiscard]] inline displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] constexpr inline displacement GetDisplacementCoefficient() const noexcept;
 
 	inline void SetColor(const QColor &) noexcept;
 
@@ -124,17 +124,17 @@ inline PainterOfRoundedBorderOfWidget::~PainterOfRoundedBorderOfWidget() noexcep
 }
 #pragma endregion GetThickness [functions]
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_layout->GetThickness();
 }
 
-[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetRoundness() const noexcept
+[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetRoundness() const noexcept
 {
 	return this->m_layout->GetRoundness();
 }
 
-[[nodiscard]] inline displacement PainterOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] constexpr inline displacement PainterOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
 {
 	return this->m_layout->GetDisplacementCoefficient();
 }

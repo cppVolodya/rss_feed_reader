@@ -9,10 +9,10 @@ using thickness = qreal;
 class ThicknessOfRoundedBorderOfWidget
 {
 public:
-	explicit inline ThicknessOfRoundedBorderOfWidget(thickness thickness_of_top    = 1.0, 			 // top
-													 thickness thickness_of_bottom = 1.0, 			 // bottom
-													 thickness thickness_of_left   = 1.0, 			 // right
-													 thickness thickness_of_right  = 1.0) noexcept;  // left
+	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(thickness thickness_of_top    = 1.0, 		   // top
+													 		   thickness thickness_of_bottom = 1.0, 		   // bottom
+													 		   thickness thickness_of_left   = 1.0, 		   // right
+													 		   thickness thickness_of_right  = 1.0) noexcept;  // left
 
 #pragma region GetThickness [functions]
 	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;  // top
@@ -36,10 +36,10 @@ private:
 #pragma endregion Thickness [members]
 };
 
-inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const thickness thickness_of_top, 		    // top
-																		  const thickness thickness_of_bottom, 		    // bottom
-																		  const thickness thickness_of_left, 		    // right
-																		  const thickness thickness_of_right) noexcept  // left
+constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const thickness thickness_of_top, 		      // top
+																		 			const thickness thickness_of_bottom, 		  // bottom
+																		 			const thickness thickness_of_left, 		      // right
+																		 			const thickness thickness_of_right) noexcept  // left
 	: m_thickness_of_top   (thickness_of_top   ),  // top
 	  m_thickness_of_bottom(thickness_of_bottom),  // bottom
 	  m_thickness_of_left  (thickness_of_left  ),  // right

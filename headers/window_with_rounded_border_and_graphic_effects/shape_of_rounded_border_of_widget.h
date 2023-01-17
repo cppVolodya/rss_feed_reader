@@ -11,7 +11,7 @@ using displacement = qreal;
 class ShapeOfRoundedBorderOfWidget
 {
 public:
-	inline ShapeOfRoundedBorderOfWidget() noexcept;
+	constexpr inline ShapeOfRoundedBorderOfWidget() noexcept;
 
 	inline void CustomizeGeometry(const QRectF &) noexcept;
 
@@ -27,11 +27,11 @@ public:
 	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;  // right
 #pragma endregion GetThickness [functions]
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] constexpr inline displacement GetDisplacementCoefficient() const noexcept;
 
-	[[nodiscard]] inline QSizeF GetSize() const noexcept;
+	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
 #pragma region SetThickness [functions]
 	inline void SetThicknessOfTop   (thickness) noexcept;  // top
@@ -69,7 +69,7 @@ private:
 #pragma endregion ReleaseSetThickness [functions]
 };
 
-inline ShapeOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget() noexcept
+constexpr inline ShapeOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget() noexcept
 	: m_displacement_coefficient(0.0)
 {
 }
@@ -113,17 +113,17 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 }
 #pragma endregion GetThickness [functions]
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_thickness;
 }
 
-[[nodiscard]] inline displacement ShapeOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] constexpr inline displacement ShapeOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
 {
 	return this->m_displacement_coefficient;
 }
 
-[[nodiscard]] inline QSizeF ShapeOfRoundedBorderOfWidget::GetSize() const noexcept
+[[nodiscard]] constexpr inline QSizeF ShapeOfRoundedBorderOfWidget::GetSize() const noexcept
 {
 	return this->m_external_rectangle.size();
 }
