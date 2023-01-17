@@ -11,21 +11,21 @@ class CursorsOfWidget
 	using selected = bool;
 public:
 #pragma region DefaultImagesOfCursors [members]
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;  			     // cursor of arrow
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;  			 // cursor of size all
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;      // cursor of size horizontal
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;  		 // cursor of size vertical
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;  // cursor of size right diagonal
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;   // cursor of size left diagonal
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
+	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
 #pragma endregion DefaultImagesOfCursors [members]
 
 #pragma region DefaultHotSpotsOfCursors [members]
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;  				// cursor of arrow
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;  			// cursor of size all
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL;      // cursor of size horizontal
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL;  		// cursor of size vertical
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;  // cursor of size right diagonal
-	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;   // cursor of size left diagonal
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL;
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL;
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;
+	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;
 #pragma endregion DefaultHotSpotsOfCursors [members]
 public:
 	explicit CursorsOfWidget(bool system_cursor_is_selected = false) noexcept;
@@ -42,30 +42,30 @@ public:
 	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
 
 #pragma region GetSpecificCursors [functions]
-	[[nodiscard]] inline QCursor GetCursorOfArrow  			 () const noexcept;  // cursor of arrow
-	[[nodiscard]] inline QCursor GetCursorOfSizeAll		     () const noexcept;  // cursor of size all
-	[[nodiscard]] inline QCursor GetCursorOfSizeHorizontal   () const noexcept;  // cursor of size horizontal
-	[[nodiscard]] inline QCursor GetCursorOfSizeVertical     () const noexcept;  // cursor of size vertical
-	[[nodiscard]] inline QCursor GetCursorOfSizeRightDiagonal() const noexcept;  // cursor of size right diagonal
-	[[nodiscard]] inline QCursor GetCursorOfSizeLeftDiagonal () const noexcept;  // cursor of size left diagonal
+	[[nodiscard]] inline QCursor GetCursorOfArrow  			 () const noexcept;
+	[[nodiscard]] inline QCursor GetCursorOfSizeAll		     () const noexcept;
+	[[nodiscard]] inline QCursor GetCursorOfSizeHorizontal   () const noexcept;
+	[[nodiscard]] inline QCursor GetCursorOfSizeVertical     () const noexcept;
+	[[nodiscard]] inline QCursor GetCursorOfSizeRightDiagonal() const noexcept;
+	[[nodiscard]] inline QCursor GetCursorOfSizeLeftDiagonal () const noexcept;
 #pragma endregion GetSpecificCursors [functions]
 private:
 #pragma region CurrentImagesOfCursors [members]
-	Image m_current_cursor_image_of_arrow;  			  // cursor of arrow
-	Image m_current_cursor_image_of_size_all; 		 	  // cursor of size all
-	Image m_current_cursor_image_of_size_horizontal;  	  // cursor of size horizontal
-	Image m_current_cursor_image_of_size_vertical;  	  // cursor of size vertical
-	Image m_current_cursor_image_of_size_right_diagonal;  // cursor of size right diagonal
-	Image m_current_cursor_image_of_size_left_diagonal;   // cursor of size left diagonal
+	Image m_current_cursor_image_of_arrow;
+	Image m_current_cursor_image_of_size_all;
+	Image m_current_cursor_image_of_size_horizontal;
+	Image m_current_cursor_image_of_size_vertical;
+	Image m_current_cursor_image_of_size_right_diagonal;
+	Image m_current_cursor_image_of_size_left_diagonal;
 #pragma endregion CurrentImagesOfCursors [members]
 
 #pragma region CurrentHotSpotsOfCursors [members]
-	QPoint m_current_hot_spot_of_cursor_of_arrow;				 // cursor of arrow
-	QPoint m_current_hot_spot_of_cursor_of_size_all;			 // cursor of size all
-	QPoint m_current_hot_spot_of_cursor_of_size_horizontal;		 // cursor of size horizontal
-	QPoint m_current_hot_spot_of_cursor_of_size_vertical;		 // cursor of size vertical
-	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;  // cursor of size right diagonal
-	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;   // cursor of size left diagonal
+	QPoint m_current_hot_spot_of_cursor_of_arrow;
+	QPoint m_current_hot_spot_of_cursor_of_size_all;
+	QPoint m_current_hot_spot_of_cursor_of_size_horizontal;
+	QPoint m_current_hot_spot_of_cursor_of_size_vertical;
+	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;
+	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;
 #pragma endregion CurrentHotSpotsOfCursors [members]
 
 	selected m_system_cursor_is_selected;

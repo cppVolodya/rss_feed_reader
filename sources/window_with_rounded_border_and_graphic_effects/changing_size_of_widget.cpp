@@ -1,8 +1,8 @@
 #include "changing_size_of_widget.h"
 
 
-const RoundnessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER{ 15.0, 15.0 	    };  // roundness
-const ThicknessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER{ 8.0, 8.0, 8.0, 8.0 };  // thickness
+const RoundnessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER{ 15.0, 15.0 	    };
+const ThicknessOfRoundedBorderOfWidget ChangingSizeOfWidget::C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER{ 8.0, 8.0, 8.0, 8.0 };
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
 {
@@ -113,7 +113,7 @@ void ChangingSizeOfWidget::SetCharacteristic(Characteristic &characteristics, co
 }
 
 #pragma region GetNewCursorShapeIfMousePositionLocatedOnEntireParts [functions]
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics)  // right part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(characteristics))
 	{
@@ -139,7 +139,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnE
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)  // left part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -165,7 +165,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnE
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // central part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(characteristics))
 	{
@@ -187,7 +187,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnE
 #pragma endregion GetNewCursorShapeIfMousePositionLocatedOnEntireParts [functions]
 
 #pragma region GetNewCursorShapeIfMousePositionLocatedOnCertainParts [functions]
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // left part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -200,7 +200,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePo
 }
 
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnTopLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)  // top left part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnTopLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -212,7 +212,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMous
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)  // bottom left part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -224,7 +224,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMouse
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // right part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder(characteristics))
 	{
@@ -236,7 +236,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePo
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnTopRightPartLayoutOfSizeBorder(const Characteristic &characteristics)  // top right part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnTopRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -248,7 +248,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMouse
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnBottomRightPartLayoutOfSizeBorder(const Characteristic &characteristics)  // bottom right part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnBottomRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
@@ -260,7 +260,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMous
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // top part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(characteristics))
 	{
@@ -272,7 +272,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePosi
 	return Qt::CursorShape::ArrowCursor;
 }
 
-Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // bottom part
+Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(characteristics))
 	{
@@ -286,19 +286,19 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePosi
 #pragma endregion GetNewCursorShapeIfMousePositionLocatedOnCertainParts [functions]
 
 #pragma region VerifyOfMousePositionLocatedOnEntireParts [functions]
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // right part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return (characteristics.m_width - characteristics.m_distance_of_x_for_cursor_of_size_diagonal) <= characteristics.m_position_x_of_mouse &&
 		    characteristics.m_position_x_of_mouse 											       <= characteristics.m_width;
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // left part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return characteristics.m_displacement_coefficient <= characteristics.m_position_x_of_mouse &&
 		   characteristics.m_position_x_of_mouse      <= characteristics.m_distance_of_x_for_cursor_of_size_diagonal;
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // central part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return characteristics.m_distance_of_x_for_cursor_of_size_diagonal <= characteristics.m_position_x_of_mouse &&
 		   characteristics.m_position_x_of_mouse 					   <= (characteristics.m_width - characteristics.m_distance_of_x_for_cursor_of_size_diagonal);
@@ -306,37 +306,37 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPar
 #pragma endregion VerifyOfMousePositionLocatedOnEntireParts [functions]
 
 #pragma region VerifyOfMousePositionLocatedOnCertainParts [functions]
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // top part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return characteristics.m_displacement_coefficient <= characteristics.m_position_y_of_mouse &&
 		   characteristics.m_position_y_of_mouse 	  <= characteristics.m_thickness;
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // bottom part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return (characteristics.m_height - characteristics.m_thickness) <= characteristics.m_position_y_of_mouse &&
 		    characteristics.m_position_y_of_mouse 					<= characteristics.m_height;
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // right part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return (characteristics.m_width - characteristics.m_thickness) <= characteristics.m_position_x_of_mouse &&
 			VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(characteristics);
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // left part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return characteristics.m_position_x_of_mouse <= characteristics.m_thickness &&
 		   VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(characteristics);
 }
 
-inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept  // right or left part
+inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
 	return characteristics.m_distance_of_y_for_cursor_of_size_diagonal <= characteristics.m_position_y_of_mouse &&
 	       characteristics.m_position_y_of_mouse 					   <= (characteristics.m_height - characteristics.m_distance_of_y_for_cursor_of_size_diagonal);
 }
 
-[[nodiscard]] inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) const  // top right or top left part
+[[nodiscard]] inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) const
 {
 	QPointF mouse_position{ characteristics.m_position_x_of_mouse, characteristics.m_position_y_of_mouse };
 
@@ -345,7 +345,7 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightOrLeftPartL
 				this->m_layout_of_size_border.contains(mouse_position);
 }
 
-[[nodiscard]] inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) const  // bottom right or bottom left part
+[[nodiscard]] inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) const
 {
 	QPointF mouse_position{ characteristics.m_position_x_of_mouse, characteristics.m_position_y_of_mouse };
 
@@ -355,7 +355,7 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightOrLeftPartL
 
 #pragma region GetNewGeometryOfWidgetIfPressAndMoveMouseOnCertainParts [functions]
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																								  const QRectF  &geometry_of_widget) noexcept  // top part
+																								  const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget.setTop(new_geometry_of_widget.top() + displacement_of_mouse_position.y());
@@ -364,7 +364,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartL
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																									 const QRectF  &geometry_of_widget) noexcept  // bottom part
+																									 const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget.setBottom(new_geometry_of_widget.bottom() + displacement_of_mouse_position.y());
@@ -373,7 +373,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPa
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnRightPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																									const QRectF  &geometry_of_widget) noexcept  // right part
+																									const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget.setRight(new_geometry_of_widget.right() + displacement_of_mouse_position.x());
@@ -382,7 +382,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnRightPar
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLeftPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																								   const QRectF  &geometry_of_widget) noexcept  // left part
+																								   const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget.setLeft(new_geometry_of_widget.left() + displacement_of_mouse_position.x());
@@ -391,7 +391,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLeftPart
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopRightPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																									   const QRectF  &geometry_of_widget) noexcept  // top right part
+																									   const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartLayoutOfSizeBorder  (displacement_of_mouse_position,
@@ -404,7 +404,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopRight
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopLeftLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																								  const QRectF  &geometry_of_widget) noexcept  // top left part
+																								  const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartLayoutOfSizeBorder (displacement_of_mouse_position,
@@ -417,7 +417,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopLeftL
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomRightPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																										  const QRectF  &geometry_of_widget) noexcept  // bottom right part
+																										  const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPartLayoutOfSizeBorder(displacement_of_mouse_position,
@@ -430,7 +430,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomRi
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomLeftPartLayoutOfSizeBorder(const QPointF &displacement_of_mouse_position,
-																										 const QRectF  &geometry_of_widget) noexcept  // bottom left part
+																										 const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget = geometry_of_widget;
 	new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPartLayoutOfSizeBorder(displacement_of_mouse_position,

@@ -29,15 +29,15 @@ public:
 	[[nodiscard]] constexpr inline QColor GetColor() const noexcept;
 
 #pragma region GetRoundness [functions]
-	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;  // x
-	[[nodiscard]] constexpr inline roundness GetRoundnessOfY() const noexcept;  // y
+	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;
+	[[nodiscard]] constexpr inline roundness GetRoundnessOfY() const noexcept;
 #pragma endregion GetRoundness [functions]
 
 #pragma region GetThickness [functions]
-	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;  // top
-	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;  // bottom
-	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;  // right
-	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;  // left
+	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
+	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
+	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
+	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
 #pragma endregion GetThickness [functions]
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
@@ -49,15 +49,15 @@ public:
 	inline void SetColor(const QColor &) noexcept;
 
 #pragma region SetRoundness [functions]
-	inline void SetRoundnessOfX(roundness) noexcept;  // x
-	inline void SetRoundnessOfY(roundness) noexcept;  // y
+	inline void SetRoundnessOfX(roundness) noexcept;
+	inline void SetRoundnessOfY(roundness) noexcept;
 #pragma endregion SetRoundness [functions]
 
 #pragma region SetThickness [functions]
-	inline void SetThicknessOfTop   (thickness) noexcept;  // top
-	inline void SetThicknessOfBottom(thickness) noexcept;  // bottom
-	inline void SetThicknessOfRight (thickness) noexcept;  // right
-	inline void SetThicknessOfLeft  (thickness) noexcept;  // left
+	inline void SetThicknessOfTop   (thickness) noexcept;
+	inline void SetThicknessOfBottom(thickness) noexcept;
+	inline void SetThicknessOfRight (thickness) noexcept;
+	inline void SetThicknessOfLeft  (thickness) noexcept;
 #pragma endregion SetThickness [functions]
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
@@ -99,34 +99,34 @@ private:
 }
 
 #pragma region GetRoundness [functions]
-[[nodiscard]] constexpr inline roundness RoundedBorderOfWindow::GetRoundnessOfX() const noexcept  // x
+[[nodiscard]] constexpr inline roundness RoundedBorderOfWindow::GetRoundnessOfX() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetRoundnessOfX();
 }
 
-[[nodiscard]] constexpr inline roundness RoundedBorderOfWindow::GetRoundnessOfY() const noexcept  // y
+[[nodiscard]] constexpr inline roundness RoundedBorderOfWindow::GetRoundnessOfY() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetRoundnessOfY();
 }
 #pragma endregion GetRoundness [functions]
 
 #pragma region GetThickness [functions]
-[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfTop() const noexcept  // top
+[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfTop() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfTop();
 }
 
-[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfBottom() const noexcept  // bottom
+[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfBottom() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfBottom();
 }
 
-[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfRight() const noexcept  // right
+[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfRight() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfRight();
 }
 
-[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfLeft() const noexcept  // left
+[[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfLeft() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfLeft();
 }
@@ -153,34 +153,34 @@ inline void RoundedBorderOfWindow::SetColor(const QColor &color) noexcept
 }
 
 #pragma region SetRoundness [functions]
-inline void RoundedBorderOfWindow::SetRoundnessOfX(const roundness roundness_of_x) noexcept  // x
+inline void RoundedBorderOfWindow::SetRoundnessOfX(const roundness roundness_of_x) noexcept
 {
 	this->m_painter_of_rounded_border.SetRoundnessOfX(roundness_of_x);
 }
 
-inline void RoundedBorderOfWindow::SetRoundnessOfY(const roundness roundness_of_y) noexcept  // y
+inline void RoundedBorderOfWindow::SetRoundnessOfY(const roundness roundness_of_y) noexcept
 {
 	this->m_painter_of_rounded_border.SetRoundnessOfY(roundness_of_y);
 }
 #pragma endregion SetRoundness [functions]
 
 #pragma region SetThickness [functions]
-inline void RoundedBorderOfWindow::SetThicknessOfTop(const thickness thickness_of_top) noexcept  // top
+inline void RoundedBorderOfWindow::SetThicknessOfTop(const thickness thickness_of_top) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfTop(thickness_of_top);
 }
 
-inline void RoundedBorderOfWindow::SetThicknessOfBottom(const thickness thickness_of_bottom) noexcept  // bottom
+inline void RoundedBorderOfWindow::SetThicknessOfBottom(const thickness thickness_of_bottom) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfBottom(thickness_of_bottom);
 }
 
-inline void RoundedBorderOfWindow::SetThicknessOfRight(const thickness thickness_of_right) noexcept  // right
+inline void RoundedBorderOfWindow::SetThicknessOfRight(const thickness thickness_of_right) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfRight(thickness_of_right);
 }
 
-inline void RoundedBorderOfWindow::SetThicknessOfLeft(const thickness thickness_of_left) noexcept  // left
+inline void RoundedBorderOfWindow::SetThicknessOfLeft(const thickness thickness_of_left) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfLeft(thickness_of_left);
 }
