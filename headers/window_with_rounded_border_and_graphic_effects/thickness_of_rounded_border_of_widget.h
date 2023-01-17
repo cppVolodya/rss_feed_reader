@@ -4,36 +4,36 @@
 #include <QtGlobal>
 
 
-using thickness = qreal;
+using t_thickness = qreal;
 
 class ThicknessOfRoundedBorderOfWidget
 {
 public:
-	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(thickness thickness_of_top    = 1.0,
-													 		   thickness thickness_of_bottom = 1.0,
-													 		   thickness thickness_of_left   = 1.0,
-													 		   thickness thickness_of_right  = 1.0) noexcept;
+	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(t_thickness thickness_of_top    = 1.0,
+													 		   t_thickness thickness_of_bottom = 1.0,
+													 		   t_thickness thickness_of_left   = 1.0,
+													 		   t_thickness thickness_of_right  = 1.0) noexcept;
 
-	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
-	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
-	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
-	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
+	[[nodiscard]] constexpr inline t_thickness GetThicknessOfTop   () const noexcept;
+	[[nodiscard]] constexpr inline t_thickness GetThicknessOfBottom() const noexcept;
+	[[nodiscard]] constexpr inline t_thickness GetThicknessOfRight () const noexcept;
+	[[nodiscard]] constexpr inline t_thickness GetThicknessOfLeft  () const noexcept;
 
-	inline void SetThicknessOfTop   (thickness) noexcept;
-	inline void SetThicknessOfBottom(thickness) noexcept;
-	inline void SetThicknessOfLeft  (thickness) noexcept;
-	inline void SetThicknessOfRight (thickness) noexcept;
+	inline void SetThicknessOfTop   (t_thickness) noexcept;
+	inline void SetThicknessOfBottom(t_thickness) noexcept;
+	inline void SetThicknessOfLeft  (t_thickness) noexcept;
+	inline void SetThicknessOfRight (t_thickness) noexcept;
 private:
-	thickness m_thickness_of_top;
-	thickness m_thickness_of_bottom;
-	thickness m_thickness_of_left;
-	thickness m_thickness_of_right;
+	t_thickness m_thickness_of_top;
+	t_thickness m_thickness_of_bottom;
+	t_thickness m_thickness_of_left;
+	t_thickness m_thickness_of_right;
 };
 
-constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const thickness thickness_of_top,
-																		 			const thickness thickness_of_bottom,
-																		 			const thickness thickness_of_left,
-																		 			const thickness thickness_of_right) noexcept
+constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const t_thickness thickness_of_top,
+																		 			const t_thickness thickness_of_bottom,
+																		 			const t_thickness thickness_of_left,
+																		 			const t_thickness thickness_of_right) noexcept
 	: m_thickness_of_top   (thickness_of_top   ),
 	  m_thickness_of_bottom(thickness_of_bottom),
 	  m_thickness_of_left  (thickness_of_left  ),
@@ -41,42 +41,42 @@ constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWid
 {
 }
 
-constexpr inline thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
+constexpr inline t_thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
 {
 	return this->m_thickness_of_top;
 }
 
-constexpr inline thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfBottom() const noexcept
+constexpr inline t_thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfBottom() const noexcept
 {
 	return this->m_thickness_of_bottom;
 }
 
-constexpr inline thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
+constexpr inline t_thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
 {
 	return this->m_thickness_of_left;
 }
 
-constexpr inline thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
+constexpr inline t_thickness ThicknessOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
 {
 	return this->m_thickness_of_right;
 }
 
-inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfTop(const thickness thickness_of_top) noexcept
+inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfTop(const t_thickness thickness_of_top) noexcept
 {
 	this->m_thickness_of_top = thickness_of_top;
 }
 
-inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfBottom(const thickness thickness_of_bottom) noexcept
+inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfBottom(const t_thickness thickness_of_bottom) noexcept
 {
 	this->m_thickness_of_bottom = thickness_of_bottom;
 }
 
-inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfLeft(const thickness thickness_of_left) noexcept
+inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfLeft(const t_thickness thickness_of_left) noexcept
 {
 	this->m_thickness_of_left = thickness_of_left;
 }
 
-inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfRight(const thickness thickness_of_right) noexcept
+inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfRight(const t_thickness thickness_of_right) noexcept
 {
 	this->m_thickness_of_right = thickness_of_right;
 }

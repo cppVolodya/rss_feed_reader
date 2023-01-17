@@ -8,15 +8,14 @@
 #include "layout_of_external_and_internal_rounded_border_of_widget.h"
 
 
-using distance = qreal;
-
 class ChangingSizeOfWidget
 {
+	using t_distance = qreal;
 public:
 	const static RoundnessOfRoundedBorderOfWidget C_S_DEFAULT_ROUNDNESS_OF_LAYOUT_OF_SIZE_BORDER;
 	const static ThicknessOfRoundedBorderOfWidget C_S_DEFAULT_THICKNESS_OF_LAYOUT_OF_SIZE_BORDER;
 
-	constexpr static distance C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL{ 10.0 };
+	constexpr static t_distance C_S_MINIMUM_DISTANCE_FOR_CURSOR_OF_SIZE_DIAGONAL{ 10.0 };
 public:
 	inline ChangingSizeOfWidget() noexcept;
 

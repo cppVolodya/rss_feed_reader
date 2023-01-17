@@ -7,15 +7,15 @@
 
 class CursorsOfWidget
 {
-	using Image    = QString;
-	using selected = bool;
+	using t_image    = QString;
+	using t_selected = bool;
 public:
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
-	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
+	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
 
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;
@@ -33,7 +33,7 @@ public:
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
 #pragma endregion SetDefaultSettings [functions]
 
-	void SetSystemCursor(selected) noexcept;
+	void SetSystemCursor(t_selected) noexcept;
 
 #pragma region GetSpecificCursors [functions]
 	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
@@ -46,12 +46,12 @@ public:
 	[[nodiscard]] inline QCursor GetCursorOfSizeLeftDiagonal () const noexcept;
 #pragma endregion GetSpecificCursors [functions]
 private:
-	Image m_current_cursor_image_of_arrow;
-	Image m_current_cursor_image_of_size_all;
-	Image m_current_cursor_image_of_size_horizontal;
-	Image m_current_cursor_image_of_size_vertical;
-	Image m_current_cursor_image_of_size_right_diagonal;
-	Image m_current_cursor_image_of_size_left_diagonal;
+	t_image m_current_cursor_image_of_arrow;
+	t_image m_current_cursor_image_of_size_all;
+	t_image m_current_cursor_image_of_size_horizontal;
+	t_image m_current_cursor_image_of_size_vertical;
+	t_image m_current_cursor_image_of_size_right_diagonal;
+	t_image m_current_cursor_image_of_size_left_diagonal;
 
 	QPoint m_current_hot_spot_of_cursor_of_arrow;
 	QPoint m_current_hot_spot_of_cursor_of_size_all;
@@ -60,7 +60,7 @@ private:
 	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;
 	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;
 
-	selected m_system_cursor_is_selected;
+	t_selected m_system_cursor_is_selected;
 private:
 	[[nodiscard]] QCursor ReleaseGetCursor(Qt::CursorShape) const noexcept;
 
