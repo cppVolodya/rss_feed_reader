@@ -1,23 +1,19 @@
 #include "cursors_of_widget.h"
 
 
-#pragma region DefaultImagesOfCursors [members]
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW		      { ":/resources/cursor_image_of_arrow.png" 			  };
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL			  { ":/resources/cursor_image_of_size_all.png" 			  };
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL    { ":/resources/cursor_image_of_size_horizontal.png"     };
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL	  { ":/resources/cursor_image_of_size_vertical.png"       };
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL{ ":/resources/cursor_image_of_size_right_diagonal.png" };
 const QString CursorsOfWidget::C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL { ":/resources/cursor_image_of_size_left_diagonal.png"  };
-#pragma endregion DefaultImagesOfCursors [members]
 
-#pragma region DefaultHotSpotsOfCursors [members]
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW			   {  5,  2 };
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL		   { -1, -1 };
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL	   { -1, -1 };
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL	   { -1, -1 };
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL{ -1, -1 };
 const QPoint CursorsOfWidget::C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL { -1, -1 };
-#pragma endregion DefaultHotSpotsOfCursors [members]
 
 CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 	: m_system_cursor_is_selected(system_cursor_is_selected)
@@ -25,7 +21,6 @@ CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 	this->SetDefaultSettings();
 }
 
-#pragma region SetDefaultSettings [functions]
 void CursorsOfWidget::SetDefaultOfImagesOfCursors() noexcept
 {
 	this->m_current_cursor_image_of_arrow				= C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
@@ -45,7 +40,6 @@ void CursorsOfWidget::SetDefaultOfHotSpotsOfCursors() noexcept
 	this->m_current_hot_spot_of_cursor_of_size_right_diagonal = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;
 	this->m_current_hot_spot_of_cursor_of_size_left_diagonal  = C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;
 }
-#pragma endregion DefaultHotSpotsOfCursors [functions]
 
 void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noexcept
 {
@@ -73,8 +67,6 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 	}
 }
 
-#pragma region ReleaseGetSpecificCursors [functions]
-#pragma region ReleaseGetCursorOfArrow [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfArrow() const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -100,9 +92,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfArrow [functions]
 
-#pragma region ReleaseGetCursorOfSizeAll [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeAll() const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -128,9 +118,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfSizeAll [functions]
 
-#pragma region ReleaseGetCursorOfSizeHorizontal [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeHorizontal() const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -156,9 +144,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfSizeHorizontal [functions]
 
-#pragma region ReleaseGetCursorOfSizeVertical [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeVertical() const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -183,9 +169,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 	QCursor cursor_of_arrow(Qt::SizeVerCursor);
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfSizeVertical [functions]
 
-#pragma region ReleaseGetCursorOfSizeRightDiagonal [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeRightDiagonal() const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -210,9 +194,7 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 	QCursor cursor_of_arrow(Qt::SizeBDiagCursor);
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfSizeRightDiagonal [functions]
 
-#pragma region ReleaseGetCursorOfSizeLeftDiagonal [functions]
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeLeftDiagonal () const noexcept
 {
 	if (this->m_system_cursor_is_selected)
@@ -238,5 +220,3 @@ void CursorsOfWidget::SetSystemCursor(const bool system_cursor_is_selected) noex
 
 	return cursor_of_arrow;
 }
-#pragma endregion ReleaseGetCursorOfSizeLeftDiagonal [functions]
-#pragma endregion ReleaseGetSpecificCursors [functions]

@@ -42,15 +42,11 @@ private:
 private:
 	void SetCharacteristic(Characteristic &, const QPointF &) noexcept;
 
-#pragma region GetNewCursorShapeIfMousePositionLocatedOnEntireParts [functions]
-	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &);
-
-	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder	(const Characteristic &);
-
-	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
-#pragma endregion GetNewCursorShapeIfMousePositionLocatedOnEntireParts [functions]
-
 #pragma region GetNewCursorShapeIfMousePositionLocatedOnCertainParts [functions]
+	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &);
+	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder	(const Characteristic &);
+	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
+
 	Qt::CursorShape GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder   (const Characteristic &) noexcept;
 	Qt::CursorShape GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
@@ -64,15 +60,11 @@ private:
 	Qt::CursorShape GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder  (const Characteristic &);
 #pragma endregion GetNewCursorShapeIfMousePositionLocatedOnCertainParts [functions]
 
-#pragma region VerifyOfMousePositionLocatedOnEntireParts [functions]
-	inline static bool VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &) noexcept;
-
-	inline static bool VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder   (const Characteristic &) noexcept;
-
-	inline static bool VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
-#pragma endregion VerifyOfMousePositionLocatedOnEntireParts [functions]
-
 #pragma region VerifyOfMousePositionLocatedOnCertainParts [functions]
+	inline static bool VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &) noexcept;
+	inline static bool VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder   (const Characteristic &) noexcept;
+	inline static bool VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
+
 	inline static bool VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder	 (const Characteristic &) noexcept;
 	inline static bool VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
@@ -80,8 +72,7 @@ private:
 	inline static bool VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder	      (const Characteristic &) noexcept;
 	inline static bool VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
-	[[nodiscard]] inline bool VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(const Characteristic &) const;
-
+	[[nodiscard]] inline bool VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder		 (const Characteristic &) const;
 	[[nodiscard]] inline bool VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(const Characteristic &) const;
 #pragma endregion VerifyOfMousePositionLocatedOnCertainParts [functions]
 
@@ -100,7 +91,6 @@ private:
 #pragma endregion GetNewGeometryOfWidgetIfPressAndMoveMouseOnCertainParts [functions]
 };
 
-#pragma region AdditionalInternalDataForChangingSizeOfWidget [data]
 struct ChangingSizeOfWidget::Characteristic
 {
 public:
@@ -134,7 +124,6 @@ enum class ChangingSizeOfWidget::StateOfWidgetResize
 
 	IDLE_RESIZE
 };
-#pragma endregion AdditionalInternalDataForChangingSizeOfWidget [data]
 
 inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 	: m_state_of_widget_resize(StateOfWidgetResize::IDLE_RESIZE)

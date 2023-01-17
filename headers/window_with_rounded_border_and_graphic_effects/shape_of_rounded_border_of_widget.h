@@ -15,17 +15,13 @@ public:
 
 	inline void CustomizeGeometry(const QRectF &) noexcept;
 
-#pragma region GetRectangles [functions]
 	[[nodiscard]] constexpr inline QRectF GetExternalRectangle() const noexcept;
 	[[nodiscard]] constexpr inline QRectF GetInternalRectangle() const noexcept;
-#pragma endregion GetRectangles [functions]
 
-#pragma region GetThickness [functions]
 	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
-#pragma endregion GetThickness [functions]
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
@@ -33,21 +29,17 @@ public:
 
 	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
-#pragma region SetThickness [functions]
 	inline void SetThicknessOfTop   (thickness) noexcept;
 	inline void SetThicknessOfBottom(thickness) noexcept;
 	inline void SetThicknessOfLeft  (thickness) noexcept;
 	inline void SetThicknessOfRight (thickness) noexcept;
-#pragma endregion SetThickness [functions]
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
 	inline void SetDisplacementCoefficient(displacement) noexcept;
 private:
-#pragma region Rectangles [members]
 	QRectF m_external_rectangle;
 	QRectF m_internal_rectangle;
-#pragma endregion Rectangles [members]
 
 	ThicknessOfRoundedBorderOfWidget m_thickness;
 
@@ -79,7 +71,6 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 	this->ReleaseCustomizeGeometry(geometry_of_widget);
 }
 
-#pragma region GetRectangles [functions]
 [[nodiscard]] constexpr inline QRectF ShapeOfRoundedBorderOfWidget::GetExternalRectangle() const noexcept
 {
 	return m_external_rectangle;
@@ -89,9 +80,7 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 {
 	return m_internal_rectangle;
 }
-#pragma endregion GetRectangles [functions]
 
-#pragma region GetThickness [functions]
 [[nodiscard]] constexpr inline thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
 {
 	return this->m_thickness.GetThicknessOfTop();
@@ -111,7 +100,6 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 {
 	return this->m_thickness.GetThicknessOfRight();
 }
-#pragma endregion GetThickness [functions]
 
 [[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
@@ -128,7 +116,6 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 	return this->m_external_rectangle.size();
 }
 
-#pragma region SetThickness [functions]
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfTop(const thickness thickness_of_top) noexcept
 {
 	this->m_thickness.SetThicknessOfTop(thickness_of_top);
@@ -148,7 +135,6 @@ inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfRight(const thickness th
 {
 	this->m_thickness.SetThicknessOfRight(thickness_of_right);
 }
-#pragma endregion SetThickness [functions]
 
 inline void ShapeOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {

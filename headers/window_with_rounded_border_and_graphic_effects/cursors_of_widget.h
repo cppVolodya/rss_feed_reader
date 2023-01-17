@@ -10,23 +10,19 @@ class CursorsOfWidget
 	using Image    = QString;
 	using selected = bool;
 public:
-#pragma region DefaultImagesOfCursors [members]
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_HORIZONTAL;
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_VERTICAL;
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_RIGHT_DIAGONAL;
 	const static Image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_LEFT_DIAGONAL;
-#pragma endregion DefaultImagesOfCursors [members]
 
-#pragma region DefaultHotSpotsOfCursors [members]
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_ARROW;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_ALL;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_HORIZONTAL;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_VERTICAL;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_RIGHT_DIAGONAL;
 	const static QPoint C_S_DEFAULT_HOT_SPOT_OF_CURSOR_OF_SIZE_LEFT_DIAGONAL;
-#pragma endregion DefaultHotSpotsOfCursors [members]
 public:
 	explicit CursorsOfWidget(bool system_cursor_is_selected = false) noexcept;
 
@@ -35,13 +31,13 @@ public:
 
 	void SetDefaultOfImagesOfCursors  () noexcept;
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
-#pragma endregion DefaultHotSpotsOfCursors [functions]
+#pragma endregion SetDefaultSettings [functions]
 
 	void SetSystemCursor(selected) noexcept;
 
+#pragma region GetSpecificCursors [functions]
 	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
 
-#pragma region GetSpecificCursors [functions]
 	[[nodiscard]] inline QCursor GetCursorOfArrow  			 () const noexcept;
 	[[nodiscard]] inline QCursor GetCursorOfSizeAll		     () const noexcept;
 	[[nodiscard]] inline QCursor GetCursorOfSizeHorizontal   () const noexcept;
@@ -50,74 +46,56 @@ public:
 	[[nodiscard]] inline QCursor GetCursorOfSizeLeftDiagonal () const noexcept;
 #pragma endregion GetSpecificCursors [functions]
 private:
-#pragma region CurrentImagesOfCursors [members]
 	Image m_current_cursor_image_of_arrow;
 	Image m_current_cursor_image_of_size_all;
 	Image m_current_cursor_image_of_size_horizontal;
 	Image m_current_cursor_image_of_size_vertical;
 	Image m_current_cursor_image_of_size_right_diagonal;
 	Image m_current_cursor_image_of_size_left_diagonal;
-#pragma endregion CurrentImagesOfCursors [members]
 
-#pragma region CurrentHotSpotsOfCursors [members]
 	QPoint m_current_hot_spot_of_cursor_of_arrow;
 	QPoint m_current_hot_spot_of_cursor_of_size_all;
 	QPoint m_current_hot_spot_of_cursor_of_size_horizontal;
 	QPoint m_current_hot_spot_of_cursor_of_size_vertical;
 	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;
 	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;
-#pragma endregion CurrentHotSpotsOfCursors [members]
 
 	selected m_system_cursor_is_selected;
 private:
 	[[nodiscard]] QCursor ReleaseGetCursor(Qt::CursorShape) const noexcept;
 
 #pragma region ReleaseGetSpecificCursors [functions]
-#pragma region ReleaseGetCursorOfArrow [functions]
 	[[nodiscard]] 				QCursor ReleaseGetCursorOfArrow      () const noexcept;
 	[[nodiscard]] inline 		QCursor ReleaseGetCustomCursorOfArrow() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfArrow() noexcept;
-#pragma endregion ReleaseGetCursorOfArrow [functions]
 
-#pragma region ReleaseGetCursorOfSizeAll [functions]
 	[[nodiscard]] 				QCursor ReleaseGetCursorOfSizeAll	   () const noexcept;
 	[[nodiscard]] inline 		QCursor ReleaseGetCustomCursorOfSizeAll() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfSizeAll() noexcept;
-#pragma endregion ReleaseGetCursorOfSizeAll [functions]
 
-#pragma region ReleaseGetCursorOfSizeHorizontal [functions]
 	[[nodiscard]]			    QCursor ReleaseGetCursorOfSizeHorizontal   	  () const noexcept;
 	[[nodiscard]] inline 	    QCursor ReleaseGetCustomCursorOfSizeHorizontal() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfSizeHorizontal() noexcept;
-#pragma endregion ReleaseGetCursorOfSizeHorizontal [functions]
 
-#pragma region ReleaseGetCursorOfSizeVertical [functions]
 	[[nodiscard]] 			    QCursor ReleaseGetCursorOfSizeVertical      () const noexcept;
 	[[nodiscard]] inline 	    QCursor ReleaseGetCustomCursorOfSizeVertical() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfSizeVertical() noexcept;
-#pragma endregion ReleaseGetCursorOfSizeVertical [functions]
 
-#pragma region ReleaseGetCursorOfSizeRightDiagonal [functions]
 	[[nodiscard]] 			    QCursor ReleaseGetCursorOfSizeRightDiagonal		 () const noexcept;
 	[[nodiscard]] inline 	    QCursor ReleaseGetCustomCursorOfSizeRightDiagonal() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfSizeRightDiagonal() noexcept;
-#pragma endregion ReleaseGetCursorOfSizeRightDiagonal [functions]
 
-#pragma region ReleaseGetCursorOfSizeLeftDiagonal [functions]
 	[[nodiscard]] 			    QCursor ReleaseGetCursorOfSizeLeftDiagonal      () const noexcept;
 	[[nodiscard]] inline 	    QCursor ReleaseGetCustomCursorOfSizeLeftDiagonal() const noexcept;
 	[[nodiscard]] static inline QCursor ReleaseGetSystemCursorOfSizeLeftDiagonal() noexcept;
-#pragma endregion ReleaseGetCursorOfSizeLeftDiagonal [functions]
 #pragma endregion ReleaseGetSpecificCursors [functions]
 };
 
-#pragma region SetDefaultSettings [functions]
 inline void CursorsOfWidget::SetDefaultSettings() noexcept
 {
 	this->SetDefaultOfImagesOfCursors  ();
 	this->SetDefaultOfHotSpotsOfCursors();
 }
-#pragma endregion DefaultHotSpotsOfCursors [functions]
 
 [[nodiscard]] inline QCursor CursorsOfWidget::GetCursor(const Qt::CursorShape cursor_shape) const noexcept
 {

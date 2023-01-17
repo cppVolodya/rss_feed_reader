@@ -12,20 +12,14 @@ public:
 	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(roundness roundness_of_x = 1.0,
 													 		   roundness roundness_of_y = 1.0) noexcept;
 
-#pragma region GetRoundness [functions]
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfY() const noexcept;
-#pragma endregion GetRoundness [functions]
 
-#pragma region SetRoundness [functions]
 	inline void SetRoundnessOfX(roundness) noexcept;
 	inline void SetRoundnessOfY(roundness) noexcept;
-#pragma endregion SetRoundness [functions]
 private:
-#pragma region Roundness [members]
 	roundness m_roundness_of_x;
 	roundness m_roundness_of_y;
-#pragma endregion Roundness [members]
 };
 
 constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const roundness roundness_of_x,

@@ -14,13 +14,11 @@ using pressed = bool;
 class RoundedBorderOfWindow : public QWidget
 {
 public:
-#pragma region DefaultCharacteristic [members]
 	const 	  static QSizeF  						  C_S_DEFAULT_SIZE;
 	const 	  static QColor  						  C_S_DEFAULT_COLOR;
 	const 	  static RoundnessOfRoundedBorderOfWidget C_S_DEFAULT_ROUNDNESS;
 	const     static ThicknessOfRoundedBorderOfWidget C_S_DEFAULT_THICKNESS;
 	constexpr static displacement 					  C_S_DEFAULT_DISPLACEMENT_COEFFICIENT{ 8.0 };
-#pragma endregion DefaultCharacteristic [members]
 public:
 	explicit RoundedBorderOfWindow(QWidget *parent = nullptr);
 
@@ -28,17 +26,13 @@ public:
 
 	[[nodiscard]] constexpr inline QColor GetColor() const noexcept;
 
-#pragma region GetRoundness [functions]
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfY() const noexcept;
-#pragma endregion GetRoundness [functions]
 
-#pragma region GetThickness [functions]
 	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
-#pragma endregion GetThickness [functions]
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
@@ -48,17 +42,13 @@ public:
 
 	inline void SetColor(const QColor &) noexcept;
 
-#pragma region SetRoundness [functions]
 	inline void SetRoundnessOfX(roundness) noexcept;
 	inline void SetRoundnessOfY(roundness) noexcept;
-#pragma endregion SetRoundness [functions]
 
-#pragma region SetThickness [functions]
 	inline void SetThicknessOfTop   (thickness) noexcept;
 	inline void SetThicknessOfBottom(thickness) noexcept;
 	inline void SetThicknessOfRight (thickness) noexcept;
 	inline void SetThicknessOfLeft  (thickness) noexcept;
-#pragma endregion SetThickness [functions]
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
@@ -68,11 +58,9 @@ public:
 protected:
 	void paintEvent(QPaintEvent *) override;
 
-#pragma region EventsOfMouse [functions]
 	void mouseMoveEvent   (QMouseEvent *) override;
 	void mousePressEvent  (QMouseEvent *) override;
 	void mouseReleaseEvent(QMouseEvent *) override;
-#pragma endregion EventsOfMouse [functions]
 private:
 	PainterOfRoundedBorderOfWidget m_painter_of_rounded_border;
 
@@ -98,7 +86,6 @@ private:
 	return this->m_painter_of_rounded_border.GetColor();
 }
 
-#pragma region GetRoundness [functions]
 [[nodiscard]] constexpr inline roundness RoundedBorderOfWindow::GetRoundnessOfX() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetRoundnessOfX();
@@ -108,9 +95,7 @@ private:
 {
 	return this->m_painter_of_rounded_border.GetRoundnessOfY();
 }
-#pragma endregion GetRoundness [functions]
 
-#pragma region GetThickness [functions]
 [[nodiscard]] constexpr inline thickness RoundedBorderOfWindow::GetThicknessOfTop() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfTop();
@@ -130,7 +115,6 @@ private:
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfLeft();
 }
-#pragma endregion GetThickness [functions]
 
 [[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget RoundedBorderOfWindow::GetThickness() const noexcept
 {
@@ -152,7 +136,6 @@ inline void RoundedBorderOfWindow::SetColor(const QColor &color) noexcept
 	this->m_painter_of_rounded_border.SetColor(color);
 }
 
-#pragma region SetRoundness [functions]
 inline void RoundedBorderOfWindow::SetRoundnessOfX(const roundness roundness_of_x) noexcept
 {
 	this->m_painter_of_rounded_border.SetRoundnessOfX(roundness_of_x);
@@ -162,9 +145,7 @@ inline void RoundedBorderOfWindow::SetRoundnessOfY(const roundness roundness_of_
 {
 	this->m_painter_of_rounded_border.SetRoundnessOfY(roundness_of_y);
 }
-#pragma endregion SetRoundness [functions]
 
-#pragma region SetThickness [functions]
 inline void RoundedBorderOfWindow::SetThicknessOfTop(const thickness thickness_of_top) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfTop(thickness_of_top);
@@ -184,7 +165,6 @@ inline void RoundedBorderOfWindow::SetThicknessOfLeft(const thickness thickness_
 {
 	this->m_painter_of_rounded_border.SetThicknessOfLeft(thickness_of_left);
 }
-#pragma endregion SetThickness [functions]
 
 inline void RoundedBorderOfWindow::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {

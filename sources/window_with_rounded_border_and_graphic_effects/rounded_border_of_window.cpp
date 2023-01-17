@@ -2,12 +2,10 @@
 #include "layout_of_external_rounded_border_of_widget.h"
 
 
-#pragma region DefaultCharacteristic [members]
 const QSizeF  						    RoundedBorderOfWindow::C_S_DEFAULT_SIZE	    { 500.0, 500.0 	      };
 const QColor  						    RoundedBorderOfWindow::C_S_DEFAULT_COLOR	{ Qt::white 		  };
 const RoundnessOfRoundedBorderOfWidget  RoundedBorderOfWindow::C_S_DEFAULT_ROUNDNESS{ 10.0, 10.0 		  };
 const ThicknessOfRoundedBorderOfWidget  RoundedBorderOfWindow::C_S_DEFAULT_THICKNESS{ 30.0, 5.0, 5.0, 5.0 };
-#pragma endregion DefaultCharacteristic [members]
 
 RoundedBorderOfWindow::RoundedBorderOfWindow(QWidget *parent)
 	: QWidget(parent, Qt::Window),
@@ -41,7 +39,6 @@ void RoundedBorderOfWindow::paintEvent(QPaintEvent *paint_event)
 	QWidget::paintEvent(paint_event);
 }
 
-#pragma region EventsOfMouse [functions]
 void RoundedBorderOfWindow::mouseMoveEvent(QMouseEvent *mouse_event)
 {
 	this->SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_event->position());
@@ -65,7 +62,6 @@ void RoundedBorderOfWindow::mouseReleaseEvent(QMouseEvent *mouse_event)
 
 	QWidget::mouseReleaseEvent(mouse_event);
 }
-#pragma endregion EventsOfMouse [functions]
 
 void RoundedBorderOfWindow::DrawOfRoundedBorder()
 {

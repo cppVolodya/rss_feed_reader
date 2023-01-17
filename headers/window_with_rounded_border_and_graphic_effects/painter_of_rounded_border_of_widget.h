@@ -24,17 +24,13 @@ public:
 
 	[[nodiscard]] constexpr inline QColor GetColor() const noexcept;
 
-#pragma region GetRoundness [functions]
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfX() const noexcept;
 	[[nodiscard]] constexpr inline roundness GetRoundnessOfY() const noexcept;
-#pragma endregion GetRoundness [functions]
 
-#pragma region GetThickness [functions]
 	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
-#pragma endregion GetThickness [functions]
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
@@ -44,17 +40,13 @@ public:
 
 	inline void SetColor(const QColor &) noexcept;
 
-#pragma region SetRoundness [functions]
 	inline void SetRoundnessOfX(roundness) noexcept;
 	inline void SetRoundnessOfY(roundness) noexcept;
-#pragma endregion SetRoundness [functions]
 
-#pragma region SetThickness [functions]
 	inline void SetThicknessOfTop   (thickness) noexcept;
 	inline void SetThicknessOfBottom(thickness) noexcept;
 	inline void SetThicknessOfRight (thickness) noexcept;
 	inline void SetThicknessOfLeft  (thickness) noexcept;
-#pragma endregion SetThickness [functions]
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
@@ -90,7 +82,6 @@ inline PainterOfRoundedBorderOfWidget::~PainterOfRoundedBorderOfWidget() noexcep
 	return this->m_color;
 }
 
-#pragma region GetRoundness [functions]
 [[nodiscard]] constexpr inline roundness PainterOfRoundedBorderOfWidget::GetRoundnessOfX() const noexcept
 {
 	return this->m_layout->GetRoundnessOfX();
@@ -100,9 +91,7 @@ inline PainterOfRoundedBorderOfWidget::~PainterOfRoundedBorderOfWidget() noexcep
 {
 	return this->m_layout->GetRoundnessOfY();
 }
-#pragma endregion GetRoundness [functions]
 
-#pragma region GetThickness [functions]
 [[nodiscard]] constexpr inline thickness PainterOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
 {
 	return this->m_layout->GetThicknessOfTop();
@@ -122,7 +111,6 @@ inline PainterOfRoundedBorderOfWidget::~PainterOfRoundedBorderOfWidget() noexcep
 {
 	return this->m_layout->GetThicknessOfLeft();
 }
-#pragma endregion GetThickness [functions]
 
 [[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
@@ -144,7 +132,6 @@ inline void PainterOfRoundedBorderOfWidget::SetColor(const QColor &color) noexce
 	this->m_color = color;
 }
 
-#pragma region SetRoundness [functions]
 inline void PainterOfRoundedBorderOfWidget::SetRoundnessOfX(const roundness roundness_of_x) noexcept
 {
 	this->m_layout->SetRoundnessOfX(roundness_of_x);
@@ -154,9 +141,7 @@ inline void PainterOfRoundedBorderOfWidget::SetRoundnessOfY(const roundness roun
 {
 	this->m_layout->SetRoundnessOfY(roundness_of_y);
 }
-#pragma endregion SetRoundness [functions]
 
-#pragma region SetThickness [functions]
 inline void PainterOfRoundedBorderOfWidget::SetThicknessOfTop(const thickness thickness_of_top) noexcept
 {
 	this->m_layout->SetThicknessOfTop(thickness_of_top);
@@ -176,7 +161,6 @@ inline void PainterOfRoundedBorderOfWidget::SetThicknessOfLeft(const thickness t
 {
 	this->m_layout->SetThicknessOfLeft(thickness_of_left);
 }
-#pragma endregion SetThickness [functions]
 
 inline void PainterOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {

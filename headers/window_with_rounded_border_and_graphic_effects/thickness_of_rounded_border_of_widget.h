@@ -14,26 +14,20 @@ public:
 													 		   thickness thickness_of_left   = 1.0,
 													 		   thickness thickness_of_right  = 1.0) noexcept;
 
-#pragma region GetThickness [functions]
 	[[nodiscard]] constexpr inline thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfBottom() const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] constexpr inline thickness GetThicknessOfLeft  () const noexcept;
-#pragma endregion GetThickness [functions]
 
-#pragma region SetThickness [functions]
 	inline void SetThicknessOfTop   (thickness) noexcept;
 	inline void SetThicknessOfBottom(thickness) noexcept;
 	inline void SetThicknessOfLeft  (thickness) noexcept;
 	inline void SetThicknessOfRight (thickness) noexcept;
-#pragma endregion SetThickness [functions]
 private:
-#pragma region Thickness [members]
 	thickness m_thickness_of_top;
 	thickness m_thickness_of_bottom;
 	thickness m_thickness_of_left;
 	thickness m_thickness_of_right;
-#pragma endregion Thickness [members]
 };
 
 constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const thickness thickness_of_top,
