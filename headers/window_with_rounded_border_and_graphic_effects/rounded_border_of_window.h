@@ -29,14 +29,14 @@ public:
 	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfX() const noexcept;
 	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfY() const noexcept;
 
+	[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
+
 	[[nodiscard]] constexpr inline t_thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline t_thickness GetThicknessOfBottom() const noexcept;
 	[[nodiscard]] constexpr inline t_thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] constexpr inline t_thickness GetThicknessOfLeft  () const noexcept;
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
-
-	[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
 
 	[[nodiscard]] constexpr inline t_displacement GetDisplacementCoefficient() const noexcept;
 
@@ -45,14 +45,14 @@ public:
 	inline void SetRoundnessOfX(t_roundness) noexcept;
 	inline void SetRoundnessOfY(t_roundness) noexcept;
 
+	inline void SetRoundness(const RoundnessOfRoundedBorderOfWidget &) noexcept;
+
 	inline void SetThicknessOfTop   (t_thickness) noexcept;
 	inline void SetThicknessOfBottom(t_thickness) noexcept;
 	inline void SetThicknessOfRight (t_thickness) noexcept;
 	inline void SetThicknessOfLeft  (t_thickness) noexcept;
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
-
-	inline void SetRoundness(const RoundnessOfRoundedBorderOfWidget &) noexcept;
 
 	inline void SetDisplacementCoefficient(t_displacement) noexcept;
 protected:
@@ -96,6 +96,11 @@ private:
 	return this->m_painter_of_rounded_border.GetRoundnessOfY();
 }
 
+[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget RoundedBorderOfWindow::GetRoundness() const noexcept
+{
+	return this->m_painter_of_rounded_border.GetRoundness();
+}
+
 [[nodiscard]] constexpr inline t_thickness RoundedBorderOfWindow::GetThicknessOfTop() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfTop();
@@ -121,11 +126,6 @@ private:
 	return this->m_painter_of_rounded_border.GetThickness();
 }
 
-[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget RoundedBorderOfWindow::GetRoundness() const noexcept
-{
-	return this->m_painter_of_rounded_border.GetRoundness();
-}
-
 [[nodiscard]] constexpr inline t_displacement RoundedBorderOfWindow::GetDisplacementCoefficient() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetDisplacementCoefficient();
@@ -144,6 +144,11 @@ inline void RoundedBorderOfWindow::SetRoundnessOfX(const t_roundness roundness_o
 inline void RoundedBorderOfWindow::SetRoundnessOfY(const t_roundness roundness_of_y) noexcept
 {
 	this->m_painter_of_rounded_border.SetRoundnessOfY(roundness_of_y);
+}
+
+inline void RoundedBorderOfWindow::SetRoundness(const RoundnessOfRoundedBorderOfWidget &roundness) noexcept
+{
+	this->m_painter_of_rounded_border.SetRoundness(roundness);
 }
 
 inline void RoundedBorderOfWindow::SetThicknessOfTop(const t_thickness thickness_of_top) noexcept
@@ -169,11 +174,6 @@ inline void RoundedBorderOfWindow::SetThicknessOfLeft(const t_thickness thicknes
 inline void RoundedBorderOfWindow::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
 	this->m_painter_of_rounded_border.SetThickness(thickness);
-}
-
-inline void RoundedBorderOfWindow::SetRoundness(const RoundnessOfRoundedBorderOfWidget &roundness) noexcept
-{
-	this->m_painter_of_rounded_border.SetRoundness(roundness);
 }
 
 inline void RoundedBorderOfWindow::SetDisplacementCoefficient(t_displacement displacement_coefficient) noexcept

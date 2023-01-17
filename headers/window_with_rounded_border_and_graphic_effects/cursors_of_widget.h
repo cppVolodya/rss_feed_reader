@@ -5,10 +5,11 @@
 #include <QPoint>
 
 
+using t_selected = bool;
+
 class CursorsOfWidget
 {
-	using t_image    = QString;
-	using t_selected = bool;
+	using t_image = QString;
 public:
 	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_ARROW;
 	const static t_image C_S_DEFAULT_CURSOR_IMAGE_OF_SIZE_ALL;
@@ -33,7 +34,9 @@ public:
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
 #pragma endregion SetDefaultSettings [functions]
 
-	void SetSystemCursor(t_selected) noexcept;
+	void SelectSystemCursors(t_selected) noexcept;
+
+	[[nodiscard]] inline t_selected SystemCursorsIsSelected() const noexcept;
 
 #pragma region GetSpecificCursors [functions]
 	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
@@ -60,7 +63,7 @@ private:
 	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;
 	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;
 
-	t_selected m_system_cursor_is_selected;
+	t_selected m_system_cursors_is_selected;
 private:
 	[[nodiscard]] QCursor ReleaseGetCursor(Qt::CursorShape) const noexcept;
 
@@ -95,6 +98,11 @@ inline void CursorsOfWidget::SetDefaultSettings() noexcept
 {
 	this->SetDefaultOfImagesOfCursors  ();
 	this->SetDefaultOfHotSpotsOfCursors();
+}
+
+[[nodiscard]] inline t_selected CursorsOfWidget::SystemCursorsIsSelected() const noexcept
+{
+	return this->m_system_cursors_is_selected;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::GetCursor(const Qt::CursorShape cursor_shape) const noexcept
