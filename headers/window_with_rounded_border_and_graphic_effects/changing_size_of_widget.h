@@ -103,23 +103,23 @@ public:
 
 enum class ChangingSizeOfWidget::StateOfWidgetResize
 {
-	TOP_RESIZE,
-	BOTTOM_RESIZE,
+	TOP,
+	BOTTOM,
 
-	RIGHT_RESIZE,
-	LEFT_RESIZE,
+	RIGHT,
+	LEFT,
 
-	TOP_RIGHT_RESIZE,
-	TOP_LEFT_RESIZE,
+	TOP_RIGHT,
+	TOP_LEFT,
 
-	BOTTOM_RIGHT_RESIZE,
-	BOTTOM_LEFT_RESIZE,
+	BOTTOM_RIGHT,
+	BOTTOM_LEFT,
 
-	IDLE_RESIZE
+	IDLE
 };
 
 inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
-	: m_state_of_widget_resize(StateOfWidgetResize::IDLE_RESIZE)
+	: m_state_of_widget_resize(StateOfWidgetResize::IDLE)
 {
 	SetDefaultSettings();
 }

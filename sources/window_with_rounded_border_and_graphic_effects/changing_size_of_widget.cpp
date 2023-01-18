@@ -26,7 +26,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnL
 		return cursor_shape;
 	}
 
-	this->m_state_of_widget_resize = StateOfWidgetResize::IDLE_RESIZE;
+	this->m_state_of_widget_resize = StateOfWidgetResize::IDLE;
 
 	return Qt::CursorShape::ArrowCursor;
 }
@@ -39,47 +39,47 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOf
 
 	switch (this->m_state_of_widget_resize)
 	{
-	case StateOfWidgetResize::TOP_RESIZE:
+	case StateOfWidgetResize::TOP:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																									  geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::BOTTOM_RESIZE:
+	case StateOfWidgetResize::BOTTOM:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																										 geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::RIGHT_RESIZE:
+	case StateOfWidgetResize::RIGHT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																										geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::LEFT_RESIZE:
+	case StateOfWidgetResize::LEFT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnLeftPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																									   geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::TOP_RIGHT_RESIZE:
+	case StateOfWidgetResize::TOP_RIGHT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																										   geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::TOP_LEFT_RESIZE:
+	case StateOfWidgetResize::TOP_LEFT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopLeftLayoutOfSizeBorder(displacement_of_mouse_position,
 																									  geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::BOTTOM_RIGHT_RESIZE:
+	case StateOfWidgetResize::BOTTOM_RIGHT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																											  geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::BOTTOM_LEFT_RESIZE:
+	case StateOfWidgetResize::BOTTOM_LEFT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomLeftPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																										     geometry_of_widget);
 
 		break;
-	case StateOfWidgetResize::IDLE_RESIZE:
+	case StateOfWidgetResize::IDLE:
 		new_geometry_of_widget = geometry_of_widget;
 		break;
 	default:
@@ -193,7 +193,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePo
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::LEFT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::LEFT;
 
 		return Qt::CursorShape::SizeHorCursor;
 	}
@@ -205,7 +205,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMous
 {
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_LEFT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_LEFT;
 
 		return Qt::CursorShape::SizeFDiagCursor;
 	}
@@ -217,7 +217,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMouse
 {
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_LEFT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_LEFT;
 
 		return Qt::CursorShape::SizeBDiagCursor;
 	}
@@ -229,7 +229,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePo
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::RIGHT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::RIGHT;
 
 		return Qt::CursorShape::SizeHorCursor;
 	}
@@ -241,7 +241,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMouse
 {
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_RIGHT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_RIGHT;
 
 		return Qt::CursorShape::SizeBDiagCursor;
 	}
@@ -253,7 +253,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMous
 {
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_RIGHT_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_RIGHT;
 
 		return Qt::CursorShape::SizeFDiagCursor;
 	}
@@ -265,7 +265,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePosi
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::TOP;
 
 		return Qt::CursorShape::SizeVerCursor;
 	}
@@ -277,7 +277,7 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePosi
 {
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(characteristics))
 	{
-		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_RESIZE;
+		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM;
 
 		return Qt::CursorShape::SizeVerCursor;
 	}
