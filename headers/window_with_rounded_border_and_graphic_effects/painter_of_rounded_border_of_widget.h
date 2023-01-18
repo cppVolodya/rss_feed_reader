@@ -10,14 +10,25 @@
 class PainterOfRoundedBorderOfWidget : public QPainter
 {
 public:
-	explicit inline PainterOfRoundedBorderOfWidget(LayoutOfRoundedBorderOfWidget* layout = nullptr) noexcept;
+	enum class TypeLayoutOfRoundedBorderOfWidget
+	{
+		EXTERNAL,
+		INTERNAL,
+
+		EXTERNAL_AND_INTERNAL,
+
+		NOT_DEFINED
+	};
+public:
+	explicit inline PainterOfRoundedBorderOfWidget(TypeLayoutOfRoundedBorderOfWidget type_layout
+												 = TypeLayoutOfRoundedBorderOfWidget::NOT_DEFINED);
 
 	inline ~PainterOfRoundedBorderOfWidget() noexcept;
 
-	PainterOfRoundedBorderOfWidget(const PainterOfRoundedBorderOfWidget &) = delete;
+	PainterOfRoundedBorderOfWidget(const PainterOfRoundedBorderOfWidget &);
 	PainterOfRoundedBorderOfWidget(PainterOfRoundedBorderOfWidget &&) noexcept;
 
-	PainterOfRoundedBorderOfWidget& operator=(const PainterOfRoundedBorderOfWidget &) = delete;
+	PainterOfRoundedBorderOfWidget& operator=(const PainterOfRoundedBorderOfWidget &);
 	PainterOfRoundedBorderOfWidget& operator=(PainterOfRoundedBorderOfWidget &&) noexcept;
 
 	void Draw(const QRectF &);
@@ -54,9 +65,12 @@ public:
 
 	inline void SetDisplacementCoefficient(t_displacement) noexcept;
 
-	inline void SetLayout(LayoutOfRoundedBorderOfWidget *layout) noexcept;
+	void SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget type_layout) noexcept;
+
+	friend inline void Swap(PainterOfRoundedBorderOfWidget &, PainterOfRoundedBorderOfWidget &) noexcept;
 private:
 	LayoutOfRoundedBorderOfWidget *m_layout;
+	TypeLayoutOfRoundedBorderOfWidget m_layout_type;
 
 	QColor m_color;
 private:
@@ -65,16 +79,21 @@ private:
 	inline void DrawAccordingToLayout();
 
 	inline void ReleaseSetColor();
+
+	void AllocateMemoryForLayout();
+	void DeallocateMemoryOfLayoutAndResetLayoutType() noexcept;
 };
 
-inline PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(LayoutOfRoundedBorderOfWidget* layout) noexcept
-	: m_layout(layout)
+inline PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(const TypeLayoutOfRoundedBorderOfWidget type_layout)
+	: m_layout	   (nullptr	   ),
+	  m_layout_type(type_layout)
 {
+	this->AllocateMemoryForLayout();
 }
 
 inline PainterOfRoundedBorderOfWidget::~PainterOfRoundedBorderOfWidget() noexcept
 {
-	delete this->m_layout;
+	this->DeallocateMemoryOfLayoutAndResetLayoutType();
 }
 
 [[nodiscard]] constexpr inline QColor PainterOfRoundedBorderOfWidget::GetColor() const noexcept
@@ -175,13 +194,6 @@ inline void PainterOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRounde
 inline void PainterOfRoundedBorderOfWidget::SetDisplacementCoefficient(t_displacement displacement_coefficient) noexcept
 {
 	this->m_layout->SetDisplacementCoefficient(displacement_coefficient);
-}
-
-inline void PainterOfRoundedBorderOfWidget::SetLayout(LayoutOfRoundedBorderOfWidget *layout) noexcept
-{
-	delete this->m_layout;
-
-	this->m_layout = layout;
 }
 
 #endif  // RSS_FEED_READER_HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_H_

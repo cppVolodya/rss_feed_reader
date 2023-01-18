@@ -16,7 +16,7 @@ RoundedBorderOfWindow::RoundedBorderOfWindow(QWidget *parent)
 
 void RoundedBorderOfWindow::SetDefaultSettings()
 {
-	this->m_painter_of_rounded_border.SetLayout(new LayoutOfExternalRoundedBorderOfWidget());
+	this->m_painter_of_rounded_border.SetTypeOfLayout(PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
 	this->resize(500.0, 500.0);
 
