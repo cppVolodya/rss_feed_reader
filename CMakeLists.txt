@@ -60,9 +60,9 @@ set(SOURCE_MAIN sources/main.cpp)
 
 set(SOURCE_MAIN_WINDOW sources/main_window/main_window.cpp)
 
-set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/rounded_border_of_window.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/central_part_of_window_with_graphic_effects.cpp
+set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_rounded_border_and_graphic_effects/widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/rounded_border_of_widget.cpp
+                                                          sources/window_with_rounded_border_and_graphic_effects/central_part_of_widget.cpp
                                                           sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.cpp
                                                           sources/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.cpp
                                                           sources/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.cpp
@@ -73,9 +73,9 @@ set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_ro
 # header files
 set(HEADER_MAIN_WINDOW headers/main_window/main_window.h)
 
-set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/window_with_rounded_border_and_graphic_effects.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/rounded_border_of_window.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/central_part_of_window_with_graphic_effects.h
+set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/rounded_border_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/central_part_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/layout_of_external_rounded_border_of_widget.h

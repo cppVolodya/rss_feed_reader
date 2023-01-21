@@ -3,10 +3,10 @@
 #ifndef HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
 #define HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
 
-#include "window_with_rounded_border_and_graphic_effects.h"
+#include "widget.h"
 
 
-class MainWindow : public WindowWithRoundedBorderAndGraphicEffects
+class MainWindow : public Widget
 {
 public:
 	explicit MainWindow(QWidget *parent = nullptr);

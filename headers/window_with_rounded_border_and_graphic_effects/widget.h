@@ -1,10 +1,10 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS_H_
-#define RSS_FEED_READER_HEADERS_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS_H_
+#ifndef RSS_FEED_READER_HEADERS_WIDGET_H_
+#define RSS_FEED_READER_HEADERS_WIDGET_H_
 
 /*
- * The class called WindowWithRoundedBorderAndGraphicEffects represents a window that will be stacked from two windows.
+ * The class called Widget represents a window that will be stacked from two windows.
  * The first window will be responsible for the frame, and the second window will be the central part.
  * My task is to get a window at the exit that will have a rounded border and a central part with an acrylic or blur effect. Why such difficulty?.
  * The reason is that on Windows 10 I was able to make a rounded window through the WinAPI or
@@ -14,16 +14,16 @@
  * That is, the problem is to use a rounded window together with an acrylic or blur effect, which is why I decided to use two windows to solve the problem.
 */
 
-#include "central_part_of_window_with_graphic_effects.h"
-#include "rounded_border_of_window.h"
+#include "central_part_of_widget.h"
+#include "rounded_border_of_widget.h"
 
 
-class WindowWithRoundedBorderAndGraphicEffects : public CentralPartOfWindowWithGraphicEffects
+class Widget : public CentralPartOfWidget
 {
 public:
-	explicit WindowWithRoundedBorderAndGraphicEffects(QWidget *parent = nullptr);
+	explicit Widget(QWidget *parent = nullptr);
 private:
-	RoundedBorderOfWindow *m_rounded_border_of_window;
+	RoundedBorderOfWidget *m_rounded_border_of_widget;
 };
 
-#endif  // RSS_FEED_READER_HEADERS_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS_H_
+#endif  // RSS_FEED_READER_HEADERS_WIDGET_H_
