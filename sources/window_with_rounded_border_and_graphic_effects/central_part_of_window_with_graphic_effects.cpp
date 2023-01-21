@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "central_part_of_window_with_graphic_effects.h"
 
 

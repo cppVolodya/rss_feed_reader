@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "rounded_border_of_window.h"
 #include "layout_of_external_rounded_border_of_widget.h"
 

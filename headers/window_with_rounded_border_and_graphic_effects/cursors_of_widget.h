@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #ifndef RSS_FEED_READER_HEADERS_CURSORS_OF_WIDGET_H_
 #define RSS_FEED_READER_HEADERS_CURSORS_OF_WIDGET_H_
 

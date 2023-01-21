@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "main_window.h"
 
 

@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "layout_of_rounded_border_of_widget.h"
 
 

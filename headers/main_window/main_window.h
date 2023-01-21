@@ -1,5 +1,7 @@
-#ifndef RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
-#define RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
+#ifndef HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
+#define HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
 
 #include "window_with_rounded_border_and_graphic_effects.h"
 
@@ -10,4 +12,4 @@ public:
 	explicit MainWindow(QWidget *parent = nullptr);
 };
 
-#endif  // RSS_FEED_READER_HEADERS_MAIN_WINDOW_H_
+#endif  // HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_

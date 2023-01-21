@@ -1,32 +1,35 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include <qdebug.h>
 
 #include "painter_of_rounded_border_of_widget.h"
 #include "layout_of_external_rounded_border_of_widget.h"
 #include "layout_of_internal_rounded_border_of_widget.h"
 #include "layout_of_external_and_internal_rounded_border_of_widget.h"
+#include "painter_of_save_and_restore.h"
 
 
-PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(const PainterOfRoundedBorderOfWidget &painter)
+PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(const PainterOfRoundedBorderOfWidget& painter)
 	: m_layout_type(painter.m_layout_type),
 	  m_layout(nullptr)
 {
 	this->AllocateMemoryForLayout();
 
-	if(this->m_layout)
+	if (this->m_layout)
 	{
 		*(this->m_layout) = *painter.m_layout;
 	}
 }
 
-PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(PainterOfRoundedBorderOfWidget &&painter) noexcept
-	: m_layout	   (painter.m_layout	 ),
+PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(PainterOfRoundedBorderOfWidget&& painter) noexcept
+	: m_layout(painter.m_layout),
 	  m_layout_type(painter.m_layout_type)
 {
-	painter.m_layout   	  = nullptr;
+	painter.m_layout = nullptr;
 	painter.m_layout_type = TypeLayoutOfRoundedBorderOfWidget::NOT_DEFINED;
 }
 
-PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(const PainterOfRoundedBorderOfWidget &painter)
+PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(const PainterOfRoundedBorderOfWidget& painter)
 {
 	if (this == &painter)
 	{
@@ -40,7 +43,7 @@ PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(const 
 	return *this;
 }
 
-PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(PainterOfRoundedBorderOfWidget &&painter) noexcept
+PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(PainterOfRoundedBorderOfWidget&& painter) noexcept
 {
 	if (this == &painter)
 	{
@@ -54,8 +57,10 @@ PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(Painte
 	return *this;
 }
 
-void PainterOfRoundedBorderOfWidget::Draw(const QRectF &geometry_of_window)
+void PainterOfRoundedBorderOfWidget::Draw(const QRectF& geometry_of_window)
 {
+	PainterOfSaveAndRestore painter = PainterOfSaveAndRestore(this);
+
 	this->Customize();
 	this->m_layout->Customize(geometry_of_window);
 	this->DrawAccordingToLayout();
@@ -70,10 +75,10 @@ void PainterOfRoundedBorderOfWidget::SetTypeOfLayout(const TypeLayoutOfRoundedBo
 	this->AllocateMemoryForLayout();
 }
 
-inline void Swap(PainterOfRoundedBorderOfWidget &first_object, PainterOfRoundedBorderOfWidget &second_object) noexcept
+inline void Swap(PainterOfRoundedBorderOfWidget& first_object, PainterOfRoundedBorderOfWidget& second_object) noexcept
 {
 	std::swap(first_object.m_layout_type, second_object.m_layout_type);
-	std::swap(first_object.m_layout, 	  second_object.m_layout);
+	std::swap(first_object.m_layout, second_object.m_layout);
 }
 
 inline void PainterOfRoundedBorderOfWidget::Customize()

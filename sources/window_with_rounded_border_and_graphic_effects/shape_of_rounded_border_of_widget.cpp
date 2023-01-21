@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "shape_of_rounded_border_of_widget.h"
 
 
@@ -12,7 +14,7 @@ inline void ShapeOfRoundedBorderOfWidget::SetGeometry(QRectF geometry_of_widget)
 	this->ReleaseSetDisplacementCoefficient(geometry_of_widget);
 
 	this->m_external_rectangle = geometry_of_widget;
-	this->m_internal_rectangle = geometry_of_widget;
+	this->m_internal_rectangle = m_external_rectangle;
 }
 
 void ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(QRectF &geometry_of_widget) const noexcept

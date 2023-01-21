@@ -85,7 +85,8 @@ set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_ro
                                                           headers/window_with_rounded_border_and_graphic_effects/roundness_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/thickness_of_rounded_border_of_widget.h
                                                           headers/window_with_rounded_border_and_graphic_effects/cursors_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.h)
+                                                          headers/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.h
+                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_save_and_restore.h)
 
 
 # other files

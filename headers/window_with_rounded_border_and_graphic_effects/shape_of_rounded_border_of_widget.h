@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #ifndef RSS_FEED_READER_HEADERS_SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_H_
 #define RSS_FEED_READER_HEADERS_SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_H_
 
@@ -73,12 +75,12 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 
 [[nodiscard]] constexpr inline QRectF ShapeOfRoundedBorderOfWidget::GetExternalRectangle() const noexcept
 {
-	return m_external_rectangle;
+	return this->m_external_rectangle;
 }
 
 [[nodiscard]] constexpr inline QRectF ShapeOfRoundedBorderOfWidget::GetInternalRectangle() const noexcept
 {
-	return m_internal_rectangle;
+	return this->m_internal_rectangle;
 }
 
 [[nodiscard]] constexpr inline t_thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept

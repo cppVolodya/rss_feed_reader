@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include <qdebug.h>
 
 #include "cursors_of_widget.h"

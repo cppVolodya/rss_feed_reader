@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #ifndef RSS_FEED_READER_HEADERS_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET_H_
 #define RSS_FEED_READER_HEADERS_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET_H_
 
@@ -12,13 +14,15 @@ class LayoutOfRoundedBorderOfWidget : public QPainterPath
 public:
 	LayoutOfRoundedBorderOfWidget() = default;
 
-	virtual ~LayoutOfRoundedBorderOfWidget() = default;
-
+#pragma region RuleOfZero
 	LayoutOfRoundedBorderOfWidget(const LayoutOfRoundedBorderOfWidget &) = default;
 	LayoutOfRoundedBorderOfWidget(LayoutOfRoundedBorderOfWidget &&) 	 = default;
 
 	LayoutOfRoundedBorderOfWidget& operator=(const LayoutOfRoundedBorderOfWidget &) = default;
 	LayoutOfRoundedBorderOfWidget& operator=(LayoutOfRoundedBorderOfWidget &&) 	    = default;
+
+	virtual ~LayoutOfRoundedBorderOfWidget() = default;
+#pragma endregion RuleOfZero
 
 	inline void Customize(const QRectF &);
 

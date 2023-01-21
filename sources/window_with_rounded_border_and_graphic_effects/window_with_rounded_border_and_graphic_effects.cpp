@@ -1,3 +1,5 @@
+// Copyright [2023] <Volodymyr Dorozhovets>"
+
 #include "window_with_rounded_border_and_graphic_effects.h"
 
 
