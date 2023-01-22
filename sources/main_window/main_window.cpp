@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include "main_window.h"
+#include "main_window.hpp"
 
 
 MainWindow::MainWindow(QWidget *parent)

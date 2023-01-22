@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include "widget.h"
+#include "widget.hpp"
 
 
 Widget::Widget(QWidget *parent)

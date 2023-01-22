@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include "rounded_border_of_widget.h"
-#include "layout_of_external_rounded_border_of_widget.h"
+#include "rounded_border_of_widget.hpp"
+#include "layout_of_external_rounded_border_of_widget.hpp"
 
 
 RoundedBorderOfWidget::RoundedBorderOfWidget(QWidget *parent)

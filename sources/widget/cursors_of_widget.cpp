@@ -2,7 +2,7 @@
 
 #include <qdebug.h>
 
-#include "cursors_of_widget.h"
+#include "cursors_of_widget.hpp"
 
 
 CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept

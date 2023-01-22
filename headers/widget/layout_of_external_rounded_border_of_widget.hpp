@@ -3,7 +3,7 @@
 #ifndef RSS_FEED_READER_HEADERS_LAYOUT_OF_ETERNAL_ROUNDED_BORDER_OF_WIDGET_H_
 #define RSS_FEED_READER_HEADERS_LAYOUT_OF_ETERNAL_ROUNDED_BORDER_OF_WIDGET_H_
 
-#include "layout_of_rounded_border_of_widget.h"
+#include "layout_of_rounded_border_of_widget.hpp"
 
 
 class LayoutOfExternalRoundedBorderOfWidget : public LayoutOfRoundedBorderOfWidget

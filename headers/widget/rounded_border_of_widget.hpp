@@ -6,9 +6,9 @@
 #include <QWidget>
 #include <QMouseEvent>
 
-#include "painter_of_rounded_border_of_widget.h"
-#include "cursors_of_widget.h"
-#include "changing_size_of_widget.h"
+#include "painter_of_rounded_border_of_widget.hpp"
+#include "cursors_of_widget.hpp"
+#include "changing_size_of_widget.hpp"
 
 
 using t_pressed = bool;

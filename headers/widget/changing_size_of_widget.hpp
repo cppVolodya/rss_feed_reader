@@ -7,7 +7,7 @@
 #include <QPointF>
 #include <QRectF>
 
-#include "layout_of_external_and_internal_rounded_border_of_widget.h"
+#include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
 
 
 class ChangingSizeOfWidget

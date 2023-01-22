@@ -2,7 +2,7 @@
 
 #include <qdebug.h>
 
-#include "changing_size_of_widget.h"
+#include "changing_size_of_widget.hpp"
 
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)

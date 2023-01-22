@@ -6,7 +6,7 @@
 #include <QPainter>
 #include <QPaintDevice>
 
-#include "layout_of_rounded_border_of_widget.h"
+#include "layout_of_rounded_border_of_widget.hpp"
 
 
 class PainterOfRoundedBorderOfWidget : public QPainter

@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include "layout_of_rounded_border_of_widget.h"
+#include "layout_of_rounded_border_of_widget.hpp"
 
 
 void LayoutOfRoundedBorderOfWidget::ReleaseCustomize(const QRectF &geometry_of_window)

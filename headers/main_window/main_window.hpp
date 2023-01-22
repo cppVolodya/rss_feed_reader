@@ -3,7 +3,7 @@
 #ifndef HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
 #define HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
 
-#include "widget.h"
+#include "widget.hpp"
 
 
 class MainWindow : public Widget

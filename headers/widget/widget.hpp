@@ -14,8 +14,8 @@
  * That is, the problem is to use a rounded window together with an acrylic or blur effect, which is why I decided to use two windows to solve the problem.
 */
 
-#include "central_part_of_widget.h"
-#include "rounded_border_of_widget.h"
+#include "central_part_of_widget.hpp"
+#include "rounded_border_of_widget.hpp"
 
 
 class Widget : public CentralPartOfWidget

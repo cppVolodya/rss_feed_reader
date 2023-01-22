@@ -2,11 +2,11 @@
 
 #include <qdebug.h>
 
-#include "painter_of_rounded_border_of_widget.h"
-#include "layout_of_external_rounded_border_of_widget.h"
-#include "layout_of_internal_rounded_border_of_widget.h"
-#include "layout_of_external_and_internal_rounded_border_of_widget.h"
-#include "painter_of_save_and_restore.h"
+#include "painter_of_rounded_border_of_widget.hpp"
+#include "layout_of_external_rounded_border_of_widget.hpp"
+#include "layout_of_internal_rounded_border_of_widget.hpp"
+#include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
+#include "painter_of_save_and_restore.hpp"
 
 
 PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(const PainterOfRoundedBorderOfWidget& painter)

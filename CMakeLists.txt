@@ -48,7 +48,7 @@ find_package(Qt6 COMPONENTS
 # settings directories
 
 include_directories(headers/main_window/
-                    headers/window_with_rounded_border_and_graphic_effects/)
+                    headers/widget/)
 # --------------------------------------------------------------------------- #
 
 
@@ -60,33 +60,33 @@ set(SOURCE_MAIN sources/main.cpp)
 
 set(SOURCE_MAIN_WINDOW sources/main_window/main_window.cpp)
 
-set(SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS sources/window_with_rounded_border_and_graphic_effects/widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/central_part_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/cursors_of_widget.cpp
-                                                          sources/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.cpp)
+set(SOURCE_WIDGET sources/widget/widget.cpp
+                  sources/widget/rounded_border_of_widget.cpp
+                  sources/widget/central_part_of_widget.cpp
+                  sources/widget/painter_of_rounded_border_of_widget.cpp
+                  sources/widget/layout_of_rounded_border_of_widget.cpp
+                  sources/widget/shape_of_rounded_border_of_widget.cpp
+                  sources/widget/cursors_of_widget.cpp
+                  sources/widget/changing_size_of_widget.cpp)
 
 
 # header files
-set(HEADER_MAIN_WINDOW headers/main_window/main_window.h)
+set(HEADER_MAIN_WINDOW headers/main_window/main_window.hpp)
 
-set(HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS headers/window_with_rounded_border_and_graphic_effects/widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/central_part_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_external_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_internal_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/layout_of_external_and_internal_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/shape_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/roundness_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/thickness_of_rounded_border_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/cursors_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/changing_size_of_widget.h
-                                                          headers/window_with_rounded_border_and_graphic_effects/painter_of_save_and_restore.h)
+set(HEADER_WIDGET headers/widget/widget.hpp
+                  headers/widget/rounded_border_of_widget.hpp
+                  headers/widget/central_part_of_widget.hpp
+                  headers/widget/painter_of_rounded_border_of_widget.hpp
+                  headers/widget/layout_of_rounded_border_of_widget.hpp
+                  headers/widget/layout_of_external_rounded_border_of_widget.hpp
+                  headers/widget/layout_of_internal_rounded_border_of_widget.hpp
+                  headers/widget/layout_of_external_and_internal_rounded_border_of_widget.hpp
+                  headers/widget/shape_of_rounded_border_of_widget.hpp
+                  headers/widget/roundness_of_rounded_border_of_widget.hpp
+                  headers/widget/thickness_of_rounded_border_of_widget.hpp
+                  headers/widget/cursors_of_widget.hpp
+                  headers/widget/changing_size_of_widget.hpp
+                  headers/widget/painter_of_save_and_restore.hpp)
 
 
 # other files
@@ -103,20 +103,20 @@ if(WIN32)
     add_executable(rss_feed_reader
                    ${SOURCE_MAIN}
                    ${SOURCE_MAIN_WINDOW}
-                   ${SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
+                   ${SOURCE_WIDGET}
 
                    ${HEADER_MAIN_WINDOW}
-                   ${HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
+                   ${HEADER_WIDGET}
 
                    ${OTHER_WIN32})
 elseif(UNIX)
     add_executable(rss_feed_reader
                    ${SOURCE_MAIN}
                    ${SOURCE_MAIN_WINDOW}
-                   ${SOURCE_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
+                   ${SOURCE_WIDGET}
 
                    ${HEADER_MAIN_WINDOW}
-                   ${HEADER_WINDOW_WITH_ROUNDED_BORDER_AND_GRAPHIC_EFFECTS}
+                   ${HEADER_WIDGET}
 
                    ${OTHER_UNIX})
 endif()
