@@ -13,12 +13,12 @@ CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 
 void CursorsOfWidget::SetDefaultOfImagesOfCursors() noexcept
 {
-	this->m_current_cursor_image_of_arrow				= ":/resources/cursor_image_of_arrow.png";
-	this->m_current_cursor_image_of_size_all			= ":/resources/cursor_image_of_size_all.png";
-	this->m_current_cursor_image_of_size_horizontal	    = ":/resources/cursor_image_of_size_horizontal.png";
-	this->m_current_cursor_image_of_size_vertical		= ":/resources/cursor_image_of_size_vertical.png";
-	this->m_current_cursor_image_of_size_right_diagonal = ":/resources/cursor_image_of_size_right_diagonal.png";
-	this->m_current_cursor_image_of_size_left_diagonal  = ":/resources/cursor_image_of_size_left_diagonal.png";
+	this->m_current_pixmap_of_cursor_of_arrow				= QPixmap(":/resources/cursor_image_of_arrow.png"			   );
+	this->m_current_pixmap_of_cursor_of_size_all			= QPixmap(":/resources/cursor_image_of_size_all.png"		   );
+	this->m_current_pixmap_of_cursor_of_size_horizontal	    = QPixmap(":/resources/cursor_image_of_size_horizontal.png"    );
+	this->m_current_pixmap_of_cursor_of_size_vertical		= QPixmap(":/resources/cursor_image_of_size_vertical.png"	   );
+	this->m_current_pixmap_of_cursor_of_size_right_diagonal = QPixmap(":/resources/cursor_image_of_size_right_diagonal.png");
+	this->m_current_pixmap_of_cursor_of_size_left_diagonal  = QPixmap(":/resources/cursor_image_of_size_left_diagonal.png" );
 }
 
 void CursorsOfWidget::SetDefaultOfHotSpotsOfCursors() noexcept
@@ -86,7 +86,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfArrow() const noexcept
 {
-	QCursor cursor_of_arrow(this->m_current_cursor_image_of_arrow,
+	QCursor cursor_of_arrow(this->m_current_pixmap_of_cursor_of_arrow,
 							this->m_current_hot_spot_of_cursor_of_arrow.x(),
 							this->m_current_hot_spot_of_cursor_of_arrow.y());
 
@@ -118,7 +118,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeAll() const noexcept
 {
-	QCursor cursor_of_size_all(this->m_current_cursor_image_of_size_all,
+	QCursor cursor_of_size_all(this->m_current_pixmap_of_cursor_of_size_all,
 							   this->m_current_hot_spot_of_cursor_of_size_all.x(),
 							   this->m_current_hot_spot_of_cursor_of_size_all.y());
 
@@ -150,7 +150,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeHorizontal() const noexcept
 {
-	QCursor cursor_of_size_horizontal(this->m_current_cursor_image_of_size_horizontal,
+	QCursor cursor_of_size_horizontal(this->m_current_pixmap_of_cursor_of_size_horizontal,
 									  this->m_current_hot_spot_of_cursor_of_size_horizontal.x(),
 									  this->m_current_hot_spot_of_cursor_of_size_horizontal.y());
 
@@ -182,7 +182,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeVertical() const noexcept
 {
-	QCursor cursor_of_size_vertical(this->m_current_cursor_image_of_size_vertical,
+	QCursor cursor_of_size_vertical(this->m_current_pixmap_of_cursor_of_size_vertical,
 									this->m_current_hot_spot_of_cursor_of_size_vertical.x(),
 									this->m_current_hot_spot_of_cursor_of_size_vertical.y());
 
@@ -214,7 +214,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeRightDiagonal() const noexcept
 {
-	QCursor cursor_of_size_right_diagonal(this->m_current_cursor_image_of_size_right_diagonal,
+	QCursor cursor_of_size_right_diagonal(this->m_current_pixmap_of_cursor_of_size_right_diagonal,
 										  this->m_current_hot_spot_of_cursor_of_size_right_diagonal.x(),
 										  this->m_current_hot_spot_of_cursor_of_size_right_diagonal.y());
 
@@ -246,7 +246,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeLeftDiagonal() const noexcept
 {
-	QCursor cursor_image_of_left_diagonal(this->m_current_cursor_image_of_size_left_diagonal,
+	QCursor cursor_image_of_left_diagonal(this->m_current_pixmap_of_cursor_of_size_left_diagonal,
 										  this->m_current_hot_spot_of_cursor_of_size_left_diagonal.x(),
 										  this->m_current_hot_spot_of_cursor_of_size_left_diagonal.y());
 

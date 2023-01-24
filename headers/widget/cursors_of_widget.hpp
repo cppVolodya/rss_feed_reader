@@ -5,13 +5,13 @@
 
 #include <QCursor>
 #include <QPoint>
+#include <QPixmap>
 
 
 using t_selected = bool;
 
 class CursorsOfWidget
 {
-	using t_image = QString;
 public:
 	explicit CursorsOfWidget(bool system_cursor_is_selected = false) noexcept;
 
@@ -37,12 +37,12 @@ public:
 	[[nodiscard]] inline QCursor GetCursorOfSizeLeftDiagonal () const noexcept;
 #pragma endregion GetSpecificCursors [functions]
 private:
-	t_image m_current_cursor_image_of_arrow;
-	t_image m_current_cursor_image_of_size_all;
-	t_image m_current_cursor_image_of_size_horizontal;
-	t_image m_current_cursor_image_of_size_vertical;
-	t_image m_current_cursor_image_of_size_right_diagonal;
-	t_image m_current_cursor_image_of_size_left_diagonal;
+	QPixmap m_current_pixmap_of_cursor_of_arrow;
+	QPixmap m_current_pixmap_of_cursor_of_size_all;
+	QPixmap m_current_pixmap_of_cursor_of_size_horizontal;
+	QPixmap m_current_pixmap_of_cursor_of_size_vertical;
+	QPixmap m_current_pixmap_of_cursor_of_size_right_diagonal;
+	QPixmap m_current_pixmap_of_cursor_of_size_left_diagonal;
 
 	QPoint m_current_hot_spot_of_cursor_of_arrow;
 	QPoint m_current_hot_spot_of_cursor_of_size_all;
