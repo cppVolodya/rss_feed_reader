@@ -9,7 +9,7 @@
 class PainterOfSaveAndRestore final
 {
 public:
-	explicit inline PainterOfSaveAndRestore(QPainter *);
+	explicit inline PainterOfSaveAndRestore(QPainter &);
 
 #pragma region RuleOfZero
 	PainterOfSaveAndRestore(const PainterOfSaveAndRestore &) = delete;
@@ -21,18 +21,18 @@ public:
 
 	inline ~PainterOfSaveAndRestore();
 private:
-	QPainter *m_painter;
+	QPainter &m_painter;
 };
 
-inline PainterOfSaveAndRestore::PainterOfSaveAndRestore(QPainter *painter)
+inline PainterOfSaveAndRestore::PainterOfSaveAndRestore(QPainter &painter)
 	: m_painter(painter)
 {
-	m_painter->save();
+	m_painter.save();
 }
 
 inline PainterOfSaveAndRestore::~PainterOfSaveAndRestore()
 {
-	m_painter->restore();
+	m_painter.restore();
 }
 
 #endif  // PAINTER_OF_SAVE_AND_RESTORE_HPP

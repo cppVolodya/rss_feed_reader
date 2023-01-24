@@ -55,7 +55,7 @@ PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(Painte
 
 void PainterOfRoundedBorderOfWidget::Draw(const QRectF& geometry_of_window)
 {
-	PainterOfSaveAndRestore painter = PainterOfSaveAndRestore(this);
+	PainterOfSaveAndRestore painter = PainterOfSaveAndRestore(*this);
 
 	this->Customize();
 	this->m_layout->Customize(geometry_of_window);
