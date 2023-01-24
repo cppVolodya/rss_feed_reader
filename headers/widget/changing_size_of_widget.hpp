@@ -115,14 +115,14 @@ enum class ChangingSizeOfWidget::StateOfWidgetResize
 	TOP,
 	BOTTOM,
 
-	RIGHT,
 	LEFT,
+	RIGHT,
 
-	TOP_RIGHT,
 	TOP_LEFT,
+	TOP_RIGHT,
 
-	BOTTOM_RIGHT,
 	BOTTOM_LEFT,
+	BOTTOM_RIGHT,
 
 	IDLE
 };

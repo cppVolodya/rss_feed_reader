@@ -44,42 +44,34 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOf
 	case StateOfWidgetResize::TOP:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																									  geometry_of_widget);
-
 		break;
 	case StateOfWidgetResize::BOTTOM:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																										 geometry_of_widget);
-
-		break;
-	case StateOfWidgetResize::RIGHT:
-		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
-																										geometry_of_widget);
-
 		break;
 	case StateOfWidgetResize::LEFT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnLeftPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																									   geometry_of_widget);
-
 		break;
-	case StateOfWidgetResize::TOP_RIGHT:
-		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
-																										   geometry_of_widget);
-
+	case StateOfWidgetResize::RIGHT:
+		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
+																										geometry_of_widget);
 		break;
 	case StateOfWidgetResize::TOP_LEFT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopLeftLayoutOfSizeBorder(displacement_of_mouse_position,
 																									  geometry_of_widget);
-
+		break;
+	case StateOfWidgetResize::TOP_RIGHT:
+		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnTopRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
+																										   geometry_of_widget);
+		break;
+	case StateOfWidgetResize::BOTTOM_LEFT:
+		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomLeftPartLayoutOfSizeBorder(displacement_of_mouse_position,
+																											 geometry_of_widget);
 		break;
 	case StateOfWidgetResize::BOTTOM_RIGHT:
 		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomRightPartLayoutOfSizeBorder(displacement_of_mouse_position,
 																											  geometry_of_widget);
-
-		break;
-	case StateOfWidgetResize::BOTTOM_LEFT:
-		new_geometry_of_widget = GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomLeftPartLayoutOfSizeBorder(displacement_of_mouse_position,
-																										     geometry_of_widget);
-
 		break;
 	case StateOfWidgetResize::IDLE:
 		new_geometry_of_widget = geometry_of_widget;

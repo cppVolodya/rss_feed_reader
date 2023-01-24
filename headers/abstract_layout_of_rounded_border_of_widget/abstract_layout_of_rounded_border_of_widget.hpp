@@ -44,8 +44,8 @@ public:
 
 	[[nodiscard]] inline T_Thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfBottom() const noexcept;
-	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfLeft  () const noexcept;
+	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 
 	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
@@ -60,8 +60,8 @@ public:
 
 	inline void SetThicknessOfTop   (T_Thickness) noexcept;
 	inline void SetThicknessOfBottom(T_Thickness) noexcept;
-	inline void SetThicknessOfRight (T_Thickness) noexcept;
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
+	inline void SetThicknessOfRight (T_Thickness) noexcept;
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
@@ -110,14 +110,14 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::Customize(const QRectF &geome
 	return this->m_shape.GetThicknessOfBottom();
 }
 
-[[nodiscard]] inline T_Thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
-{
-	return this->m_shape.GetThicknessOfRight();
-}
-
 [[nodiscard]] inline T_Thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
 {
 	return this->m_shape.GetThicknessOfLeft();
+}
+
+[[nodiscard]] inline T_Thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
+{
+	return this->m_shape.GetThicknessOfRight();
 }
 
 [[nodiscard]] inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
@@ -160,14 +160,14 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::SetThicknessOfBottom(const T_
 	this->m_shape.SetThicknessOfBottom(thickness_of_bottom);
 }
 
-inline void AbstractLayoutOfRoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
-{
-	this->m_shape.SetThicknessOfRight(thickness_of_right);
-}
-
 inline void AbstractLayoutOfRoundedBorderOfWidget::SetThicknessOfLeft(const T_Thickness thickness_of_left) noexcept
 {
 	this->m_shape.SetThicknessOfLeft(thickness_of_left);
+}
+
+inline void AbstractLayoutOfRoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
+{
+	this->m_shape.SetThicknessOfRight(thickness_of_right);
 }
 
 inline void AbstractLayoutOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept

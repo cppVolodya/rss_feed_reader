@@ -21,8 +21,8 @@ public:
 
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfBottom() const noexcept;
-	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfLeft  () const noexcept;
+	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfRight () const noexcept;
 
 	inline void SetThicknessOfTop   (T_Thickness) noexcept;
 	inline void SetThicknessOfBottom(T_Thickness) noexcept;

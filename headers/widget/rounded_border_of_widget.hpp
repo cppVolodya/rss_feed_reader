@@ -40,8 +40,8 @@ public:
 
 	[[nodiscard]] inline T_Thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfBottom() const noexcept;
-	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfLeft  () const noexcept;
+	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 
 	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
@@ -56,8 +56,8 @@ public:
 
 	inline void SetThicknessOfTop   (T_Thickness) noexcept;
 	inline void SetThicknessOfBottom(T_Thickness) noexcept;
-	inline void SetThicknessOfRight (T_Thickness) noexcept;
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
+	inline void SetThicknessOfRight (T_Thickness) noexcept;
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
@@ -118,14 +118,14 @@ private:
 	return this->m_painter_of_rounded_border.GetThicknessOfBottom();
 }
 
-[[nodiscard]] inline T_Thickness RoundedBorderOfWidget::GetThicknessOfRight() const noexcept
-{
-	return this->m_painter_of_rounded_border.GetThicknessOfRight();
-}
-
 [[nodiscard]] inline T_Thickness RoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThicknessOfLeft();
+}
+
+[[nodiscard]] inline T_Thickness RoundedBorderOfWidget::GetThicknessOfRight() const noexcept
+{
+	return this->m_painter_of_rounded_border.GetThicknessOfRight();
 }
 
 [[nodiscard]] inline ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetThickness() const noexcept
@@ -168,14 +168,14 @@ inline void RoundedBorderOfWidget::SetThicknessOfBottom(const T_Thickness thickn
 	this->m_painter_of_rounded_border.SetThicknessOfBottom(thickness_of_bottom);
 }
 
-inline void RoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
-{
-	this->m_painter_of_rounded_border.SetThicknessOfRight(thickness_of_right);
-}
-
 inline void RoundedBorderOfWidget::SetThicknessOfLeft(const T_Thickness thickness_of_left) noexcept
 {
 	this->m_painter_of_rounded_border.SetThicknessOfLeft(thickness_of_left);
+}
+
+inline void RoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
+{
+	this->m_painter_of_rounded_border.SetThicknessOfRight(thickness_of_right);
 }
 
 inline void RoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
