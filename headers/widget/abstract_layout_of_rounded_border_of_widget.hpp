@@ -26,21 +26,21 @@ public:
 
 	inline void Customize(const QRectF &);
 
-	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfX() const noexcept;
-	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfY() const noexcept;
+	[[nodiscard]] inline t_roundness GetRoundnessOfX() const noexcept;
+	[[nodiscard]] inline t_roundness GetRoundnessOfY() const noexcept;
 
-	[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
+	[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget GetRoundness() const noexcept;
 
-	[[nodiscard]] constexpr inline t_thickness GetThicknessOfTop   () const noexcept;
-	[[nodiscard]] constexpr inline t_thickness GetThicknessOfBottom() const noexcept;
-	[[nodiscard]] constexpr inline t_thickness GetThicknessOfRight () const noexcept;
-	[[nodiscard]] constexpr inline t_thickness GetThicknessOfLeft  () const noexcept;
+	[[nodiscard]] inline t_thickness GetThicknessOfTop   () const noexcept;
+	[[nodiscard]] inline t_thickness GetThicknessOfBottom() const noexcept;
+	[[nodiscard]] inline t_thickness GetThicknessOfRight () const noexcept;
+	[[nodiscard]] inline t_thickness GetThicknessOfLeft  () const noexcept;
 
-	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] constexpr inline t_displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] inline t_displacement GetDisplacementCoefficient() const noexcept;
 
-	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
+	[[nodiscard]] inline QSizeF GetSize() const noexcept;
 
 	inline void SetRoundnessOfX(t_roundness) noexcept;
 	inline void SetRoundnessOfY(t_roundness) noexcept;
@@ -74,52 +74,52 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::Customize(const QRectF &geome
 	this->ReleaseCustomize(geometry_of_window);
 }
 
-[[nodiscard]] constexpr inline t_roundness AbstractLayoutOfRoundedBorderOfWidget::GetRoundnessOfX() const noexcept
+[[nodiscard]] inline t_roundness AbstractLayoutOfRoundedBorderOfWidget::GetRoundnessOfX() const noexcept
 {
 	return this->m_roundness.GetRoundnessOfX();
 }
 
-[[nodiscard]] constexpr inline t_roundness AbstractLayoutOfRoundedBorderOfWidget::GetRoundnessOfY() const noexcept
+[[nodiscard]] inline t_roundness AbstractLayoutOfRoundedBorderOfWidget::GetRoundnessOfY() const noexcept
 {
 	return this->m_roundness.GetRoundnessOfY();
 }
 
-[[nodiscard]] constexpr inline RoundnessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetRoundness() const noexcept
+[[nodiscard]] inline RoundnessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetRoundness() const noexcept
 {
 	return this->m_roundness;
 }
 
-[[nodiscard]] constexpr inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
+[[nodiscard]] inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
 {
 	return this->m_shape.GetThicknessOfTop();
 }
 
-[[nodiscard]] constexpr inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfBottom() const noexcept
+[[nodiscard]] inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfBottom() const noexcept
 {
 	return this->m_shape.GetThicknessOfBottom();
 }
 
-[[nodiscard]] constexpr inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
+[[nodiscard]] inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
 {
 	return this->m_shape.GetThicknessOfRight();
 }
 
-[[nodiscard]] constexpr inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
+[[nodiscard]] inline t_thickness AbstractLayoutOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
 {
 	return this->m_shape.GetThicknessOfLeft();
 }
 
-[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_shape.GetThickness();
 }
 
-[[nodiscard]] constexpr inline t_displacement AbstractLayoutOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] inline t_displacement AbstractLayoutOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
 {
 	return this->m_shape.GetDisplacementCoefficient();
 }
 
-[[nodiscard]] constexpr inline QSizeF AbstractLayoutOfRoundedBorderOfWidget::GetSize() const noexcept
+[[nodiscard]] inline QSizeF AbstractLayoutOfRoundedBorderOfWidget::GetSize() const noexcept
 {
 	return this->m_shape.GetSize();
 }
