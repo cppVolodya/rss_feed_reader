@@ -23,7 +23,7 @@ class Widget : public CentralPartOfWidget
 public:
 	explicit Widget(QWidget *parent = nullptr);
 private:
-	RoundedBorderOfWidget *m_rounded_border_of_widget;
+	RoundedBorderOfWidget *m_rounded_border_of_widget;  // NOLINT(pvs-studio-V122)
 };
 
 #endif  // WIDGET_HPP
