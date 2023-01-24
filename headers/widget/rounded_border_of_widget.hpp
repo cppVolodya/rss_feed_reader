@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_ROUNDED_BORDER_OF_WINDOW_H_
-#define RSS_FEED_READER_HEADERS_ROUNDED_BORDER_OF_WINDOW_H_
+#ifndef ROUNDED_BORDER_OF_WIDGET_HPP
+#define ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include <QWidget>
 #include <QMouseEvent>
@@ -177,4 +177,4 @@ inline void RoundedBorderOfWidget::SetDisplacementCoefficient(t_displacement dis
 	this->m_painter_of_rounded_border.SetDisplacementCoefficient(displacement_coefficient);
 }
 
-#endif  // RSS_FEED_READER_HEADERS_ROUNDED_BORDER_OF_WINDOW_H_
+#endif  // ROUNDED_BORDER_OF_WIDGET_HPP

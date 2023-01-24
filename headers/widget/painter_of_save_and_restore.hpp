@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_PAINTER_OF_SAVE_AND_RESTORE_H
-#define RSS_FEED_READER_HEADERS_PAINTER_OF_SAVE_AND_RESTORE_H
+#ifndef PAINTER_OF_SAVE_AND_RESTORE_HPP
+#define PAINTER_OF_SAVE_AND_RESTORE_HPP
 
 #include <QPainter>
 
@@ -35,4 +35,4 @@ inline PainterOfSaveAndRestore::~PainterOfSaveAndRestore()
 	m_painter->restore();
 }
 
-#endif  // RSS_FEED_READER_HEADERS_PAINTER_OF_SAVE_AND_RESTORE_H
+#endif  // PAINTER_OF_SAVE_AND_RESTORE_HPP

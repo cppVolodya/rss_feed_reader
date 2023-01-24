@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include <qdebug.h>
+#include <QApplication>
 
 #include "changing_size_of_widget.hpp"
 
@@ -10,27 +10,25 @@ Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnL
 	Characteristic characteristics{};
 	this->SetCharacteristic(characteristics, mouse_position);
 
-	if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(characteristics);
-			cursor_shape != Qt::CursorShape::ArrowCursor)
+	Qt::CursorShape new_cursor_shape =
+		this->GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(characteristics);
+
+	if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 	{
-		return cursor_shape;
+		new_cursor_shape = this->GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(characteristics);
 	}
 
-	if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(characteristics);
-			cursor_shape != Qt::CursorShape::ArrowCursor)
+	if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 	{
-		return cursor_shape;
+		new_cursor_shape = this->GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(characteristics);
 	}
 
-	if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(characteristics);
-			cursor_shape != Qt::CursorShape::ArrowCursor)
+	if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 	{
-		return cursor_shape;
+		this->m_state_of_widget_resize = StateOfWidgetResize::IDLE;
 	}
 
-	this->m_state_of_widget_resize = StateOfWidgetResize::IDLE;
-
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &new_mouse_position,
@@ -84,9 +82,10 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOf
 	case StateOfWidgetResize::IDLE:
 		new_geometry_of_widget = geometry_of_widget;
 		break;
-	default:
+	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different widget resizing state is selected!";
-		new_geometry_of_widget = geometry_of_widget;
+		QApplication::exit(EXIT_FAILURE);
+		break;
 	}
 
 	this->SetMousePosition(new_mouse_position);
@@ -121,170 +120,177 @@ void ChangingSizeOfWidget::SetCharacteristic(Characteristic &characteristics, co
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(characteristics))
 	{
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnRightPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
+		new_cursor_shape =
+			this->GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnRightPartLayoutOfSizeBorder(characteristics);
+
+		if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 		{
-			return cursor_shape;
+			new_cursor_shape = this->GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnTopRightPartLayoutOfSizeBorder(characteristics);
 		}
 
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnTopRightPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
+		if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 		{
-			return cursor_shape;
-		}
-
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnBottomRightPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
-		{
-			return cursor_shape;
+			new_cursor_shape = this->GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnBottomRightPartLayoutOfSizeBorder(characteristics);
 		}
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(characteristics))
 	{
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
+		new_cursor_shape =
+			this->GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(characteristics);
+
+		if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 		{
-			return cursor_shape;
+			new_cursor_shape = this->GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnTopLeftPartLayoutOfSizeBorder(characteristics);
 		}
 
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnTopLeftPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
+		if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 		{
-			return cursor_shape;
-		}
-
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
-		{
-			return cursor_shape;
+			new_cursor_shape = this->GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder(characteristics);
 		}
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(characteristics))
 	{
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
-		{
-			return cursor_shape;
-		}
+		new_cursor_shape = this->GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder(characteristics);
 
-		if (Qt::CursorShape cursor_shape = this->GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(characteristics);
-				cursor_shape != Qt::CursorShape::ArrowCursor)
+		if (new_cursor_shape == Qt::CursorShape::ArrowCursor)
 		{
-			return cursor_shape;
+			new_cursor_shape = this->GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(characteristics);
 		}
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::LEFT;
 
-		return Qt::CursorShape::SizeHorCursor;
+		new_cursor_shape = Qt::CursorShape::SizeHorCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnTopLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_LEFT;
 
-		return Qt::CursorShape::SizeFDiagCursor;
+		new_cursor_shape = Qt::CursorShape::SizeFDiagCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnBottomLeftPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_LEFT;
 
-		return Qt::CursorShape::SizeBDiagCursor;
+		new_cursor_shape = Qt::CursorShape::SizeBDiagCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeHorizontalIfMousePositionLocatedOnRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::RIGHT;
 
-		return Qt::CursorShape::SizeHorCursor;
+		new_cursor_shape = Qt::CursorShape::SizeHorCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeLeftDiagonalIfMousePositionLocatedOnTopRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (this->VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::TOP_RIGHT;
 
-		return Qt::CursorShape::SizeBDiagCursor;
+		new_cursor_shape = Qt::CursorShape::SizeBDiagCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeRightDiagonalIfMousePositionLocatedOnBottomRightPartLayoutOfSizeBorder(const Characteristic &characteristics)
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (this->VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM_RIGHT;
 
-		return Qt::CursorShape::SizeFDiagCursor;
+		new_cursor_shape = Qt::CursorShape::SizeFDiagCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::TOP;
 
-		return Qt::CursorShape::SizeVerCursor;
+		new_cursor_shape = Qt::CursorShape::SizeVerCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeOfSizeVerticalIfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
+	Qt::CursorShape new_cursor_shape = Qt::CursorShape::ArrowCursor;
+
 	if (ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(characteristics))
 	{
 		this->m_state_of_widget_resize = StateOfWidgetResize::BOTTOM;
 
-		return Qt::CursorShape::SizeVerCursor;
+		new_cursor_shape = Qt::CursorShape::SizeVerCursor;
 	}
 
-	return Qt::CursorShape::ArrowCursor;
+	return new_cursor_shape;
 }
 
 inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept

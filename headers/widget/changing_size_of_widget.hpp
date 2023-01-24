@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_CHANGING_SIZE_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_CHANGING_SIZE_OF_WIDGET_H_
+#ifndef CHANGING_SIZE_OF_WIDGET_HPP
+#define CHANGING_SIZE_OF_WIDGET_HPP
 
 #include <QCursor>
 #include <QPointF>
@@ -142,4 +142,4 @@ inline void ChangingSizeOfWidget::SetMousePosition(const QPointF &mouse_position
 	this->m_old_mouse_position = mouse_position;
 }
 
-#endif  // RSS_FEED_READER_HEADERS_CHANGING_SIZE_OF_WIDGET_H_
+#endif  // CHANGING_SIZE_OF_WIDGET_HPP

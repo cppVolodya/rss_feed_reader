@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include <qdebug.h>
+#include <QApplication>
 
 #include "painter_of_rounded_border_of_widget.hpp"
 #include "layout_of_external_rounded_border_of_widget.hpp"
@@ -15,7 +15,7 @@ PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(const PainterOfRo
 {
 	this->AllocateMemoryForLayout();
 
-	if (this->m_layout)
+	if (this->m_layout != nullptr)
 	{
 		*(this->m_layout) = *painter.m_layout;
 	}
@@ -31,28 +31,24 @@ PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(PainterOfRoundedB
 
 PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(const PainterOfRoundedBorderOfWidget& painter)
 {
-	if (this == &painter)
+	if (this != &painter)
 	{
-		return *this;
+		PainterOfRoundedBorderOfWidget temporary(painter);
+
+		Swap(*this, temporary);
 	}
-
-	PainterOfRoundedBorderOfWidget temporary(painter);
-
-	Swap(*this, temporary);
 
 	return *this;
 }
 
 PainterOfRoundedBorderOfWidget& PainterOfRoundedBorderOfWidget::operator=(PainterOfRoundedBorderOfWidget&& painter) noexcept
 {
-	if (this == &painter)
+	if (this != &painter)
 	{
-		return *this;
+		PainterOfRoundedBorderOfWidget temporary(std::move(painter));
+
+		Swap(*this, temporary);
 	}
-
-	PainterOfRoundedBorderOfWidget temporary(std::move(painter));
-
-	Swap(*this, temporary);
 
 	return *this;
 }
@@ -114,9 +110,9 @@ void PainterOfRoundedBorderOfWidget::AllocateMemoryForLayout()
 	case TypeLayoutOfRoundedBorderOfWidget::NOT_DEFINED:
 		this->m_layout = nullptr;
 		break;
-	default:
-		this->m_layout = nullptr;
+	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different layout type is selected!";
+		QApplication::exit(EXIT_FAILURE);
 	}
 }
 

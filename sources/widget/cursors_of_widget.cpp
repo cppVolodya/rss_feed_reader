@@ -1,6 +1,6 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#include <qdebug.h>
+#include <QApplication>
 
 #include "cursors_of_widget.hpp"
 
@@ -38,34 +38,50 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursor(const Qt::CursorShape cursor_shape) const noexcept
 {
+	QCursor cursor = Qt::CursorShape::ArrowCursor;
+
 	switch (cursor_shape)
 	{
 	case Qt::CursorShape::ArrowCursor:
-		return this->GetCursorOfArrow();
+		cursor = this->GetCursorOfArrow();
+		break;
 	case Qt::CursorShape::SizeAllCursor:
-		return this->GetCursorOfSizeAll();
+		cursor = this->GetCursorOfSizeAll();
+		break;
 	case Qt::CursorShape::SizeVerCursor:
-		return this->GetCursorOfSizeVertical();
+		cursor = this->GetCursorOfSizeVertical();
+		break;
 	case Qt::CursorShape::SizeHorCursor:
-		return this->GetCursorOfSizeHorizontal();
+		cursor = this->GetCursorOfSizeHorizontal();
+		break;
 	case Qt::CursorShape::SizeBDiagCursor:
-		return this->GetCursorOfSizeRightDiagonal();
+		cursor = this->GetCursorOfSizeRightDiagonal();
+		break;
 	case Qt::CursorShape::SizeFDiagCursor:
-		return this->GetCursorOfSizeLeftDiagonal();
-	default:
+		cursor = this->GetCursorOfSizeLeftDiagonal();
+		break;
+	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different cursor shape is selected!";
-		return { Qt::ArrowCursor };
+		QApplication::exit(EXIT_FAILURE);
 	}
+
+	return cursor;
 }
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfArrow() const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return CursorsOfWidget::ReleaseGetSystemCursorOfArrow();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfArrow();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfArrow();
 	}
 
-	return this->ReleaseGetCustomCursorOfArrow();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfArrow() const noexcept
@@ -86,12 +102,18 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeAll() const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return ReleaseGetSystemCursorOfSizeAll();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfSizeAll();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfSizeAll();
 	}
 
-	return ReleaseGetCustomCursorOfSizeAll();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeAll() const noexcept
@@ -112,12 +134,18 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeHorizontal() const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return CursorsOfWidget::ReleaseGetSystemCursorOfSizeHorizontal();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfSizeHorizontal();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfSizeHorizontal();
 	}
 
-	return this->ReleaseGetCustomCursorOfSizeHorizontal();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeHorizontal() const noexcept
@@ -138,12 +166,18 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeVertical() const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return CursorsOfWidget::ReleaseGetSystemCursorOfSizeVertical();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfSizeVertical();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfSizeVertical();
 	}
 
-	return this->ReleaseGetCustomCursorOfSizeVertical();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeVertical() const noexcept
@@ -158,17 +192,24 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetSystemCursorOfSizeVertical() noexcept
 {
 	QCursor cursor_of_arrow(Qt::SizeVerCursor);
+
 	return cursor_of_arrow;
 }
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeRightDiagonal() const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return CursorsOfWidget::ReleaseGetSystemCursorOfSizeRightDiagonal();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfSizeRightDiagonal();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfSizeRightDiagonal();
 	}
 
-	return this->ReleaseGetCustomCursorOfSizeRightDiagonal();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeRightDiagonal() const noexcept
@@ -183,17 +224,24 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetSystemCursorOfSizeRightDiagonal() noexcept
 {
 	QCursor cursor_of_arrow(Qt::SizeBDiagCursor);
+
 	return cursor_of_arrow;
 }
 
 [[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursorOfSizeLeftDiagonal () const noexcept
 {
+	QCursor cursor;
+
 	if (this->SystemCursorsIsSelected())
 	{
-		return CursorsOfWidget::ReleaseGetSystemCursorOfSizeLeftDiagonal();
+		cursor = CursorsOfWidget::ReleaseGetSystemCursorOfSizeLeftDiagonal();
+	}
+	else
+	{
+		cursor = this->ReleaseGetCustomCursorOfSizeLeftDiagonal();
 	}
 
-	return this->ReleaseGetCustomCursorOfSizeLeftDiagonal();
+	return cursor;
 }
 
 [[nodiscard]] inline QCursor CursorsOfWidget::ReleaseGetCustomCursorOfSizeLeftDiagonal() const noexcept

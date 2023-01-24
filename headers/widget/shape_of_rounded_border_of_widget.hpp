@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#ifndef SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_HPP
+#define SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include <QRectF>
 
@@ -148,4 +148,4 @@ inline void ShapeOfRoundedBorderOfWidget::SetDisplacementCoefficient(t_displacem
 	this->m_displacement_coefficient = displacement_coefficient;
 }
 
-#endif  // RSS_FEED_READER_HEADERS_SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#endif  // SHAPE_OF_ROUNDED_BORDER_OF_WIDGET_HPP

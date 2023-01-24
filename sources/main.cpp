@@ -5,7 +5,7 @@
 #include "main_window.hpp"
 
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[])  // NOLINT(clion-misra-cpp2008-3-1-3)
 {
     QApplication application(argc, argv);
 

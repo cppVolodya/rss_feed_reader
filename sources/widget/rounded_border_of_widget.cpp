@@ -1,5 +1,8 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
+#include <QMessageBox>
+#include <QApplication>
+
 #include "rounded_border_of_widget.hpp"
 #include "layout_of_external_rounded_border_of_widget.hpp"
 
@@ -20,7 +23,7 @@ void RoundedBorderOfWidget::SetDefaultSettings()
 {
 	this->m_painter_of_rounded_border.SetTypeOfLayout(PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
-	this->resize(500.0, 500.0);
+	this->resize(500, 500);
 
 	this->SetColor(Qt::white);
 
@@ -66,9 +69,30 @@ void RoundedBorderOfWidget::mouseReleaseEvent(QMouseEvent *mouse_event)
 
 void RoundedBorderOfWidget::DrawOfRoundedBorder()
 {
-	this->m_painter_of_rounded_border.begin(this);
+	QMessageBox::StandardButton button_pressed;
+
+	if(!this->m_painter_of_rounded_border.begin(this))
+	{
+		qDebug() << "Error starting to draw a rounded border!";
+		button_pressed = QMessageBox::critical(this, "Rss Feed Reader",
+												     "Error starting to draw a rounded border!",
+												     QMessageBox::Ok);
+	}
+
 	this->m_painter_of_rounded_border.Draw(this->rect().toRectF());
-	this->m_painter_of_rounded_border.end();
+
+	if(!this->m_painter_of_rounded_border.end())
+	{
+		qDebug() << "Error completing drawing rounded border!";
+		button_pressed = QMessageBox::critical(this, "Rss Feed Reader",
+													 "Error completing drawing rounded border!",
+													 QMessageBox::Ok);
+	}
+
+	if(button_pressed == QMessageBox::Ok)
+	{
+		QApplication::exit(EXIT_FAILURE);
+	}
 }
 
 inline void RoundedBorderOfWidget::CustomizeChangingSizeOfWidget()

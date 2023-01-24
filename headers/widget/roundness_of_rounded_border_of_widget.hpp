@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#ifndef ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
+#define ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include <QtGlobal>
 
@@ -51,4 +51,4 @@ inline void RoundnessOfRoundedBorderOfWidget::SetRoundnessOfY(const t_roundness 
 	this->m_roundness_of_y = roundness_of_y;
 }
 
-#endif   // RSS_FEED_READER_HEADERS_ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#endif   // ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP

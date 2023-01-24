@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_CURSORS_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_CURSORS_OF_WIDGET_H_
+#ifndef CURSORS_OF_WIDGET_HPP
+#define CURSORS_OF_WIDGET_HPP
 
 #include <QCursor>
 #include <QPoint>
@@ -128,4 +128,4 @@ inline void CursorsOfWidget::SetDefaultSettings() noexcept
 	return this->ReleaseGetCursorOfSizeLeftDiagonal();
 }
 
-#endif  // RSS_FEED_READER_HEADERS_CURSORS_OF_WIDGET_H_
+#endif  // CURSORS_OF_WIDGET_HPP

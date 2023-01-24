@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#ifndef THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
+#define THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include <QtGlobal>
 
@@ -83,4 +83,4 @@ inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfRight(const t_thickn
 	this->m_thickness_of_right = thickness_of_right;
 }
 
-#endif  // RSS_FEED_READER_HEADERS_THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#endif  // THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP

@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
-#define HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
+#ifndef MAIN_WINDOW_HPP
+#define MAIN_WINDOW_HPP
 
 #include "widget.hpp"
 
@@ -12,4 +12,4 @@ public:
 	explicit MainWindow(QWidget *parent = nullptr);
 };
 
-#endif  // HEADERS_MAIN_WINDOW_MAIN_WINDOW_H_
+#endif  // MAIN_WINDOW_HPP

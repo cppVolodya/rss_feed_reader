@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#ifndef PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_HPP
+#define PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include <QPainter>
 #include <QPaintDevice>
@@ -198,4 +198,4 @@ inline void PainterOfRoundedBorderOfWidget::SetDisplacementCoefficient(t_displac
 	this->m_layout->SetDisplacementCoefficient(displacement_coefficient);
 }
 
-#endif  // RSS_FEED_READER_HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_H_
+#endif  // PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_HPP

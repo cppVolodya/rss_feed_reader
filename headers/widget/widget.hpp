@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_WIDGET_H_
+#ifndef WIDGET_HPP
+#define WIDGET_HPP
 
 /*
  * The class called Widget represents a window that will be stacked from two windows.
@@ -26,4 +26,4 @@ private:
 	RoundedBorderOfWidget *m_rounded_border_of_widget;
 };
 
-#endif  // RSS_FEED_READER_HEADERS_WIDGET_H_
+#endif  // WIDGET_HPP

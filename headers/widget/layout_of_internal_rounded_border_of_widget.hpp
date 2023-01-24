@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef RSS_FEED_READER_HEADERS_LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_H_
-#define RSS_FEED_READER_HEADERS_LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_H_
+#ifndef LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_HPP
+#define LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_HPP
 
 #include "layout_of_rounded_border_of_widget.hpp"
 
@@ -20,4 +20,4 @@ inline void LayoutOfInternalRoundedBorderOfWidget::ReleaseSetRoundness()
 	this->addRect(this->m_shape.GetExternalRectangle());
 }
 
-#endif  // RSS_FEED_READER_HEADERS_LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_H_
+#endif  // LAYOUT_OF_INTERNAL_ROUNDED_BORDER_OF_WIDGET_HPP
