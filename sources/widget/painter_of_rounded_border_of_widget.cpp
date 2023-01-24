@@ -113,6 +113,7 @@ void PainterOfRoundedBorderOfWidget::AllocateMemoryForLayout()
 	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different layout type is selected!";
 		QApplication::exit(EXIT_FAILURE);
+		break;
 	}
 }
 

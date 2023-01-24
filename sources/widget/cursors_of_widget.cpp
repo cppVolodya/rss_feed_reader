@@ -63,6 +63,7 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different cursor shape is selected!";
 		QApplication::exit(EXIT_FAILURE);
+		break;
 	}
 
 	return cursor;
