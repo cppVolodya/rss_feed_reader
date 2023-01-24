@@ -48,7 +48,9 @@ find_package(Qt6 COMPONENTS
 # settings directories
 
 include_directories(headers/main_window/
-                    headers/widget/)
+                    headers/widget/
+                    headers/painter_of_rounded_border_of_widget
+                    headers/abstract_layout_of_rounded_border_of_widget)
 # --------------------------------------------------------------------------- #
 
 
@@ -56,37 +58,53 @@ include_directories(headers/main_window/
 # variable for 'settings executable(program)'
 
 # source files
-set(SOURCE_MAIN sources/main.cpp)
+set(SOURCES_MAIN sources/main/main.cpp)
 
-set(SOURCE_MAIN_WINDOW sources/main_window/main_window.cpp)
+set(SOURCES_MAIN_WINDOW sources/main_window/main_window.cpp)
 
-set(SOURCE_WIDGET sources/widget/widget.cpp
-                  sources/widget/rounded_border_of_widget.cpp
-                  sources/widget/central_part_of_widget.cpp
-                  sources/widget/painter_of_rounded_border_of_widget.cpp
-                  sources/widget/abstract_layout_of_rounded_border_of_widget.cpp
-                  sources/widget/shape_of_rounded_border_of_widget.cpp
-                  sources/widget/cursors_of_widget.cpp
-                  sources/widget/changing_size_of_widget.cpp)
+set(SOURCES_WIDGET sources/widget/widget.cpp
+                   sources/widget/rounded_border_of_widget.cpp
+                   sources/widget/central_part_of_widget.cpp
+                   sources/widget/cursors_of_widget.cpp
+                   sources/widget/changing_size_of_widget.cpp)
+
+set(SOURCES_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET sources/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.cpp
+                                                sources/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.cpp)
+
+set(SOURCES_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET sources/abstract_layout_of_rounded_border_of_widget/abstract_layout_of_rounded_border_of_widget.cpp)
+
+set(SOURCES ${SOURCES_MAIN}
+            ${SOURCES_MAIN_WINDOW}
+            ${SOURCES_WIDGET}
+            ${SOURCES_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET}
+            ${SOURCES_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET})
 
 
 # header files
-set(HEADER_MAIN_WINDOW headers/main_window/main_window.hpp)
+set(HEADERS_MAIN_WINDOW headers/main_window/main_window.hpp)
 
-set(HEADER_WIDGET headers/widget/widget.hpp
-                  headers/widget/rounded_border_of_widget.hpp
-                  headers/widget/central_part_of_widget.hpp
-                  headers/widget/painter_of_rounded_border_of_widget.hpp
-                  headers/widget/painter_of_save_and_restore.hpp
-                  headers/widget/abstract_layout_of_rounded_border_of_widget.hpp
-                  headers/widget/layout_of_external_rounded_border_of_widget.hpp
-                  headers/widget/layout_of_internal_rounded_border_of_widget.hpp
-                  headers/widget/layout_of_external_and_internal_rounded_border_of_widget.hpp
-                  headers/widget/shape_of_rounded_border_of_widget.hpp
-                  headers/widget/roundness_of_rounded_border_of_widget.hpp
-                  headers/widget/thickness_of_rounded_border_of_widget.hpp
-                  headers/widget/cursors_of_widget.hpp
-                  headers/widget/changing_size_of_widget.hpp)
+set(HEADERS_WIDGET headers/widget/widget.hpp
+                   headers/widget/rounded_border_of_widget.hpp
+                   headers/widget/central_part_of_widget.hpp
+                   headers/widget/cursors_of_widget.hpp
+                   headers/widget/changing_size_of_widget.hpp)
+
+set(HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET headers/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.hpp
+                                                headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore.hpp
+                                                headers/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.hpp
+                                                headers/painter_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.hpp
+                                                headers/painter_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.hpp)
+
+set(HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET headers/abstract_layout_of_rounded_border_of_widget/abstract_layout_of_rounded_border_of_widget.hpp
+                                                        headers/abstract_layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.hpp
+                                                        headers/abstract_layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.hpp
+                                                        headers/abstract_layout_of_rounded_border_of_widget/layout_of_external_and_internal_rounded_border_of_widget.hpp)
+
+set(HEADERS ${HEADERS_MAIN}
+            ${HEADERS_MAIN_WINDOW}
+            ${HEADERS_WIDGET}
+            ${HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET}
+            ${HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET})
 
 
 # other files
@@ -94,6 +112,11 @@ set(OTHER_WIN32 resources.qrc
                 ${app_icon_resource_windows})
 
 set(OTHER_UNIX resources.qrc)
+
+
+# ready list of main files
+set(MAIN ${SOURCES}
+         ${HEADERS})
 # --------------------------------------------------------------------------- #
 
 
@@ -101,23 +124,11 @@ set(OTHER_UNIX resources.qrc)
 # executable(program) settings
 if(WIN32)
     add_executable(rss_feed_reader
-                   ${SOURCE_MAIN}
-                   ${SOURCE_MAIN_WINDOW}
-                   ${SOURCE_WIDGET}
-
-                   ${HEADER_MAIN_WINDOW}
-                   ${HEADER_WIDGET}
-
+                   ${MAIN}
                    ${OTHER_WIN32})
 elseif(UNIX)
     add_executable(rss_feed_reader
-                   ${SOURCE_MAIN}
-                   ${SOURCE_MAIN_WINDOW}
-                   ${SOURCE_WIDGET}
-
-                   ${HEADER_MAIN_WINDOW}
-                   ${HEADER_WIDGET}
-
+                   ${MAIN}
                    ${OTHER_UNIX})
 endif()
 
