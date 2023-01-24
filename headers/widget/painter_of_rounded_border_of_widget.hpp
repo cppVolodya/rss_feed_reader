@@ -6,7 +6,7 @@
 #include <QPainter>
 #include <QPaintDevice>
 
-#include "layout_of_rounded_border_of_widget.hpp"
+#include "abstract_layout_of_rounded_border_of_widget.hpp"
 
 
 class PainterOfRoundedBorderOfWidget : public QPainter
@@ -71,7 +71,7 @@ public:
 
 	friend inline void Swap(PainterOfRoundedBorderOfWidget &, PainterOfRoundedBorderOfWidget &) noexcept;
 private:
-	LayoutOfRoundedBorderOfWidget *m_layout;
+	AbstractLayoutOfRoundedBorderOfWidget *m_layout;
 	TypeLayoutOfRoundedBorderOfWidget m_layout_type;
 
 	QColor m_color;

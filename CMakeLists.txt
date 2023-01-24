@@ -64,7 +64,7 @@ set(SOURCE_WIDGET sources/widget/widget.cpp
                   sources/widget/rounded_border_of_widget.cpp
                   sources/widget/central_part_of_widget.cpp
                   sources/widget/painter_of_rounded_border_of_widget.cpp
-                  sources/widget/layout_of_rounded_border_of_widget.cpp
+                  sources/widget/abstract_layout_of_rounded_border_of_widget.cpp
                   sources/widget/shape_of_rounded_border_of_widget.cpp
                   sources/widget/cursors_of_widget.cpp
                   sources/widget/changing_size_of_widget.cpp)
@@ -77,7 +77,7 @@ set(HEADER_WIDGET headers/widget/widget.hpp
                   headers/widget/rounded_border_of_widget.hpp
                   headers/widget/central_part_of_widget.hpp
                   headers/widget/painter_of_rounded_border_of_widget.hpp
-                  headers/widget/layout_of_rounded_border_of_widget.hpp
+                  headers/widget/abstract_layout_of_rounded_border_of_widget.hpp
                   headers/widget/layout_of_external_rounded_border_of_widget.hpp
                   headers/widget/layout_of_internal_rounded_border_of_widget.hpp
                   headers/widget/layout_of_external_and_internal_rounded_border_of_widget.hpp
