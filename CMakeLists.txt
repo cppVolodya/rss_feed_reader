@@ -77,6 +77,7 @@ set(HEADER_WIDGET headers/widget/widget.hpp
                   headers/widget/rounded_border_of_widget.hpp
                   headers/widget/central_part_of_widget.hpp
                   headers/widget/painter_of_rounded_border_of_widget.hpp
+                  headers/widget/painter_of_save_and_restore.hpp
                   headers/widget/abstract_layout_of_rounded_border_of_widget.hpp
                   headers/widget/layout_of_external_rounded_border_of_widget.hpp
                   headers/widget/layout_of_internal_rounded_border_of_widget.hpp
@@ -85,8 +86,7 @@ set(HEADER_WIDGET headers/widget/widget.hpp
                   headers/widget/roundness_of_rounded_border_of_widget.hpp
                   headers/widget/thickness_of_rounded_border_of_widget.hpp
                   headers/widget/cursors_of_widget.hpp
-                  headers/widget/changing_size_of_widget.hpp
-                  headers/widget/painter_of_save_and_restore.hpp)
+                  headers/widget/changing_size_of_widget.hpp)
 
 
 # other files
