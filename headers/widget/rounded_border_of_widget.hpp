@@ -72,9 +72,9 @@ private:
 
 	void SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 
-	void SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorder(QMouseEvent *);
+	void SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorder(const QMouseEvent *);
 
-	inline void SetValueIfLeftMouseButtonIsPressed(t_pressed, QMouseEvent *);
+	inline void SetValueIfLeftMouseButtonIsPressed(t_pressed, const QMouseEvent *);
 };
 
 [[nodiscard]] constexpr inline QColor RoundedBorderOfWidget::GetColor() const noexcept

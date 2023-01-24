@@ -109,7 +109,7 @@ void RoundedBorderOfWidget::SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBord
 	}
 }
 
-void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorder(QMouseEvent *mouse_event)
+void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorder(const QMouseEvent *mouse_event)
 {
 	if (this->m_left_mouse_button_is_pressed)
 	{
@@ -118,7 +118,7 @@ void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorde
 	}
 }
 
-inline void RoundedBorderOfWidget::SetValueIfLeftMouseButtonIsPressed(const bool value, QMouseEvent *mouse_event)
+inline void RoundedBorderOfWidget::SetValueIfLeftMouseButtonIsPressed(const bool value, const QMouseEvent *mouse_event)
 {
 	if(mouse_event->button() == Qt::LeftButton)
 	{
