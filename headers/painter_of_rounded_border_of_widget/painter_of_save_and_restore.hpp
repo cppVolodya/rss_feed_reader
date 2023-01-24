@@ -6,6 +6,8 @@
 #include <QPainter>
 
 
+namespace N_PainterOfRoundedBorderOfWidget
+{
 class PainterOfSaveAndRestore final
 {
 public:
@@ -34,5 +36,6 @@ inline PainterOfSaveAndRestore::~PainterOfSaveAndRestore()
 {
 	m_painter.restore();
 }
+}  // namespace N_PainterOfRoundedBorderOfWidget
 
 #endif  // PAINTER_OF_SAVE_AND_RESTORE_HPP

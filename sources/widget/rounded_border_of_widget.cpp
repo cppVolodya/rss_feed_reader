@@ -7,6 +7,11 @@
 #include "layout_of_external_rounded_border_of_widget.hpp"
 
 
+namespace N_Widget
+{
+using N_PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget;
+
+
 RoundedBorderOfWidget::RoundedBorderOfWidget(QWidget *parent)
 	: QWidget(parent, Qt::Window),
 	  m_left_mouse_button_is_pressed(false)
@@ -21,7 +26,7 @@ RoundedBorderOfWidget::RoundedBorderOfWidget(QWidget *parent)
 
 void RoundedBorderOfWidget::SetDefaultSettings()
 {
-	this->m_painter_of_rounded_border.SetTypeOfLayout(PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
+	this->m_painter_of_rounded_border.SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
 	this->resize(500, 500);
 
@@ -125,3 +130,4 @@ inline void RoundedBorderOfWidget::SetValueIfLeftMouseButtonIsPressed(const bool
 		this->m_left_mouse_button_is_pressed = value;
 	}
 }
+}  // namespace N_Widget

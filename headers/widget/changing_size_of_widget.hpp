@@ -10,6 +10,13 @@
 #include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
 
 
+namespace N_Widget
+{
+using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRoundedBorderOfWidget;
+using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
+using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
+
+
 class ChangingSizeOfWidget
 {
 public:
@@ -141,5 +148,6 @@ inline void ChangingSizeOfWidget::SetMousePosition(const QPointF &mouse_position
 {
 	this->m_old_mouse_position = mouse_position;
 }
+}  // namespace N_Widget
 
 #endif  // CHANGING_SIZE_OF_WIDGET_HPP

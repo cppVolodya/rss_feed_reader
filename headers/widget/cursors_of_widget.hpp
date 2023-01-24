@@ -8,7 +8,10 @@
 #include <QPixmap>
 
 
-using t_selected = bool;
+namespace N_Widget
+{
+using T_Selected = bool;
+
 
 class CursorsOfWidget
 {
@@ -22,9 +25,9 @@ public:
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
 #pragma endregion SetDefaultSettings [functions]
 
-	void SelectSystemCursors(t_selected) noexcept;
+	void SelectSystemCursors(T_Selected) noexcept;
 
-	[[nodiscard]] inline t_selected SystemCursorsIsSelected() const noexcept;
+	[[nodiscard]] inline T_Selected SystemCursorsIsSelected() const noexcept;
 
 #pragma region GetSpecificCursors [functions]
 	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
@@ -51,7 +54,7 @@ private:
 	QPoint m_current_hot_spot_of_cursor_of_size_right_diagonal;
 	QPoint m_current_hot_spot_of_cursor_of_size_left_diagonal;
 
-	t_selected m_system_cursors_is_selected;
+	T_Selected m_system_cursors_is_selected;
 private:
 	[[nodiscard]] QCursor ReleaseGetCursor(Qt::CursorShape) const noexcept;
 
@@ -88,7 +91,7 @@ inline void CursorsOfWidget::SetDefaultSettings() noexcept
 	this->SetDefaultOfHotSpotsOfCursors();
 }
 
-[[nodiscard]] inline t_selected CursorsOfWidget::SystemCursorsIsSelected() const noexcept
+[[nodiscard]] inline T_Selected CursorsOfWidget::SystemCursorsIsSelected() const noexcept
 {
 	return this->m_system_cursors_is_selected;
 }
@@ -127,5 +130,6 @@ inline void CursorsOfWidget::SetDefaultSettings() noexcept
 {
 	return this->ReleaseGetCursorOfSizeLeftDiagonal();
 }
+}  // namespace N_Widget
 
 #endif  // CURSORS_OF_WIDGET_HPP

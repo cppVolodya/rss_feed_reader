@@ -18,12 +18,15 @@
 #include "rounded_border_of_widget.hpp"
 
 
-class Widget : public CentralPartOfWidget
+namespace N_Widget
+{
+class Widget: public CentralPartOfWidget
 {
 public:
 	explicit Widget(QWidget *parent = nullptr);
 private:
 	RoundedBorderOfWidget *m_rounded_border_of_widget;  // NOLINT(pvs-studio-V122)
 };
+}  // namespace N_Widget
 
 #endif  // WIDGET_HPP

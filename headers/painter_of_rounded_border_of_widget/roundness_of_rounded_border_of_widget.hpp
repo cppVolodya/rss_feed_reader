@@ -6,49 +6,53 @@
 #include <QtGlobal>
 
 
-using t_roundness = qreal;
+namespace N_PainterOfRoundedBorderOfWidget
+{
+using T_Roundness = qreal;
+
 
 class RoundnessOfRoundedBorderOfWidget
 {
 public:
-	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(t_roundness roundness_of_x = 1.0,
-													 		   t_roundness roundness_of_y = 1.0) noexcept;
+	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(T_Roundness roundness_of_x = 1.0,
+													 		   T_Roundness roundness_of_y = 1.0) noexcept;
 
-	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfX() const noexcept;
-	[[nodiscard]] constexpr inline t_roundness GetRoundnessOfY() const noexcept;
+	[[nodiscard]] constexpr inline T_Roundness GetRoundnessOfX() const noexcept;
+	[[nodiscard]] constexpr inline T_Roundness GetRoundnessOfY() const noexcept;
 
-	inline void SetRoundnessOfX(t_roundness) noexcept;
-	inline void SetRoundnessOfY(t_roundness) noexcept;
+	inline void SetRoundnessOfX(T_Roundness) noexcept;
+	inline void SetRoundnessOfY(T_Roundness) noexcept;
 private:
-	t_roundness m_roundness_of_x;
-	t_roundness m_roundness_of_y;
+	T_Roundness m_roundness_of_x;
+	T_Roundness m_roundness_of_y;
 };
 
-constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const t_roundness roundness_of_x,
-																		  			 const t_roundness roundness_of_y) noexcept
+constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const T_Roundness roundness_of_x,
+																		  			 const T_Roundness roundness_of_y) noexcept
 	: m_roundness_of_x(roundness_of_x),
 	  m_roundness_of_y(roundness_of_y)
 {
 }
 
-constexpr inline t_roundness RoundnessOfRoundedBorderOfWidget::GetRoundnessOfX() const noexcept
+constexpr inline T_Roundness RoundnessOfRoundedBorderOfWidget::GetRoundnessOfX() const noexcept
 {
 	return this->m_roundness_of_x;
 }
 
-constexpr inline t_roundness RoundnessOfRoundedBorderOfWidget::GetRoundnessOfY() const noexcept
+constexpr inline T_Roundness RoundnessOfRoundedBorderOfWidget::GetRoundnessOfY() const noexcept
 {
 	return this->m_roundness_of_y;
 }
 
-inline void RoundnessOfRoundedBorderOfWidget::SetRoundnessOfX(const t_roundness roundness_of_x) noexcept
+inline void RoundnessOfRoundedBorderOfWidget::SetRoundnessOfX(const T_Roundness roundness_of_x) noexcept
 {
 	this->m_roundness_of_x = roundness_of_x;
 }
 
-inline void RoundnessOfRoundedBorderOfWidget::SetRoundnessOfY(const t_roundness roundness_of_y) noexcept
+inline void RoundnessOfRoundedBorderOfWidget::SetRoundnessOfY(const T_Roundness roundness_of_y) noexcept
 {
 	this->m_roundness_of_y = roundness_of_y;
 }
+}  // namespace N_PainterOfRoundedBorderOfWidget
 
 #endif   // ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP

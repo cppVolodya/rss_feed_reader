@@ -5,6 +5,8 @@
 #include "changing_size_of_widget.hpp"
 
 
+namespace N_Widget
+{
 Qt::CursorShape ChangingSizeOfWidget::GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
 {
 	Characteristic characteristics{};
@@ -444,3 +446,4 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnBottomLe
 
 	return new_geometry_of_widget;
 }
+}  // namespace N_Widget

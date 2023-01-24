@@ -3,6 +3,8 @@
 #include "shape_of_rounded_border_of_widget.hpp"
 
 
+namespace N_PainterOfRoundedBorderOfWidget
+{
 void ShapeOfRoundedBorderOfWidget::ReleaseCustomizeGeometry(const QRectF &geometry_of_widget) noexcept
 {
 	this->SetGeometry(geometry_of_widget);
@@ -57,4 +59,5 @@ inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight() noexcept
 	const qreal thickness_of_right = this->GetThicknessOfRight();
 	this->m_internal_rectangle.setWidth (this->GetInternalRectangle().width() - thickness_of_right);
 }
+}  // namespace N_PainterOfRoundedBorderOfWidget
 #pragma endregion ReleaseSetThickness [functions]

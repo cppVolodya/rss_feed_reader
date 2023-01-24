@@ -9,7 +9,7 @@ int main(int argc, char *argv[])  // NOLINT(clion-misra-cpp2008-3-1-3)
 {
     QApplication application(argc, argv);  // NOLINT(pvs-studio-V808)
 
-    MainWindow main_window;
+    N_MainWindow::MainWindow main_window;
     main_window.show();
 
     return QApplication::exec();

@@ -5,6 +5,8 @@
 #include "cursors_of_widget.hpp"
 
 
+namespace N_Widget
+{
 CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
 	: m_system_cursors_is_selected(system_cursor_is_selected)
 {
@@ -260,3 +262,4 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 
 	return cursor_of_arrow;
 }
+}  // namespace N_Widget

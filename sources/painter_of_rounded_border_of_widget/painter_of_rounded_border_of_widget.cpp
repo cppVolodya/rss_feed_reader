@@ -9,6 +9,13 @@
 #include "painter_of_save_and_restore.hpp"
 
 
+namespace N_PainterOfRoundedBorderOfWidget
+{
+using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalRoundedBorderOfWidget;
+using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfInternalRoundedBorderOfWidget;
+using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRoundedBorderOfWidget;
+
+
 void PainterOfRoundedBorderOfWidget::Draw(const QRectF& geometry_of_window)
 {
 	PainterOfSaveAndRestore painter = PainterOfSaveAndRestore(*this);
@@ -54,3 +61,4 @@ void PainterOfRoundedBorderOfWidget::AllocateMemoryForLayout()
 		break;
 	}
 }
+}  // namespace N_PainterOfRoundedBorderOfWidget
