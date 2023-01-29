@@ -3,21 +3,18 @@
 #ifndef THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 #define THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
-#include <QtGlobal>
+#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-using T_Thickness = qreal;
-
-
 class ThicknessOfRoundedBorderOfWidget
 {
 public:
-	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(T_Thickness thickness_of_top    = 1.0,
-													 		   T_Thickness thickness_of_bottom = 1.0,
-													 		   T_Thickness thickness_of_left   = 1.0,
-													 		   T_Thickness thickness_of_right  = 1.0) noexcept;
+	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(T_Thickness thickness_of_top    = 2.0,
+													 		   T_Thickness thickness_of_bottom = 2.0,
+													 		   T_Thickness thickness_of_left   = 2.0,
+													 		   T_Thickness thickness_of_right  = 2.0) noexcept;
 
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfBottom() const noexcept;
@@ -36,9 +33,9 @@ private:
 };
 
 constexpr inline ThicknessOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget(const T_Thickness thickness_of_top,
-																		 			const T_Thickness thickness_of_bottom,
-																		 			const T_Thickness thickness_of_left,
-																		 			const T_Thickness thickness_of_right) noexcept
+																					const T_Thickness thickness_of_bottom,
+																					const T_Thickness thickness_of_left,
+																					const T_Thickness thickness_of_right) noexcept
 	: m_thickness_of_top   (thickness_of_top   ),
 	  m_thickness_of_bottom(thickness_of_bottom),
 	  m_thickness_of_left  (thickness_of_left  ),

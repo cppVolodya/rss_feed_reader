@@ -7,23 +7,22 @@
 #include <QPoint>
 #include <QPixmap>
 
+#include "types_aliases_of_widget.hpp"
+
 
 namespace N_Widget
 {
-using T_Selected = bool;
-
-
 class CursorsOfWidget
 {
 public:
-	explicit CursorsOfWidget(bool system_cursor_is_selected = false) noexcept;
+	inline explicit CursorsOfWidget(T_Selected system_cursor_is_selected = false) noexcept;
 
-#pragma region SetDefaultSettings [functions]
-	inline void SetDefaultSettings() noexcept;
+#pragma region SetDefaultCharacteristics [functions]
+	inline void SetDefaultCharacteristics() noexcept;
 
 	void SetDefaultOfImagesOfCursors  () noexcept;
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
-#pragma endregion SetDefaultSettings [functions]
+#pragma endregion SetDefaultCharacteristics [functions]
 
 	void SelectSystemCursors(T_Selected) noexcept;
 
@@ -85,7 +84,13 @@ private:
 #pragma endregion ReleaseGetSpecificCursors [functions]
 };
 
-inline void CursorsOfWidget::SetDefaultSettings() noexcept
+CursorsOfWidget::CursorsOfWidget(T_Selected system_cursor_is_selected) noexcept
+	: m_system_cursors_is_selected(system_cursor_is_selected)
+{
+	this->SetDefaultCharacteristics();
+}
+
+inline void CursorsOfWidget::SetDefaultCharacteristics() noexcept
 {
 	this->SetDefaultOfImagesOfCursors  ();
 	this->SetDefaultOfHotSpotsOfCursors();

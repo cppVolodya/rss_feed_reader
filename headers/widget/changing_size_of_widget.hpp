@@ -7,14 +7,19 @@
 #include <QPointF>
 #include <QRectF>
 
+#include "types_aliases_of_widget.hpp"
 #include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
 
 
 namespace N_Widget
 {
 using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRoundedBorderOfWidget;
+
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
+
+using N_PainterOfRoundedBorderOfWidget::T_Thickness;
+using N_PainterOfRoundedBorderOfWidget::T_Displacement;
 
 
 class ChangingSizeOfWidget
@@ -22,13 +27,16 @@ class ChangingSizeOfWidget
 public:
 	inline ChangingSizeOfWidget() noexcept;
 
+	inline void SetDefaultCharacteristics() noexcept;
+
 	inline void CustomizeLayoutOfSizeBorder(const QRectF &);
 
 	Qt::CursorShape GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 
-	QRectF GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &, const QRectF &) noexcept;
+	QRectF GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &,
+																	     const QRectF  &) noexcept;
 
-	inline void SetDefaultSettings() noexcept;
+	[[nodiscard]] inline QPointF GetMousePosition() const noexcept;
 
 	inline void SetMousePosition(const QPointF &) noexcept;
 private:
@@ -63,19 +71,19 @@ private:
 #pragma endregion GetNewCursorShapeIfMousePositionLocatedOnCertainParts [functions]
 
 #pragma region VerifyOfMousePositionLocatedOnCertainParts [functions]
-	inline static bool VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &) noexcept;
-	inline static bool VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder   (const Characteristic &) noexcept;
-	inline static bool VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnEntireRightPartLayoutOfSizeBorder  (const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder   (const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
-	inline static bool VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder	 (const Characteristic &) noexcept;
-	inline static bool VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder	 (const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
-	inline static bool VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder      (const Characteristic &) noexcept;
-	inline static bool VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder	      (const Characteristic &) noexcept;
-	inline static bool VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnRightPartLayoutOfSizeBorder      (const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnLeftPartLayoutOfSizeBorder	   (const Characteristic &) noexcept;
+	inline static T_Success VerifyOfMousePositionLocatedOnRightOrLeftPartLayoutOfSizeBorder(const Characteristic &) noexcept;
 
-	[[nodiscard]] inline bool VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder		 (const Characteristic &) const;
-	[[nodiscard]] inline bool VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(const Characteristic &) const;
+	[[nodiscard]] inline T_Success VerifyOfMousePositionLocatedOnTopRightOrTopLeftPartLayoutOfSizeBorder	  (const Characteristic &) const;
+	[[nodiscard]] inline T_Success VerifyOfMousePositionLocatedOnBottomRightOrBottomLeftPartLayoutOfSizeBorder(const Characteristic &) const;
 #pragma endregion VerifyOfMousePositionLocatedOnCertainParts [functions]
 
 #pragma region GetNewGeometryOfWidgetIfPressAndMoveMouseOnCertainParts [functions]
@@ -96,18 +104,18 @@ private:
 struct ChangingSizeOfWidget::Characteristic
 {
 public:
-	qreal m_position_x_of_mouse;
-	qreal m_position_y_of_mouse;
+	T_Position m_position_x_of_mouse;
+	T_Position m_position_y_of_mouse;
 
-	qreal m_width;
-	qreal m_height;
+	T_Distance m_width;
+	T_Distance m_height;
 
-	qreal m_thickness;
+	T_Thickness m_thickness;
 
-	qreal m_displacement_coefficient;
+	T_Displacement m_displacement_coefficient;
 
-	qreal m_distance_of_x_for_cursor_of_size_diagonal;
-	qreal m_distance_of_y_for_cursor_of_size_diagonal;
+	T_Distance m_distance_of_x_for_cursor_of_size_diagonal;
+	T_Distance m_distance_of_y_for_cursor_of_size_diagonal;
 };
 
 enum class ChangingSizeOfWidget::StateOfWidgetResize
@@ -130,7 +138,13 @@ enum class ChangingSizeOfWidget::StateOfWidgetResize
 inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 	: m_state_of_widget_resize(StateOfWidgetResize::IDLE)
 {
-	SetDefaultSettings();
+	SetDefaultCharacteristics();
+}
+
+inline void ChangingSizeOfWidget::SetDefaultCharacteristics() noexcept
+{
+	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0		  ));
+	this->m_layout_of_size_border.SetThickness(ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
 }
 
 inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geometry_of_widget)
@@ -138,10 +152,9 @@ inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geom
 	this->m_layout_of_size_border.Customize(geometry_of_widget);
 }
 
-inline void ChangingSizeOfWidget::SetDefaultSettings() noexcept
+[[nodiscard]] inline QPointF ChangingSizeOfWidget::GetMousePosition() const noexcept
 {
-	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0		  ));
-	this->m_layout_of_size_border.SetThickness(ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
+	return this->m_old_mouse_position;
 }
 
 inline void ChangingSizeOfWidget::SetMousePosition(const QPointF &mouse_position) noexcept

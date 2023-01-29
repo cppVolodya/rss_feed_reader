@@ -5,59 +5,65 @@
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-void ShapeOfRoundedBorderOfWidget::ReleaseCustomizeGeometry(const QRectF &geometry_of_widget) noexcept
+void ShapeOfRoundedBorderOfWidget::ReleaseCustomizeGeometry(const QRectF &geometry) noexcept
 {
-	this->SetGeometry(geometry_of_widget);
-	this->ReleaseSetThickness();
+	this->SetGeometry(geometry);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(this->m_internal_rectangle, this->m_thickness);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::SetGeometry(QRectF geometry_of_widget) noexcept
+inline void ShapeOfRoundedBorderOfWidget::SetGeometry(QRectF geometry) noexcept
 {
-	this->ReleaseSetDisplacementCoefficient(geometry_of_widget);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(geometry, this->GetDisplacementCoefficient());
 
-	this->m_external_rectangle = geometry_of_widget;
-	this->m_internal_rectangle = m_external_rectangle;
+	this->SetExternalRectangle(geometry);
+	this->SetInternalRectangle(geometry);
 }
 
-void ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(QRectF &geometry_of_widget) const noexcept
+void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(QRectF &geometry,
+													   const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
-	geometry_of_widget.setY     (geometry_of_widget.y     () + this->GetDisplacementCoefficient());
-	geometry_of_widget.setHeight(geometry_of_widget.height() - this->GetDisplacementCoefficient());
-	geometry_of_widget.setX     (geometry_of_widget.x     () + this->GetDisplacementCoefficient());
-	geometry_of_widget.setWidth (geometry_of_widget.width () - this->GetDisplacementCoefficient());
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop   (geometry, thickness.GetThicknessOfTop	  ());
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(geometry, thickness.GetThicknessOfBottom());
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft  (geometry, thickness.GetThicknessOfLeft  ());
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight (geometry, thickness.GetThicknessOfRight ());
 }
 
-#pragma region ReleaseSetThickness [functions]
-void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness() noexcept
+void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(QRectF &geometry,
+													   const T_Thickness thickness) noexcept
 {
-	this->ReleaseSetThicknessOfTop   ();
-	this->ReleaseSetThicknessOfBottom();
-	this->ReleaseSetThicknessOfLeft  ();
-	this->ReleaseSetThicknessOfRight ();
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop   (geometry, thickness);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(geometry, thickness);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft  (geometry, thickness);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight (geometry, thickness);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop() noexcept
+inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop(QRectF &geometry,
+																   const T_Thickness thickness_of_top) noexcept
 {
-	const qreal thickness_of_top = this->GetThicknessOfTop();
-	this->m_internal_rectangle.setY(this->GetInternalRectangle().y() + thickness_of_top);
+	geometry.setY(geometry.y() + thickness_of_top);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom() noexcept
+inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(QRectF &geometry,
+																      const T_Thickness thickness_of_bottom) noexcept
 {
-	const qreal thickness_of_bottom = this->GetThicknessOfBottom();
-	this->m_internal_rectangle.setHeight(this->GetInternalRectangle().height() - thickness_of_bottom);
+	geometry.setHeight(geometry.height() - thickness_of_bottom);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft() noexcept
+inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft(QRectF &geometry,
+																	const T_Thickness thickness_of_left) noexcept
 {
-	const qreal thickness_of_left = this->GetThicknessOfLeft();
-	this->m_internal_rectangle.setX(this->GetInternalRectangle().x() + thickness_of_left);
+	geometry.setX(geometry.x() + thickness_of_left);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight() noexcept
+inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight(QRectF &geometry,
+																	 const T_Thickness thickness_of_right) noexcept
 {
-	const qreal thickness_of_right = this->GetThicknessOfRight();
-	this->m_internal_rectangle.setWidth (this->GetInternalRectangle().width() - thickness_of_right);
+	geometry.setWidth(geometry.width() - thickness_of_right);
+}
+
+void ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(QRectF &geometry,
+																	 const T_Displacement displacement) noexcept
+{
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(geometry, displacement);
 }
 }  // namespace N_PainterOfRoundedBorderOfWidget
-#pragma endregion ReleaseSetThickness [functions]

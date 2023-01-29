@@ -6,8 +6,9 @@
 namespace N_Widget
 {
 CentralPartOfWidget::CentralPartOfWidget(QWidget *parent)
-	: QWidget(parent, Qt::Widget)
+	: QWidget(parent)
 {
+	this->setWindowFlag(Qt::Window, 			 true);
 	this->setWindowFlag(Qt::FramelessWindowHint, true);
 }
 }  // namespace N_Widget

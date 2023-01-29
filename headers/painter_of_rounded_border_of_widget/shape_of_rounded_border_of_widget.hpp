@@ -5,14 +5,12 @@
 
 #include <QRectF>
 
+#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
 #include "thickness_of_rounded_border_of_widget.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-using T_Displacement = qreal;
-
-
 class ShapeOfRoundedBorderOfWidget
 {
 public:
@@ -34,6 +32,9 @@ public:
 
 	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
+	inline void SetExternalRectangle(const QRectF &) noexcept;
+	inline void SetInternalRectangle(const QRectF &) noexcept;
+
 	inline void SetThicknessOfTop   (T_Thickness) noexcept;
 	inline void SetThicknessOfBottom(T_Thickness) noexcept;
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
@@ -54,16 +55,17 @@ private:
 
 	inline void SetGeometry(QRectF) noexcept;
 
-	void ReleaseSetDisplacementCoefficient(QRectF &) const noexcept;
-
 #pragma region ReleaseSetThickness [functions]
-	void ReleaseSetThickness() noexcept;
+	static void ReleaseSetThickness(QRectF &, const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	static void ReleaseSetThickness(QRectF &, T_Thickness						      ) noexcept;
 
-	inline void ReleaseSetThicknessOfTop   () noexcept;
-	inline void ReleaseSetThicknessOfBottom() noexcept;
-	inline void ReleaseSetThicknessOfLeft  () noexcept;
-	inline void ReleaseSetThicknessOfRight () noexcept;
+	static inline void ReleaseSetThicknessOfTop   (QRectF &, T_Thickness) noexcept;
+	static inline void ReleaseSetThicknessOfBottom(QRectF &, T_Thickness) noexcept;
+	static inline void ReleaseSetThicknessOfLeft  (QRectF &, T_Thickness) noexcept;
+	static inline void ReleaseSetThicknessOfRight (QRectF &, T_Thickness) noexcept;
 #pragma endregion ReleaseSetThickness [functions]
+
+	static void ReleaseSetDisplacementCoefficient(QRectF &, T_Displacement) noexcept;
 };
 
 constexpr inline ShapeOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget() noexcept
@@ -119,6 +121,16 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 [[nodiscard]] constexpr inline QSizeF ShapeOfRoundedBorderOfWidget::GetSize() const noexcept
 {
 	return this->m_external_rectangle.size();
+}
+
+inline void ShapeOfRoundedBorderOfWidget::SetExternalRectangle(const QRectF & external_rectangle) noexcept
+{
+	this->m_external_rectangle = external_rectangle;
+}
+
+inline void ShapeOfRoundedBorderOfWidget::SetInternalRectangle(const QRectF & internal_rectangle) noexcept
+{
+	this->m_internal_rectangle = internal_rectangle;
 }
 
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfTop(const T_Thickness thickness_of_top) noexcept

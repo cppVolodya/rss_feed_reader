@@ -6,6 +6,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 
+#include "types_aliases_of_widget.hpp"
 #include "painter_of_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
 #include "changing_size_of_widget.hpp"
@@ -13,8 +14,6 @@
 
 namespace N_Widget
 {
-using T_Pressed = bool;
-
 using N_PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
@@ -30,6 +29,7 @@ public:
 	explicit RoundedBorderOfWidget(QWidget *parent = nullptr);
 
 	void SetDefaultSettings();
+	void SetDefaultCharacteristics();
 
 	[[nodiscard]] inline QColor GetColor() const noexcept;
 

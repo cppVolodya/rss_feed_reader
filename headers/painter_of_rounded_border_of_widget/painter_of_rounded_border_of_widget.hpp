@@ -18,10 +18,10 @@ using N_AbstractLayoutOfRoundedBorderOfWidget::AbstractLayoutOfRoundedBorderOfWi
 
 enum class TypeLayoutOfRoundedBorderOfWidget
 {
-	EXTERNAL,
-	INTERNAL,
-
 	EXTERNAL_AND_INTERNAL,
+
+	EXTERNAL,
+	INTERNAL
 };
 
 class PainterOfRoundedBorderOfWidget : public QPainter
@@ -51,6 +51,8 @@ public:
 
 	[[nodiscard]] inline T_Displacement GetDisplacementCoefficient() const noexcept;
 
+	[[nodiscard]] inline TypeLayoutOfRoundedBorderOfWidget GetTypeOfLayout() const noexcept;
+
 	inline void SetColor(const QColor &) noexcept;
 
 	inline void SetRoundnessOfX(T_Roundness) noexcept;
@@ -67,7 +69,7 @@ public:
 
 	inline void SetDisplacementCoefficient(T_Displacement) noexcept;
 
-	inline void SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget type_layout) noexcept;
+	inline void SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget type_layout);
 private:
 	std::unique_ptr<AbstractLayoutOfRoundedBorderOfWidget> m_layout;
 	TypeLayoutOfRoundedBorderOfWidget m_layout_type;
@@ -147,6 +149,11 @@ inline PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(QPaintDevi
 	return this->m_layout->GetDisplacementCoefficient();
 }
 
+[[nodiscard]] inline TypeLayoutOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetTypeOfLayout() const noexcept
+{
+	return this->m_layout_type;
+}
+
 inline void PainterOfRoundedBorderOfWidget::SetColor(const QColor &color) noexcept
 {
 	this->m_color = color;
@@ -197,7 +204,7 @@ inline void PainterOfRoundedBorderOfWidget::SetDisplacementCoefficient(T_Displac
 	this->m_layout->SetDisplacementCoefficient(displacement_coefficient);
 }
 
-inline void PainterOfRoundedBorderOfWidget::SetTypeOfLayout(const TypeLayoutOfRoundedBorderOfWidget type_layout) noexcept
+inline void PainterOfRoundedBorderOfWidget::SetTypeOfLayout(const TypeLayoutOfRoundedBorderOfWidget type_layout)
 {
 	this->m_layout_type = type_layout;
 

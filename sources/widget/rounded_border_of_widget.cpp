@@ -13,18 +13,24 @@ using N_PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget;
 
 
 RoundedBorderOfWidget::RoundedBorderOfWidget(QWidget *parent)
-	: QWidget(parent, Qt::Window),
+	: QWidget(parent),
 	  m_left_mouse_button_is_pressed(false)
 {
-	this->setAttribute (Qt::WA_TranslucentBackground, true);
-	this->setWindowFlag(Qt::FramelessWindowHint,      true);
-
-	this->setMouseTracking(true);
-
 	this->SetDefaultSettings();
+	this->SetDefaultCharacteristics();
 }
 
 void RoundedBorderOfWidget::SetDefaultSettings()
+{
+	this->setAttribute (Qt::WA_TranslucentBackground, true);
+
+	this->setWindowFlag(Qt::Window, 			 true);
+	this->setWindowFlag(Qt::FramelessWindowHint, true);
+
+	this->setMouseTracking(true);
+}
+
+void RoundedBorderOfWidget::SetDefaultCharacteristics()
 {
 	this->m_painter_of_rounded_border.SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
@@ -34,10 +40,10 @@ void RoundedBorderOfWidget::SetDefaultSettings()
 
 	this->SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0));
 
-	this->SetThickness(ThicknessOfRoundedBorderOfWidget(30.0, 5.0, 5.0, 5.0));
+	this->SetThickness(ThicknessOfRoundedBorderOfWidget(5.0, 5.0, 5.0, 5.0));
 
 	this->SetDisplacementCoefficient(8.0);
-}
+};
 
 void RoundedBorderOfWidget::paintEvent(QPaintEvent *paint_event)
 {
@@ -109,7 +115,9 @@ void RoundedBorderOfWidget::SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBord
 {
 	if (!this->m_left_mouse_button_is_pressed)
 	{
-		Qt::CursorShape new_cursor_shape = this->m_changing_size_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
+		Qt::CursorShape new_cursor_shape =
+			this->m_changing_size_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
+
 		this->setCursor(this->m_cursors.GetCursor(new_cursor_shape));
 	}
 }
@@ -118,7 +126,10 @@ void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorde
 {
 	if (this->m_left_mouse_button_is_pressed)
 	{
-		QRectF new_geometry = this->m_changing_size_of_widget.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(), this->geometry().toRectF());
+		QRectF new_geometry =
+			this->m_changing_size_of_widget.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(),
+																										  this->geometry().toRectF());
+
 		this->setGeometry(new_geometry.toRect());
 	}
 }

@@ -37,7 +37,7 @@ QRectF ChangingSizeOfWidget::GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOf
 																					 	   const QRectF  &geometry_of_widget) noexcept
 {
 	QRectF new_geometry_of_widget;
-	QPointF displacement_of_mouse_position = new_mouse_position - this->m_old_mouse_position;
+	QPointF displacement_of_mouse_position = new_mouse_position - this->GetMousePosition();
 
 	switch (this->m_state_of_widget_resize)
 	{
@@ -99,7 +99,7 @@ void ChangingSizeOfWidget::SetCharacteristic(Characteristic &characteristics, co
 
 	characteristics.m_displacement_coefficient = this->m_layout_of_size_border.GetDisplacementCoefficient();
 
-	constexpr qreal minimum_distance_for_cursor_of_size_diagonal{ 10.0 };
+	constexpr qreal minimum_distance_for_cursor_of_size_diagonal = 10.0;
 
 	characteristics.m_distance_of_x_for_cursor_of_size_diagonal =
 		(this->m_layout_of_size_border.GetRoundnessOfX() > minimum_distance_for_cursor_of_size_diagonal)

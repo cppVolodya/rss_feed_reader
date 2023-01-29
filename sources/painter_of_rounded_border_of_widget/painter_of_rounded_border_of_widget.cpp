@@ -18,7 +18,7 @@ using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRounde
 
 void PainterOfRoundedBorderOfWidget::Draw(const QRectF& geometry_of_window)
 {
-	PainterOfSaveAndRestore painter = PainterOfSaveAndRestore(*this);
+	PainterOfSaveAndRestore painter_saver(*this);
 
 	this->Customize();
 	this->m_layout->Customize(geometry_of_window);
@@ -44,16 +44,16 @@ inline void PainterOfRoundedBorderOfWidget::ReleaseSetColor()
 
 void PainterOfRoundedBorderOfWidget::AllocateMemoryForLayout()
 {
-	switch (this->m_layout_type)
+	switch (this->GetTypeOfLayout())
 	{
+	case TypeLayoutOfRoundedBorderOfWidget::EXTERNAL_AND_INTERNAL:
+		this->m_layout = std::make_unique<LayoutOfExternalAndInternalRoundedBorderOfWidget>();
+		break;
 	case TypeLayoutOfRoundedBorderOfWidget::EXTERNAL:
 		this->m_layout = std::make_unique<LayoutOfExternalRoundedBorderOfWidget>();
 		break;
 	case TypeLayoutOfRoundedBorderOfWidget::INTERNAL:
 		this->m_layout = std::make_unique<LayoutOfInternalRoundedBorderOfWidget>();
-		break;
-	case TypeLayoutOfRoundedBorderOfWidget::EXTERNAL_AND_INTERNAL:
-		this->m_layout = std::make_unique<LayoutOfExternalAndInternalRoundedBorderOfWidget>();
 		break;
 	default:  // NOLINT(clion-misra-cpp2008-6-4-5)
 		qDebug() << "A different layout type is selected!";

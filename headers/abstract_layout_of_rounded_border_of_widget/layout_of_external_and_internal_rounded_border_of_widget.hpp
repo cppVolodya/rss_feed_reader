@@ -18,8 +18,13 @@ private:
 
 inline void LayoutOfExternalAndInternalRoundedBorderOfWidget::ReleaseSetRoundness()
 {
-	this->addRoundedRect(this->m_shape.GetInternalRectangle(), this->GetRoundnessOfX(), this->GetRoundnessOfY());
-	this->addRoundedRect(this->m_shape.GetExternalRectangle(), this->GetRoundnessOfX(), this->GetRoundnessOfY());
+	this->addRoundedRect(this->m_shape.GetInternalRectangle(),
+						 this->GetRoundnessOfX(),
+						 this->GetRoundnessOfY());
+
+	this->addRoundedRect(this->m_shape.GetExternalRectangle(),
+						 this->GetRoundnessOfX(),
+						 this->GetRoundnessOfY());
 }
 }  // namespace N_AbstractLayoutOfRoundedBorderOfWidget
 

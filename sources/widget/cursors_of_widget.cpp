@@ -7,12 +7,6 @@
 
 namespace N_Widget
 {
-CursorsOfWidget::CursorsOfWidget(bool system_cursor_is_selected) noexcept
-	: m_system_cursors_is_selected(system_cursor_is_selected)
-{
-	this->SetDefaultSettings();
-}
-
 void CursorsOfWidget::SetDefaultOfImagesOfCursors() noexcept
 {
 	this->m_current_pixmap_of_cursor_of_arrow				= QPixmap(":/resources/cursor_image_of_arrow.png"			   );

@@ -3,14 +3,11 @@
 #ifndef ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 #define ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
-#include <QtGlobal>
+#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-using T_Roundness = qreal;
-
-
 class RoundnessOfRoundedBorderOfWidget
 {
 public:
@@ -27,8 +24,8 @@ private:
 	T_Roundness m_roundness_of_y;
 };
 
-constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget (const T_Roundness roundness_of_x,
-																		  			 const T_Roundness roundness_of_y) noexcept
+constexpr inline RoundnessOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget(const T_Roundness roundness_of_x,
+																					const T_Roundness roundness_of_y) noexcept
 	: m_roundness_of_x(roundness_of_x),
 	  m_roundness_of_y(roundness_of_y)
 {

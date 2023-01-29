@@ -19,9 +19,9 @@ public:
 
 	PainterOfSaveAndRestore& operator=(const PainterOfSaveAndRestore &) = delete;
 	PainterOfSaveAndRestore& operator=(PainterOfSaveAndRestore &&)		= delete;
-#pragma endregion RuleOfZero
 
 	inline ~PainterOfSaveAndRestore();
+#pragma endregion RuleOfZero
 private:
 	QPainter &m_painter;
 };
