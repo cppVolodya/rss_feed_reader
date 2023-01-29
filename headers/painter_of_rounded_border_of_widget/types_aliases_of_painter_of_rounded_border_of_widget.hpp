@@ -8,9 +8,8 @@
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-using T_Thickness    = qreal;
-using T_Roundness    = qreal;
-using T_Displacement = qreal;
+using T_Thickness = qreal;
+using T_Roundness = qreal;
 }  // namespace N_PainterOfRoundedBorderOfWidget
 
 #endif  // TYPES_ALIASES_OF_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET_HPP

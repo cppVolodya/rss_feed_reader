@@ -49,7 +49,7 @@ public:
 
 	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline T_Displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	[[nodiscard]] inline TypeLayoutOfRoundedBorderOfWidget GetTypeOfLayout() const noexcept;
 
@@ -67,7 +67,7 @@ public:
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetDisplacementCoefficient(T_Displacement) noexcept;
+	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
 	inline void SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget type_layout);
 private:
@@ -144,9 +144,9 @@ inline PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget(QPaintDevi
 	return this->m_layout->GetThickness();
 }
 
-[[nodiscard]] inline T_Displacement PainterOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
-	return this->m_layout->GetDisplacementCoefficient();
+	return this->m_layout->GetBoundingThickness();
 }
 
 [[nodiscard]] inline TypeLayoutOfRoundedBorderOfWidget PainterOfRoundedBorderOfWidget::GetTypeOfLayout() const noexcept
@@ -199,9 +199,9 @@ inline void PainterOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRounde
 	this->m_layout->SetThickness(thickness);
 }
 
-inline void PainterOfRoundedBorderOfWidget::SetDisplacementCoefficient(T_Displacement displacement_coefficient) noexcept
+inline void PainterOfRoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
-	this->m_layout->SetDisplacementCoefficient(displacement_coefficient);
+	this->m_layout->SetBoundingThickness(bounding_thickness);
 }
 
 inline void PainterOfRoundedBorderOfWidget::SetTypeOfLayout(const TypeLayoutOfRoundedBorderOfWidget type_layout)

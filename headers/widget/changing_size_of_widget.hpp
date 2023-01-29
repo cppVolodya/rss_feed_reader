@@ -19,7 +19,6 @@ using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 
 using N_PainterOfRoundedBorderOfWidget::T_Thickness;
-using N_PainterOfRoundedBorderOfWidget::T_Displacement;
 
 
 class ChangingSizeOfWidget
@@ -112,7 +111,7 @@ public:
 
 	T_Thickness m_thickness;
 
-	T_Displacement m_displacement_coefficient;
+	T_Distance m_bounding_distance;
 
 	T_Distance m_distance_of_x_for_cursor_of_size_diagonal;
 	T_Distance m_distance_of_y_for_cursor_of_size_diagonal;

@@ -3,6 +3,8 @@
 #ifndef THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 #define THICKNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
+#include <algorithm>
+
 #include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
 
 
@@ -11,10 +13,10 @@ namespace N_PainterOfRoundedBorderOfWidget
 class ThicknessOfRoundedBorderOfWidget
 {
 public:
-	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(T_Thickness thickness_of_top    = 2.0,
-													 		   T_Thickness thickness_of_bottom = 2.0,
-													 		   T_Thickness thickness_of_left   = 2.0,
-													 		   T_Thickness thickness_of_right  = 2.0) noexcept;
+	explicit constexpr inline ThicknessOfRoundedBorderOfWidget(T_Thickness thickness_of_top    = 0.0,
+													 		   T_Thickness thickness_of_bottom = 0.0,
+													 		   T_Thickness thickness_of_left   = 0.0,
+													 		   T_Thickness thickness_of_right  = 0.0) noexcept;
 
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfTop   () const noexcept;
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfBottom() const noexcept;
@@ -25,6 +27,8 @@ public:
 	inline void SetThicknessOfBottom(T_Thickness) noexcept;
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
 	inline void SetThicknessOfRight (T_Thickness) noexcept;
+
+	[[nodiscard]] constexpr inline T_Thickness GetMaximumValue() const;
 private:
 	T_Thickness m_thickness_of_top;
 	T_Thickness m_thickness_of_bottom;
@@ -81,6 +85,11 @@ inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfLeft(const T_Thickne
 inline void ThicknessOfRoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
 {
 	this->m_thickness_of_right = thickness_of_right;
+}
+
+[[nodiscard]] constexpr inline T_Thickness ThicknessOfRoundedBorderOfWidget::GetMaximumValue() const
+{
+	return std::max({ this->GetThicknessOfTop(), this->GetThicknessOfBottom(), this->GetThicknessOfLeft(), this->GetThicknessOfRight() });
 }
 }  // namespace N_PainterOfRoundedBorderOfWidget
 

@@ -97,7 +97,7 @@ void ChangingSizeOfWidget::SetCharacteristic(Characteristic &characteristics, co
 
 	characteristics.m_thickness = this->m_layout_of_size_border.GetThicknessOfLeft();
 
-	characteristics.m_displacement_coefficient = this->m_layout_of_size_border.GetDisplacementCoefficient();
+	characteristics.m_bounding_distance = this->m_layout_of_size_border.GetBoundingThickness().GetMaximumValue();
 
 	constexpr qreal minimum_distance_for_cursor_of_size_diagonal = 10.0;
 
@@ -295,8 +295,8 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireRightPartL
 
 inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireLeftPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
-	return characteristics.m_displacement_coefficient <= characteristics.m_position_x_of_mouse &&
-		   characteristics.m_position_x_of_mouse      <= characteristics.m_distance_of_x_for_cursor_of_size_diagonal;
+	return characteristics.m_bounding_distance   <= characteristics.m_position_x_of_mouse &&
+		   characteristics.m_position_x_of_mouse <= characteristics.m_distance_of_x_for_cursor_of_size_diagonal;
 }
 
 inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
@@ -307,8 +307,8 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnEntireCentralPar
 
 inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnTopPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
 {
-	return characteristics.m_displacement_coefficient <= characteristics.m_position_y_of_mouse &&
-		   characteristics.m_position_y_of_mouse 	  <= characteristics.m_thickness;
+	return characteristics.m_bounding_distance   <= characteristics.m_position_y_of_mouse &&
+		   characteristics.m_position_y_of_mouse <= characteristics.m_thickness;
 }
 
 inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnBottomPartLayoutOfSizeBorder(const Characteristic &characteristics) noexcept
@@ -339,8 +339,8 @@ inline bool ChangingSizeOfWidget::VerifyOfMousePositionLocatedOnRightOrLeftPartL
 {
 	QPointF mouse_position{ characteristics.m_position_x_of_mouse, characteristics.m_position_y_of_mouse };
 
-	return (characteristics.m_displacement_coefficient <= characteristics.m_position_y_of_mouse &&
-			characteristics.m_position_y_of_mouse      <= characteristics.m_distance_of_y_for_cursor_of_size_diagonal) &&
+	return (characteristics.m_bounding_distance   <= characteristics.m_position_y_of_mouse &&
+			characteristics.m_position_y_of_mouse <= characteristics.m_distance_of_y_for_cursor_of_size_diagonal) &&
 				this->m_layout_of_size_border.contains(mouse_position);
 }
 

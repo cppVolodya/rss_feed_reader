@@ -11,8 +11,8 @@ namespace N_PainterOfRoundedBorderOfWidget
 class RoundnessOfRoundedBorderOfWidget
 {
 public:
-	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(T_Roundness roundness_of_x = 1.0,
-													 		   T_Roundness roundness_of_y = 1.0) noexcept;
+	explicit constexpr inline RoundnessOfRoundedBorderOfWidget(T_Roundness roundness_of_x = 0.0,
+													 		   T_Roundness roundness_of_y = 0.0) noexcept;
 
 	[[nodiscard]] constexpr inline T_Roundness GetRoundnessOfX() const noexcept;
 	[[nodiscard]] constexpr inline T_Roundness GetRoundnessOfY() const noexcept;

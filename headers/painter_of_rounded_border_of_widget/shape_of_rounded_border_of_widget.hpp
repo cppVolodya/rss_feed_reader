@@ -28,7 +28,7 @@ public:
 
 	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] constexpr inline T_Displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
@@ -42,14 +42,14 @@ public:
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetDisplacementCoefficient(T_Displacement) noexcept;
+	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 private:
 	QRectF m_external_rectangle;
 	QRectF m_internal_rectangle;
 
 	ThicknessOfRoundedBorderOfWidget m_thickness;
 
-	T_Displacement m_displacement_coefficient;
+	ThicknessOfRoundedBorderOfWidget m_bounding_thickness;
 private:
 	void ReleaseCustomizeGeometry(const QRectF &) noexcept;
 
@@ -57,7 +57,6 @@ private:
 
 #pragma region ReleaseSetThickness [functions]
 	static void ReleaseSetThickness(QRectF &, const ThicknessOfRoundedBorderOfWidget &) noexcept;
-	static void ReleaseSetThickness(QRectF &, T_Thickness						      ) noexcept;
 
 	static inline void ReleaseSetThicknessOfTop   (QRectF &, T_Thickness) noexcept;
 	static inline void ReleaseSetThicknessOfBottom(QRectF &, T_Thickness) noexcept;
@@ -65,11 +64,11 @@ private:
 	static inline void ReleaseSetThicknessOfRight (QRectF &, T_Thickness) noexcept;
 #pragma endregion ReleaseSetThickness [functions]
 
-	static void ReleaseSetDisplacementCoefficient(QRectF &, T_Displacement) noexcept;
+	static void ReleaseSetBoundingThickness(QRectF &, const ThicknessOfRoundedBorderOfWidget &) noexcept;
 };
 
 constexpr inline ShapeOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget() noexcept
-	: m_displacement_coefficient(0.0)
+	: m_bounding_thickness(0.0, 0.0, 0.0, 0.0)
 {
 }
 
@@ -113,9 +112,9 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 	return this->m_thickness;
 }
 
-[[nodiscard]] constexpr inline T_Displacement ShapeOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
-	return this->m_displacement_coefficient;
+	return this->m_bounding_thickness;
 }
 
 [[nodiscard]] constexpr inline QSizeF ShapeOfRoundedBorderOfWidget::GetSize() const noexcept
@@ -158,9 +157,9 @@ inline void ShapeOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedB
 	this->m_thickness = thickness;
 }
 
-inline void ShapeOfRoundedBorderOfWidget::SetDisplacementCoefficient(T_Displacement displacement_coefficient) noexcept
+inline void ShapeOfRoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
-	this->m_displacement_coefficient = displacement_coefficient;
+	this->m_bounding_thickness = bounding_thickness;
 }
 }  // namespace N_PainterOfRoundedBorderOfWidget
 

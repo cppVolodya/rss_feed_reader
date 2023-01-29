@@ -20,7 +20,6 @@ using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 
 using N_PainterOfRoundedBorderOfWidget::T_Roundness;
 using N_PainterOfRoundedBorderOfWidget::T_Thickness;
-using N_PainterOfRoundedBorderOfWidget::T_Displacement;
 
 
 class RoundedBorderOfWidget : public QWidget
@@ -45,7 +44,7 @@ public:
 
 	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline T_Displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	inline void SetColor(const QColor &) noexcept;
 
@@ -61,7 +60,7 @@ public:
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetDisplacementCoefficient(T_Displacement) noexcept;
+	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 protected:
 	void paintEvent(QPaintEvent *) override;
 
@@ -133,9 +132,9 @@ private:
 	return this->m_painter_of_rounded_border.GetThickness();
 }
 
-[[nodiscard]] inline T_Displacement RoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
-	return this->m_painter_of_rounded_border.GetDisplacementCoefficient();
+	return this->m_painter_of_rounded_border.GetBoundingThickness();
 }
 
 inline void RoundedBorderOfWidget::SetColor(const QColor &color) noexcept
@@ -183,9 +182,9 @@ inline void RoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOf
 	this->m_painter_of_rounded_border.SetThickness(thickness);
 }
 
-inline void RoundedBorderOfWidget::SetDisplacementCoefficient(T_Displacement displacement_coefficient) noexcept
+inline void RoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
-	this->m_painter_of_rounded_border.SetDisplacementCoefficient(displacement_coefficient);
+	this->m_painter_of_rounded_border.SetBoundingThickness(bounding_thickness);
 }
 }  // namespace N_Widget
 

@@ -13,7 +13,7 @@ void ShapeOfRoundedBorderOfWidget::ReleaseCustomizeGeometry(const QRectF &geomet
 
 inline void ShapeOfRoundedBorderOfWidget::SetGeometry(QRectF geometry) noexcept
 {
-	ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(geometry, this->GetDisplacementCoefficient());
+	ShapeOfRoundedBorderOfWidget::ReleaseSetBoundingThickness(geometry, this->GetBoundingThickness());
 
 	this->SetExternalRectangle(geometry);
 	this->SetInternalRectangle(geometry);
@@ -26,15 +26,6 @@ void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(QRectF &geometry,
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(geometry, thickness.GetThicknessOfBottom());
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft  (geometry, thickness.GetThicknessOfLeft  ());
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight (geometry, thickness.GetThicknessOfRight ());
-}
-
-void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(QRectF &geometry,
-													   const T_Thickness thickness) noexcept
-{
-	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop   (geometry, thickness);
-	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(geometry, thickness);
-	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfLeft  (geometry, thickness);
-	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight (geometry, thickness);
 }
 
 inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop(QRectF &geometry,
@@ -61,9 +52,9 @@ inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight(QRectF &geo
 	geometry.setWidth(geometry.width() - thickness_of_right);
 }
 
-void ShapeOfRoundedBorderOfWidget::ReleaseSetDisplacementCoefficient(QRectF &geometry,
-																	 const T_Displacement displacement) noexcept
+void ShapeOfRoundedBorderOfWidget::ReleaseSetBoundingThickness(QRectF &geometry,
+															   const ThicknessOfRoundedBorderOfWidget& bounding_thickness) noexcept
 {
-	ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(geometry, displacement);
+	ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(geometry, bounding_thickness);
 }
 }  // namespace N_PainterOfRoundedBorderOfWidget

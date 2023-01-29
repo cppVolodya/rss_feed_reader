@@ -17,7 +17,6 @@ using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 
 using N_PainterOfRoundedBorderOfWidget::T_Roundness;
 using N_PainterOfRoundedBorderOfWidget::T_Thickness;
-using N_PainterOfRoundedBorderOfWidget::T_Displacement;
 
 
 class AbstractLayoutOfRoundedBorderOfWidget : public QPainterPath
@@ -49,7 +48,7 @@ public:
 
 	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline T_Displacement GetDisplacementCoefficient() const noexcept;
+	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	[[nodiscard]] inline QSizeF GetSize() const noexcept;
 
@@ -65,7 +64,7 @@ public:
 
 	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetDisplacementCoefficient(T_Displacement) noexcept;
+	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
 protected:
 	ShapeOfRoundedBorderOfWidget m_shape;
 
@@ -125,9 +124,9 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::Customize(const QRectF &geome
 	return this->m_shape.GetThickness();
 }
 
-[[nodiscard]] inline T_Displacement AbstractLayoutOfRoundedBorderOfWidget::GetDisplacementCoefficient() const noexcept
+[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
-	return this->m_shape.GetDisplacementCoefficient();
+	return this->m_shape.GetBoundingThickness();
 }
 
 [[nodiscard]] inline QSizeF AbstractLayoutOfRoundedBorderOfWidget::GetSize() const noexcept
@@ -175,9 +174,9 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::SetThickness(const ThicknessO
 	this->m_shape.SetThickness(thickness);
 }
 
-inline void AbstractLayoutOfRoundedBorderOfWidget::SetDisplacementCoefficient(T_Displacement displacement_coefficient) noexcept
+inline void AbstractLayoutOfRoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
-	this->m_shape.SetDisplacementCoefficient(displacement_coefficient);
+	this->m_shape.SetBoundingThickness(bounding_thickness);
 }
 }  // namespace N_AbstractLayoutOfRoundedBorderOfWidget
 
