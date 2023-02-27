@@ -28,10 +28,10 @@ private:
 
 	CursorShape m_cursor_shape;
 private:
-	/*inline*/ CursorShape ReleaseGetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
+	CursorShape ReleaseGetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 
-	/*inline*/ QRectF ReleaseGetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &,
-																						   const QRectF  &) noexcept;
+	QRectF ReleaseGetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &,
+																				const QRectF  &) noexcept;
 };
 
 inline ChangingSizeAndCursorOfWidget::ChangingSizeAndCursorOfWidget() noexcept

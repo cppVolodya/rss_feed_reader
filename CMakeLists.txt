@@ -98,7 +98,7 @@ set(HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET headers/painter_of_rounded_borde
                                                 headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore.hpp
                                                 headers/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.hpp
-                                                headers/painter_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.hpp
+                                                headers/painter_of_rounded_border_of_widget/characteristics_of_placement_of_positional_element.hpp
                                                 headers/painter_of_rounded_border_of_widget/types_aliases_of_painter_of_rounded_border_of_widget.hpp)
 
 set(HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET headers/abstract_layout_of_rounded_border_of_widget/abstract_layout_of_rounded_border_of_widget.hpp

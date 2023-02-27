@@ -5,15 +5,15 @@
 
 namespace N_ChangingSizeAndCursorOfWidget
 {
-/*inline*/ CursorShape ChangingSizeAndCursorOfWidget::ReleaseGetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
+CursorShape ChangingSizeAndCursorOfWidget::ReleaseGetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
 {
 	this->m_cursor_shape = this->m_changing_cursor_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
 
 	return this->m_cursor_shape;
 }
 
-/*inline*/ QRectF ChangingSizeAndCursorOfWidget::ReleaseGetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &mouse_position,
-																													  const QRectF  &geometry_of_widget) noexcept
+QRectF ChangingSizeAndCursorOfWidget::ReleaseGetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(const QPointF &mouse_position,
+																										   const QRectF  &geometry_of_widget) noexcept
 {
 	this->m_changing_size_of_widget.SetStateOfWidgetResize(this->m_cursor_shape);
 

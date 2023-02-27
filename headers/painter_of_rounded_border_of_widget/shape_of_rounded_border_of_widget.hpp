@@ -6,7 +6,7 @@
 #include <QRectF>
 
 #include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
-#include "thickness_of_rounded_border_of_widget.hpp"
+#include "characteristics_of_placement_of_positional_element.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
@@ -89,22 +89,22 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 
 [[nodiscard]] constexpr inline T_Thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfTop() const noexcept
 {
-	return this->m_thickness.GetThicknessOfTop();
+	return this->m_thickness.GetPositionOfTop();
 }
 
 [[nodiscard]] constexpr inline T_Thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfBottom() const noexcept
 {
-	return this->m_thickness.GetThicknessOfBottom();
+	return this->m_thickness.GetPositionOfBottom();
 }
 
 [[nodiscard]] constexpr inline T_Thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfLeft() const noexcept
 {
-	return this->m_thickness.GetThicknessOfLeft();
+	return this->m_thickness.GetPositionOfLeft();
 }
 
 [[nodiscard]] constexpr inline T_Thickness ShapeOfRoundedBorderOfWidget::GetThicknessOfRight() const noexcept
 {
-	return this->m_thickness.GetThicknessOfRight();
+	return this->m_thickness.GetPositionOfRight();
 }
 
 [[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
@@ -134,22 +134,22 @@ inline void ShapeOfRoundedBorderOfWidget::SetInternalRectangle(const QRectF & in
 
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfTop(const T_Thickness thickness_of_top) noexcept
 {
-	this->m_thickness.SetThicknessOfTop(thickness_of_top);
+	this->m_thickness.SetPositionOfTop(thickness_of_top);
 }
 
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfBottom(const T_Thickness thickness_of_bottom) noexcept
 {
-	this->m_thickness.SetThicknessOfBottom(thickness_of_bottom);
+	this->m_thickness.SetPositionOfBottom(thickness_of_bottom);
 }
 
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfLeft(const T_Thickness thickness_of_left) noexcept
 {
-	this->m_thickness.SetThicknessOfLeft(thickness_of_left);
+	this->m_thickness.SetPositionOfLeft(thickness_of_left);
 }
 
 inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickness_of_right) noexcept
 {
-	this->m_thickness.SetThicknessOfRight(thickness_of_right);
+	this->m_thickness.SetPositionOfRight(thickness_of_right);
 }
 
 inline void ShapeOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
