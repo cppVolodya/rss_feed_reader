@@ -32,28 +32,32 @@ void CursorsOfWidget::SelectSystemCursors(const bool system_cursor_is_selected) 
 	this->m_system_cursors_is_selected = system_cursor_is_selected;
 }
 
-[[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursor(const Qt::CursorShape cursor_shape) const noexcept
+[[nodiscard]] QCursor CursorsOfWidget::ReleaseGetCursor(const CursorShape cursor_shape) const noexcept
 {
 	QCursor cursor = Qt::CursorShape::ArrowCursor;
 
 	switch (cursor_shape)
 	{
-	case Qt::CursorShape::ArrowCursor:
+	case CursorShape::ArrowCursor:
 		cursor = this->GetCursorOfArrow();
 		break;
-	case Qt::CursorShape::SizeAllCursor:
+	case CursorShape::SizeAllCursor:
 		cursor = this->GetCursorOfSizeAll();
 		break;
-	case Qt::CursorShape::SizeVerCursor:
+	case CursorShape::SizeTopVerticalCursor:
+	case CursorShape::SizeBottomVerticalCursor:
 		cursor = this->GetCursorOfSizeVertical();
 		break;
-	case Qt::CursorShape::SizeHorCursor:
+	case CursorShape::SizeLeftHorizontalCursor:
+	case CursorShape::SizeRightHorizontalCursor:
 		cursor = this->GetCursorOfSizeHorizontal();
 		break;
-	case Qt::CursorShape::SizeBDiagCursor:
+	case CursorShape::SizeTopRightDiagonalCursor:
+	case CursorShape::SizeBottomLeftDiagonalCursor:
 		cursor = this->GetCursorOfSizeRightDiagonal();
 		break;
-	case Qt::CursorShape::SizeFDiagCursor:
+	case CursorShape::SizeTopLeftDiagonalCursor:
+	case CursorShape::SizeBottomRightDiagonalCursor:
 		cursor = this->GetCursorOfSizeLeftDiagonal();
 		break;
 	default:  // NOLINT(clion-misra-cpp2008-6-4-5)

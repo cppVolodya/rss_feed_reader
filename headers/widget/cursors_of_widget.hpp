@@ -12,6 +12,25 @@
 
 namespace N_Widget
 {
+enum CursorShape
+{
+	ArrowCursor,
+
+	SizeAllCursor,
+
+	SizeTopVerticalCursor,
+	SizeBottomVerticalCursor,
+
+	SizeLeftHorizontalCursor,
+	SizeRightHorizontalCursor,
+
+	SizeTopLeftDiagonalCursor,
+	SizeTopRightDiagonalCursor,
+
+	SizeBottomLeftDiagonalCursor,
+	SizeBottomRightDiagonalCursor,
+};
+
 class CursorsOfWidget
 {
 public:
@@ -29,7 +48,7 @@ public:
 	[[nodiscard]] inline T_Selected SystemCursorsIsSelected() const noexcept;
 
 #pragma region GetSpecificCursors [functions]
-	[[nodiscard]] inline QCursor GetCursor(Qt::CursorShape) const noexcept;
+	[[nodiscard]] inline QCursor GetCursor(CursorShape) const noexcept;
 
 	[[nodiscard]] inline QCursor GetCursorOfArrow  			 () const noexcept;
 	[[nodiscard]] inline QCursor GetCursorOfSizeAll		     () const noexcept;
@@ -55,7 +74,7 @@ private:
 
 	T_Selected m_system_cursors_is_selected;
 private:
-	[[nodiscard]] QCursor ReleaseGetCursor(Qt::CursorShape) const noexcept;
+	[[nodiscard]] QCursor ReleaseGetCursor(CursorShape) const noexcept;
 
 #pragma region ReleaseGetSpecificCursors [functions]
 	[[nodiscard]] 				QCursor ReleaseGetCursorOfArrow      () const noexcept;
@@ -101,7 +120,7 @@ inline void CursorsOfWidget::SetDefaultCharacteristics() noexcept
 	return this->m_system_cursors_is_selected;
 }
 
-[[nodiscard]] inline QCursor CursorsOfWidget::GetCursor(const Qt::CursorShape cursor_shape) const noexcept
+[[nodiscard]] inline QCursor CursorsOfWidget::GetCursor(const CursorShape cursor_shape) const noexcept
 {
 	return this->ReleaseGetCursor(cursor_shape);
 }

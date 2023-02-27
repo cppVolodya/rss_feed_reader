@@ -9,7 +9,7 @@
 #include "types_aliases_of_widget.hpp"
 #include "painter_of_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
-#include "changing_size_of_widget.hpp"
+#include "changing_size_and_cursor_of_widget.hpp"
 
 
 namespace N_Widget
@@ -17,6 +17,8 @@ namespace N_Widget
 using N_PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
+
+using N_ChangingSizeAndCursorOfWidget::ChangingSizeAndCursorOfWidget;
 
 using N_PainterOfRoundedBorderOfWidget::T_Roundness;
 using N_PainterOfRoundedBorderOfWidget::T_Thickness;
@@ -70,15 +72,13 @@ protected:
 private:
 	PainterOfRoundedBorderOfWidget m_painter_of_rounded_border;
 
-	ChangingSizeOfWidget m_changing_size_of_widget;
+	ChangingSizeAndCursorOfWidget m_changing_cursor_and_size_of_widget;
 
 	CursorsOfWidget m_cursors;
 
 	T_Pressed m_left_mouse_button_is_pressed;
 private:
 	void DrawOfRoundedBorder();
-
-	inline void CustomizeChangingSizeOfWidget();
 
 	void SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &);
 

@@ -50,7 +50,8 @@ find_package(Qt6 COMPONENTS
 include_directories(headers/main_window/
                     headers/widget/
                     headers/painter_of_rounded_border_of_widget
-                    headers/abstract_layout_of_rounded_border_of_widget)
+                    headers/abstract_layout_of_rounded_border_of_widget
+                    headers/changing_size_and_cursor_of_widget)
 # --------------------------------------------------------------------------- #
 
 
@@ -65,19 +66,23 @@ set(SOURCES_MAIN_WINDOW sources/main_window/main_window.cpp)
 set(SOURCES_WIDGET sources/widget/widget.cpp
                    sources/widget/rounded_border_of_widget.cpp
                    sources/widget/central_part_of_widget.cpp
-                   sources/widget/cursors_of_widget.cpp
-                   sources/widget/changing_size_of_widget.cpp)
+                   sources/widget/cursors_of_widget.cpp)
 
 set(SOURCES_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET sources/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.cpp
                                                 sources/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.cpp)
 
 set(SOURCES_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET sources/abstract_layout_of_rounded_border_of_widget/abstract_layout_of_rounded_border_of_widget.cpp)
 
+set(SOURCES_CHANGING_CURSOR_AND_SIZE_OF_WIDGET sources/changing_size_and_cursor_of_widget/changing_size_and_cursor_of_widget.cpp
+                                               sources/changing_size_and_cursor_of_widget/changing_cursor_of_widget.cpp
+                                               sources/changing_size_and_cursor_of_widget/changing_size_of_widget.cpp)
+
 set(SOURCES ${SOURCES_MAIN}
             ${SOURCES_MAIN_WINDOW}
             ${SOURCES_WIDGET}
             ${SOURCES_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET}
-            ${SOURCES_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET})
+            ${SOURCES_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET}
+            ${SOURCES_CHANGING_CURSOR_AND_SIZE_OF_WIDGET})
 
 
 # header files
@@ -87,24 +92,31 @@ set(HEADERS_WIDGET headers/widget/widget.hpp
                    headers/widget/rounded_border_of_widget.hpp
                    headers/widget/central_part_of_widget.hpp
                    headers/widget/cursors_of_widget.hpp
-                   headers/widget/changing_size_of_widget.hpp)
+                   headers/widget/types_aliases_of_widget.hpp)
 
 set(HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET headers/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore.hpp
                                                 headers/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.hpp
-                                                headers/painter_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.hpp)
+                                                headers/painter_of_rounded_border_of_widget/thickness_of_rounded_border_of_widget.hpp
+                                                headers/painter_of_rounded_border_of_widget/types_aliases_of_painter_of_rounded_border_of_widget.hpp)
 
 set(HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET headers/abstract_layout_of_rounded_border_of_widget/abstract_layout_of_rounded_border_of_widget.hpp
                                                         headers/abstract_layout_of_rounded_border_of_widget/layout_of_external_rounded_border_of_widget.hpp
                                                         headers/abstract_layout_of_rounded_border_of_widget/layout_of_internal_rounded_border_of_widget.hpp
                                                         headers/abstract_layout_of_rounded_border_of_widget/layout_of_external_and_internal_rounded_border_of_widget.hpp)
 
+set(HEADERS_CHANGING_CURSOR_AND_SIZE_OF_WIDGET headers/changing_size_and_cursor_of_widget/changing_size_and_cursor_of_widget.hpp
+                                               headers/changing_size_and_cursor_of_widget/changing_cursor_of_widget.hpp
+                                               headers/changing_size_and_cursor_of_widget/changing_size_of_widget.hpp
+                                               headers/changing_size_and_cursor_of_widget/types_aliases_of_changing_size_and_cursor_of_widget.hpp)
+
 set(HEADERS ${HEADERS_MAIN}
             ${HEADERS_MAIN_WINDOW}
             ${HEADERS_WIDGET}
             ${HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET}
-            ${HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET})
+            ${HEADERS_ABSTRACT_LAYOUT_OF_ROUNDED_BORDER_OF_WIDGET}
+            ${HEADERS_CHANGING_CURSOR_AND_SIZE_OF_WIDGET})
 
 
 # other files

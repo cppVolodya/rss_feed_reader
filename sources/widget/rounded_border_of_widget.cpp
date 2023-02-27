@@ -49,7 +49,7 @@ void RoundedBorderOfWidget::paintEvent(QPaintEvent *paint_event)
 {
 	this->DrawOfRoundedBorder();
 
-	this->CustomizeChangingSizeOfWidget();
+	this->m_changing_cursor_and_size_of_widget.CustomizeLayoutOfSizeBorder(this->rect().toRectF());
 
 	QWidget::paintEvent(paint_event);
 }
@@ -66,7 +66,7 @@ void RoundedBorderOfWidget::mousePressEvent(QMouseEvent *mouse_event)
 {
 	this->SetValueIfLeftMouseButtonIsPressed(true, mouse_event);
 
-	this->m_changing_size_of_widget.SetMousePosition(mouse_event->globalPosition());
+	this->m_changing_cursor_and_size_of_widget.SetMousePosition(mouse_event->globalPosition());
 
 	QWidget::mouseMoveEvent(mouse_event);
 }
@@ -106,17 +106,12 @@ void RoundedBorderOfWidget::DrawOfRoundedBorder()
 	}
 }
 
-inline void RoundedBorderOfWidget::CustomizeChangingSizeOfWidget()
-{
-	this->m_changing_size_of_widget.CustomizeLayoutOfSizeBorder(this->rect().toRectF());
-}
-
 void RoundedBorderOfWidget::SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBorder(const QPointF &mouse_position)
 {
 	if (!this->m_left_mouse_button_is_pressed)
 	{
-		Qt::CursorShape new_cursor_shape =
-			this->m_changing_size_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
+		CursorShape new_cursor_shape =
+			this->m_changing_cursor_and_size_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
 
 		this->setCursor(this->m_cursors.GetCursor(new_cursor_shape));
 	}
@@ -127,8 +122,8 @@ void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorde
 	if (this->m_left_mouse_button_is_pressed)
 	{
 		QRectF new_geometry =
-			this->m_changing_size_of_widget.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(),
-																										  this->geometry().toRectF());
+			this->m_changing_cursor_and_size_of_widget.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(),
+																	  this->geometry().toRectF());
 
 		this->setGeometry(new_geometry.toRect());
 	}
