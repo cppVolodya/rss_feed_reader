@@ -6,7 +6,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 
-#include "types_aliases_of_widget.hpp"
+#include "types_aliases.hpp"
 #include "painter_of_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
 #include "changing_size_and_cursor_of_widget.hpp"
@@ -15,13 +15,14 @@
 namespace N_Widget
 {
 using N_PainterOfRoundedBorderOfWidget::PainterOfRoundedBorderOfWidget;
-using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 
 using N_ChangingSizeAndCursorOfWidget::ChangingSizeAndCursorOfWidget;
 
-using N_PainterOfRoundedBorderOfWidget::T_Roundness;
-using N_PainterOfRoundedBorderOfWidget::T_Thickness;
+using N_TypesAliases::T_Roundness;
+using N_TypesAliases::T_Thickness;
+using N_TypesAliases::T_Pressed;
+using N_TypesAliases::T_ThicknessOfRoundedBorderOfWidget;
 
 
 class RoundedBorderOfWidget : public QWidget
@@ -44,9 +45,9 @@ public:
 	[[nodiscard]] inline T_Thickness GetThicknessOfLeft  () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
+	[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	inline void SetColor(const QColor &) noexcept;
 
@@ -60,9 +61,9 @@ public:
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
 	inline void SetThicknessOfRight (T_Thickness) noexcept;
 
-	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 protected:
 	void paintEvent(QPaintEvent *) override;
 
@@ -127,12 +128,12 @@ private:
 	return this->m_painter_of_rounded_border.GetThicknessOfRight();
 }
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetThickness();
 }
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetBoundingThickness() const noexcept
+[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget RoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
 	return this->m_painter_of_rounded_border.GetBoundingThickness();
 }
@@ -177,12 +178,12 @@ inline void RoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness thickne
 	this->m_painter_of_rounded_border.SetThicknessOfRight(thickness_of_right);
 }
 
-inline void RoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
+inline void RoundedBorderOfWidget::SetThickness(const T_ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
 	this->m_painter_of_rounded_border.SetThickness(thickness);
 }
 
-inline void RoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
+inline void RoundedBorderOfWidget::SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
 	this->m_painter_of_rounded_border.SetBoundingThickness(bounding_thickness);
 }

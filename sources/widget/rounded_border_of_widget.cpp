@@ -40,9 +40,9 @@ void RoundedBorderOfWidget::SetDefaultCharacteristics()
 
 	this->SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0));
 
-	this->SetThickness(ThicknessOfRoundedBorderOfWidget(5.0, 5.0, 5.0, 5.0));
+	this->SetThickness(T_ThicknessOfRoundedBorderOfWidget(5.0, 5.0, 5.0, 5.0));
 
-	this->SetBoundingThickness(ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
+	this->SetBoundingThickness(T_ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
 };
 
 void RoundedBorderOfWidget::paintEvent(QPaintEvent *paint_event)

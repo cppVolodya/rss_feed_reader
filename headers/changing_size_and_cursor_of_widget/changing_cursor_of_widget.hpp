@@ -5,7 +5,7 @@
 
 #include <QPointF>
 
-#include "types_aliases_of_changing_size_and_cursor_of_widget.hpp"
+#include "types_aliases.hpp"
 #include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
 
@@ -16,7 +16,10 @@ using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRounde
 
 using N_Widget::CursorShape;
 
-using N_PainterOfRoundedBorderOfWidget::T_Thickness;
+using N_TypesAliases::T_Thickness;
+using N_TypesAliases::T_Success;
+using N_TypesAliases::T_Distance;
+using N_TypesAliases::T_Position;
 
 
 class ChangingCursorOfWidget

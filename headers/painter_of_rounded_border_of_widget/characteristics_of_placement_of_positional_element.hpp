@@ -5,11 +5,14 @@
 
 #include <algorithm>
 
-#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
+#include "types_aliases.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
+using N_TypesAliases::T_Position;
+
+
 class CharacteristicsOfPlacementOfPositionalElement
 {
 public:

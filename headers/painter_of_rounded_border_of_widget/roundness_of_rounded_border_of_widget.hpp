@@ -3,11 +3,14 @@
 #ifndef ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 #define ROUNDNESS_OF_ROUNDED_BORDER_OF_WIDGET_HPP
 
-#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
+#include "types_aliases.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
+using N_TypesAliases::T_Roundness;
+
+
 class RoundnessOfRoundedBorderOfWidget
 {
 public:

@@ -5,6 +5,7 @@
 
 #include <QPainterPath>
 
+#include "types_aliases.hpp"
 #include "shape_of_rounded_border_of_widget.hpp"
 #include "roundness_of_rounded_border_of_widget.hpp"
 
@@ -12,11 +13,11 @@
 namespace N_AbstractLayoutOfRoundedBorderOfWidget
 {
 using N_PainterOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget;
-using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
 
-using N_PainterOfRoundedBorderOfWidget::T_Roundness;
-using N_PainterOfRoundedBorderOfWidget::T_Thickness;
+using N_TypesAliases::T_ThicknessOfRoundedBorderOfWidget;
+using N_TypesAliases::T_Roundness;
+using N_TypesAliases::T_Thickness;
 
 
 class AbstractLayoutOfRoundedBorderOfWidget : public QPainterPath
@@ -46,9 +47,9 @@ public:
 	[[nodiscard]] inline T_Thickness GetThicknessOfLeft  () const noexcept;
 	[[nodiscard]] inline T_Thickness GetThicknessOfRight () const noexcept;
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
+	[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	[[nodiscard]] inline QSizeF GetSize() const noexcept;
 
@@ -62,9 +63,9 @@ public:
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
 	inline void SetThicknessOfRight (T_Thickness) noexcept;
 
-	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 protected:
 	ShapeOfRoundedBorderOfWidget m_shape;
 
@@ -119,12 +120,12 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::Customize(const QRectF &geome
 	return this->m_shape.GetThicknessOfRight();
 }
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_shape.GetThickness();
 }
 
-[[nodiscard]] inline ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
+[[nodiscard]] inline T_ThicknessOfRoundedBorderOfWidget AbstractLayoutOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
 	return this->m_shape.GetBoundingThickness();
 }
@@ -169,12 +170,12 @@ inline void AbstractLayoutOfRoundedBorderOfWidget::SetThicknessOfRight(const T_T
 	this->m_shape.SetThicknessOfRight(thickness_of_right);
 }
 
-inline void AbstractLayoutOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
+inline void AbstractLayoutOfRoundedBorderOfWidget::SetThickness(const T_ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
 	this->m_shape.SetThickness(thickness);
 }
 
-inline void AbstractLayoutOfRoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
+inline void AbstractLayoutOfRoundedBorderOfWidget::SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
 	this->m_shape.SetBoundingThickness(bounding_thickness);
 }

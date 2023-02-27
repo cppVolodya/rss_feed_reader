@@ -7,11 +7,14 @@
 #include <QPoint>
 #include <QPixmap>
 
-#include "types_aliases_of_widget.hpp"
+#include "types_aliases.hpp"
 
 
 namespace N_Widget
 {
+using N_TypesAliases::T_Selected;
+
+
 enum CursorShape
 {
 	ArrowCursor,

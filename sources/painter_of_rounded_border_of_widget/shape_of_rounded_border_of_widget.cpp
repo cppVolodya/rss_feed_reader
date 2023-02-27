@@ -20,7 +20,7 @@ inline void ShapeOfRoundedBorderOfWidget::SetGeometry(QRectF geometry) noexcept
 }
 
 void ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(QRectF &geometry,
-													   const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
+													   const T_ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfTop   (geometry, thickness.GetPositionOfTop   ());
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfBottom(geometry, thickness.GetPositionOfBottom());
@@ -53,7 +53,7 @@ inline void ShapeOfRoundedBorderOfWidget::ReleaseSetThicknessOfRight(QRectF &geo
 }
 
 void ShapeOfRoundedBorderOfWidget::ReleaseSetBoundingThickness(QRectF &geometry,
-															   const ThicknessOfRoundedBorderOfWidget& bounding_thickness) noexcept
+															   const T_ThicknessOfRoundedBorderOfWidget& bounding_thickness) noexcept
 {
 	ShapeOfRoundedBorderOfWidget::ReleaseSetThickness(geometry, bounding_thickness);
 }

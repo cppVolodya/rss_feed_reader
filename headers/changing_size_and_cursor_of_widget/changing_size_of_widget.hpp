@@ -7,7 +7,7 @@
 #include <QRectF>
 #include <QApplication>
 
-#include "types_aliases_of_changing_size_and_cursor_of_widget.hpp"
+#include "types_aliases.hpp"
 #include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
 
@@ -17,9 +17,10 @@ namespace N_ChangingSizeAndCursorOfWidget
 using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRoundedBorderOfWidget;
 
 using N_PainterOfRoundedBorderOfWidget::RoundnessOfRoundedBorderOfWidget;
-using N_PainterOfRoundedBorderOfWidget::ThicknessOfRoundedBorderOfWidget;
 
 using N_Widget::CursorShape;
+
+using N_TypesAliases::T_ThicknessOfRoundedBorderOfWidget;
 
 
 class ChangingSizeOfWidget
@@ -91,7 +92,7 @@ inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 inline void ChangingSizeOfWidget::SetDefaultCharacteristics() noexcept
 {
 	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0		  ));
-	this->m_layout_of_size_border.SetThickness(ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
+	this->m_layout_of_size_border.SetThickness(T_ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
 }
 
 inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geometry_of_widget)

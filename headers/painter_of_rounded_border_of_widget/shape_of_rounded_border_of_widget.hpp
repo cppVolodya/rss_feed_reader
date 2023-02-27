@@ -5,12 +5,15 @@
 
 #include <QRectF>
 
-#include "types_aliases_of_painter_of_rounded_border_of_widget.hpp"
 #include "characteristics_of_placement_of_positional_element.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
+using N_TypesAliases::T_Thickness;
+using N_TypesAliases::T_ThicknessOfRoundedBorderOfWidget;
+
+
 class ShapeOfRoundedBorderOfWidget
 {
 public:
@@ -26,9 +29,9 @@ public:
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfLeft  () const noexcept;
 	[[nodiscard]] constexpr inline T_Thickness GetThicknessOfRight () const noexcept;
 
-	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
+	[[nodiscard]] constexpr inline T_ThicknessOfRoundedBorderOfWidget GetThickness() const noexcept;
 
-	[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
+	[[nodiscard]] constexpr inline T_ThicknessOfRoundedBorderOfWidget GetBoundingThickness() const noexcept;
 
 	[[nodiscard]] constexpr inline QSizeF GetSize() const noexcept;
 
@@ -40,23 +43,23 @@ public:
 	inline void SetThicknessOfLeft  (T_Thickness) noexcept;
 	inline void SetThicknessOfRight (T_Thickness) noexcept;
 
-	inline void SetThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 
-	inline void SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	inline void SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 private:
 	QRectF m_external_rectangle;
 	QRectF m_internal_rectangle;
 
-	ThicknessOfRoundedBorderOfWidget m_thickness;
+	T_ThicknessOfRoundedBorderOfWidget m_thickness;
 
-	ThicknessOfRoundedBorderOfWidget m_bounding_thickness;
+	T_ThicknessOfRoundedBorderOfWidget m_bounding_thickness;
 private:
 	void ReleaseCustomizeGeometry(const QRectF &) noexcept;
 
 	inline void SetGeometry(QRectF) noexcept;
 
 #pragma region ReleaseSetThickness [functions]
-	static void ReleaseSetThickness(QRectF &, const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	static void ReleaseSetThickness(QRectF &, const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 
 	static inline void ReleaseSetThicknessOfTop   (QRectF &, T_Thickness) noexcept;
 	static inline void ReleaseSetThicknessOfBottom(QRectF &, T_Thickness) noexcept;
@@ -64,7 +67,7 @@ private:
 	static inline void ReleaseSetThicknessOfRight (QRectF &, T_Thickness) noexcept;
 #pragma endregion ReleaseSetThickness [functions]
 
-	static void ReleaseSetBoundingThickness(QRectF &, const ThicknessOfRoundedBorderOfWidget &) noexcept;
+	static void ReleaseSetBoundingThickness(QRectF &, const T_ThicknessOfRoundedBorderOfWidget &) noexcept;
 };
 
 constexpr inline ShapeOfRoundedBorderOfWidget::ShapeOfRoundedBorderOfWidget() noexcept
@@ -107,12 +110,12 @@ inline void ShapeOfRoundedBorderOfWidget::CustomizeGeometry(const QRectF &geomet
 	return this->m_thickness.GetPositionOfRight();
 }
 
-[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
+[[nodiscard]] constexpr inline T_ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetThickness() const noexcept
 {
 	return this->m_thickness;
 }
 
-[[nodiscard]] constexpr inline ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
+[[nodiscard]] constexpr inline T_ThicknessOfRoundedBorderOfWidget ShapeOfRoundedBorderOfWidget::GetBoundingThickness() const noexcept
 {
 	return this->m_bounding_thickness;
 }
@@ -152,12 +155,12 @@ inline void ShapeOfRoundedBorderOfWidget::SetThicknessOfRight(const T_Thickness 
 	this->m_thickness.SetPositionOfRight(thickness_of_right);
 }
 
-inline void ShapeOfRoundedBorderOfWidget::SetThickness(const ThicknessOfRoundedBorderOfWidget &thickness) noexcept
+inline void ShapeOfRoundedBorderOfWidget::SetThickness(const T_ThicknessOfRoundedBorderOfWidget &thickness) noexcept
 {
 	this->m_thickness = thickness;
 }
 
-inline void ShapeOfRoundedBorderOfWidget::SetBoundingThickness(const ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
+inline void ShapeOfRoundedBorderOfWidget::SetBoundingThickness(const T_ThicknessOfRoundedBorderOfWidget &bounding_thickness) noexcept
 {
 	this->m_bounding_thickness = bounding_thickness;
 }
