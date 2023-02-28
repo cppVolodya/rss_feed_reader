@@ -28,7 +28,7 @@ using N_TypesAliases::T_ThicknessOfRoundedBorderOfWidget;
 class RoundedBorderOfWidget : public QWidget
 {
 public:
-	explicit RoundedBorderOfWidget(QWidget *parent = nullptr);
+	explicit RoundedBorderOfWidget(CursorsOfWidget &, QWidget *parent = nullptr);
 
 	void SetDefaultSettings();
 	void SetDefaultCharacteristics();
@@ -75,7 +75,7 @@ private:
 
 	ChangingSizeAndCursorOfWidget m_changing_cursor_and_size_of_widget;
 
-	CursorsOfWidget m_cursors;
+	CursorsOfWidget &m_cursors;
 
 	T_Pressed m_left_mouse_button_is_pressed;
 private:

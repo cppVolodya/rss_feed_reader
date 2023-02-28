@@ -25,7 +25,9 @@ class Widget: public CentralPartOfWidget
 public:
 	explicit Widget(QWidget *parent = nullptr);
 private:
-	RoundedBorderOfWidget *m_rounded_border_of_widget;  // NOLINT(pvs-studio-V122)
+	RoundedBorderOfWidget* m_rounded_border_of_widget;  // NOLINT(pvs-studio-V122)
+
+	CursorsOfWidget m_cursors;
 };
 }  // namespace N_Widget
 

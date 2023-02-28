@@ -12,8 +12,9 @@ namespace N_Widget
 using N_PainterOfRoundedBorderOfWidget::TypeLayoutOfRoundedBorderOfWidget;
 
 
-RoundedBorderOfWidget::RoundedBorderOfWidget(QWidget *parent)
-	: QWidget(parent),
+RoundedBorderOfWidget::RoundedBorderOfWidget(CursorsOfWidget &cursors, QWidget *parent)
+	: m_cursors(cursors),
+	  QWidget(parent),
 	  m_left_mouse_button_is_pressed(false)
 {
 	this->SetDefaultSettings();
