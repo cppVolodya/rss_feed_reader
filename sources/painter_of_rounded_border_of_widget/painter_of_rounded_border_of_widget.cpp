@@ -6,7 +6,7 @@
 #include "layout_of_external_rounded_border_of_widget.hpp"
 #include "layout_of_internal_rounded_border_of_widget.hpp"
 #include "layout_of_external_and_internal_rounded_border_of_widget.hpp"
-#include "painter_of_save_and_restore.hpp"
+#include "painter_of_save_and_restore_state.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget
@@ -18,7 +18,7 @@ using N_AbstractLayoutOfRoundedBorderOfWidget::LayoutOfExternalAndInternalRounde
 
 void PainterOfRoundedBorderOfWidget::Draw(const QRectF& geometry_of_window)
 {
-	PainterOfSaveAndRestore painter_saver(*this);
+	PainterOfSaveAndRestoreState painter_saver_of_state(*this);
 
 	this->Customize();
 	this->m_layout->Customize(geometry_of_window);

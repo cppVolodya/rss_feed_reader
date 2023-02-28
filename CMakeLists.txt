@@ -95,7 +95,7 @@ set(HEADERS_WIDGET headers/widget/widget.hpp
                    headers/widget/cursors_of_widget.hpp)
 
 set(HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET headers/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.hpp
-                                                headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore.hpp
+                                                headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore_state.hpp
                                                 headers/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/roundness_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/characteristics_of_placement_of_positional_element.hpp)
