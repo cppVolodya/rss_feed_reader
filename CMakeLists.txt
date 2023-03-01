@@ -67,7 +67,8 @@ set(SOURCES_MAIN_WINDOW sources/main_window/main_window.cpp)
 set(SOURCES_WIDGET sources/widget/widget.cpp
                    sources/widget/rounded_border_of_widget.cpp
                    sources/widget/central_part_of_widget.cpp
-                   sources/widget/cursors_of_widget.cpp)
+                   sources/widget/cursors_of_widget.cpp
+                   sources/widget/graphics_shadow_effect_of_widget.cpp)
 
 set(SOURCES_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET sources/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.cpp
                                                 sources/painter_of_rounded_border_of_widget/shape_of_rounded_border_of_widget.cpp)
@@ -92,7 +93,8 @@ set(HEADERS_MAIN_WINDOW headers/main_window/main_window.hpp)
 set(HEADERS_WIDGET headers/widget/widget.hpp
                    headers/widget/rounded_border_of_widget.hpp
                    headers/widget/central_part_of_widget.hpp
-                   headers/widget/cursors_of_widget.hpp)
+                   headers/widget/cursors_of_widget.hpp
+                   headers/widget/graphics_shadow_effect_of_widget.hpp)
 
 set(HEADERS_PAINTER_OF_ROUNDED_BORDER_OF_WIDGET headers/painter_of_rounded_border_of_widget/painter_of_rounded_border_of_widget.hpp
                                                 headers/painter_of_rounded_border_of_widget/painter_of_save_and_restore_state.hpp

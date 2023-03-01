@@ -10,6 +10,7 @@
 #include "painter_of_rounded_border_of_widget.hpp"
 #include "cursors_of_widget.hpp"
 #include "changing_size_and_cursor_of_widget.hpp"
+#include "graphics_shadow_effect_of_widget.hpp"
 
 
 namespace N_Widget
@@ -73,11 +74,13 @@ protected:
 private:
 	PainterOfRoundedBorderOfWidget m_painter_of_rounded_border;
 
-	ChangingSizeAndCursorOfWidget m_changing_cursor_and_size_of_widget;
+	ChangingSizeAndCursorOfWidget m_changing_cursor_and_size;
 
 	CursorsOfWidget &m_cursors;
 
 	T_Pressed m_left_mouse_button_is_pressed;
+
+	GraphicsShadowEffectOfWidget m_graphics_shadow_effect;
 private:
 	void DrawOfRoundedBorder();
 

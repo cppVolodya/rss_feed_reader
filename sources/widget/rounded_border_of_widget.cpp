@@ -29,28 +29,30 @@ void RoundedBorderOfWidget::SetDefaultSettings()
 	this->setWindowFlag(Qt::FramelessWindowHint, true);
 
 	this->setMouseTracking(true);
+
+	this->setGraphicsEffect(&this->m_graphics_shadow_effect);
 }
 
 void RoundedBorderOfWidget::SetDefaultCharacteristics()
 {
 	this->m_painter_of_rounded_border.SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
+	this->m_graphics_shadow_effect.SetCharacteristicOfPlacement(CharacteristicsOfPlacementOfPositionalElement(2.0, 2.0, 2.0, 2.0));
+	this->m_graphics_shadow_effect.SetColor(QColor(0, 0, 0, 120));
+	this->m_graphics_shadow_effect.SetBlurRadius(20.0);
+
 	this->resize(500, 500);
-
 	this->SetColor(Qt::white);
-
-	this->SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0));
-
+	this->SetRoundness(RoundnessOfRoundedBorderOfWidget(8.0, 8.0));
 	this->SetThickness(T_ThicknessOfRoundedBorderOfWidget(5.0, 5.0, 5.0, 5.0));
-
-	this->SetBoundingThickness(T_ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
+	this->SetBoundingThickness(T_ThicknessOfRoundedBorderOfWidget(10.0, 10.0, 10.0, 10.0));
 };
 
 void RoundedBorderOfWidget::paintEvent(QPaintEvent *paint_event)
 {
 	this->DrawOfRoundedBorder();
 
-	this->m_changing_cursor_and_size_of_widget.CustomizeLayoutOfSizeBorder(this->rect().toRectF());
+	this->m_changing_cursor_and_size.CustomizeLayoutOfSizeBorder(this->rect().toRectF());
 
 	QWidget::paintEvent(paint_event);
 }
@@ -67,7 +69,7 @@ void RoundedBorderOfWidget::mousePressEvent(QMouseEvent *mouse_event)
 {
 	this->SetValueIfLeftMouseButtonIsPressed(true, mouse_event);
 
-	this->m_changing_cursor_and_size_of_widget.SetMousePosition(mouse_event->globalPosition());
+	this->m_changing_cursor_and_size.SetMousePosition(mouse_event->globalPosition());
 
 	QWidget::mouseMoveEvent(mouse_event);
 }
@@ -112,7 +114,7 @@ void RoundedBorderOfWidget::SetNewCursorIfMousePositionLocatedOnLayoutOfSizeBord
 	if (!this->m_left_mouse_button_is_pressed)
 	{
 		CursorShape new_cursor_shape =
-			this->m_changing_cursor_and_size_of_widget.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
+			this->m_changing_cursor_and_size.GetNewCursorShapeIfMousePositionLocatedOnLayoutOfSizeBorder(mouse_position);
 
 		this->setCursor(this->m_cursors.GetCursor(new_cursor_shape));
 	}
@@ -123,8 +125,8 @@ void RoundedBorderOfWidget::SetNewGeometryIfPressAndMoveMouseOnLayoutOfSizeBorde
 	if (this->m_left_mouse_button_is_pressed)
 	{
 		QRectF new_geometry =
-			this->m_changing_cursor_and_size_of_widget.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(),
-																	  this->geometry().toRectF());
+			this->m_changing_cursor_and_size.GetNewGeometryOfWidgetIfPressAndMoveMouseOnLayoutOfSizeBorder(mouse_event->globalPosition(),
+																										   this->geometry().toRectF());
 
 		this->setGeometry(new_geometry.toRect());
 	}

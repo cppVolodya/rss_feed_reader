@@ -15,15 +15,16 @@ namespace N_TypesAliases
 using N_PainterOfRoundedBorderOfWidget::CharacteristicsOfPlacementOfPositionalElement;
 
 
-using T_Position  = qreal;
-using T_Roundness = qreal;
-using T_Distance  = qreal;
-
-using T_Thickness = T_Position;
-
 using T_Success  = bool;
 using T_Selected = bool;
 using T_Pressed  = bool;
+
+using T_BlurRadius = qreal;
+using T_Position   = qreal;
+using T_Roundness  = qreal;
+using T_Distance   = qreal;
+
+using T_Thickness = T_Position;
 
 using T_ThicknessOfRoundedBorderOfWidget = CharacteristicsOfPlacementOfPositionalElement;
 }  // namespace N_TypesAliases

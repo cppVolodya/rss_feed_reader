@@ -91,8 +91,8 @@ inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 
 inline void ChangingSizeOfWidget::SetDefaultCharacteristics() noexcept
 {
-	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget(10.0, 10.0		  ));
-	this->m_layout_of_size_border.SetThickness(T_ThicknessOfRoundedBorderOfWidget(8.0, 8.0, 8.0, 8.0));
+	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget  (10.0, 10.0		    ));
+	this->m_layout_of_size_border.SetThickness(T_ThicknessOfRoundedBorderOfWidget(10.0, 10.0, 10.0, 10.0));
 }
 
 inline void ChangingSizeOfWidget::CustomizeLayoutOfSizeBorder(const QRectF &geometry_of_widget)
