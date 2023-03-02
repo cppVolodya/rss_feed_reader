@@ -18,7 +18,7 @@ RoundedBorderOfWidget::RoundedBorderOfWidget(CursorsOfWidget &cursors, QWidget *
 	  m_left_mouse_button_is_pressed(false)
 {
 	this->SetDefaultSettings();
-	this->SetDefaultCharacteristics();
+	this->SetDefaultCharacteristic();
 }
 
 void RoundedBorderOfWidget::SetDefaultSettings()
@@ -33,11 +33,11 @@ void RoundedBorderOfWidget::SetDefaultSettings()
 	this->setGraphicsEffect(&this->m_graphics_shadow_effect);
 }
 
-void RoundedBorderOfWidget::SetDefaultCharacteristics()
+void RoundedBorderOfWidget::SetDefaultCharacteristic()
 {
 	this->m_painter_of_rounded_border.SetTypeOfLayout(TypeLayoutOfRoundedBorderOfWidget::EXTERNAL);
 
-	this->m_graphics_shadow_effect.SetCharacteristicOfPlacement(CharacteristicsOfPlacementOfPositionalElement(2.0, 2.0, 2.0, 2.0));
+	this->m_graphics_shadow_effect.SetCharacteristicOfPlacement(CharacteristicOfPlacementOfPositionalElement(2.0, 2.0, 2.0, 2.0));
 	this->m_graphics_shadow_effect.SetColor(QColor(0, 0, 0, 120));
 	this->m_graphics_shadow_effect.SetBlurRadius(20.0);
 

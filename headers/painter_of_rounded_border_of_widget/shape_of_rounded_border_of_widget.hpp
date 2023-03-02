@@ -5,7 +5,7 @@
 
 #include <QRectF>
 
-#include "characteristics_of_placement_of_positional_element.hpp"
+#include "characteristic_of_placement_of_positional_element.hpp"
 
 
 namespace N_PainterOfRoundedBorderOfWidget

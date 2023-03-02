@@ -39,12 +39,12 @@ class CursorsOfWidget
 public:
 	inline explicit CursorsOfWidget(T_Selected system_cursor_is_selected = false) noexcept;
 
-#pragma region SetDefaultCharacteristics [functions]
-	inline void SetDefaultCharacteristics() noexcept;
+#pragma region SetDefaultCharacteristic [functions]
+	inline void SetDefaultCharacteristic() noexcept;
 
 	void SetDefaultOfImagesOfCursors  () noexcept;
 	void SetDefaultOfHotSpotsOfCursors() noexcept;
-#pragma endregion SetDefaultCharacteristics [functions]
+#pragma endregion SetDefaultCharacteristic [functions]
 
 	void SelectSystemCursors(T_Selected) noexcept;
 
@@ -109,10 +109,10 @@ private:
 CursorsOfWidget::CursorsOfWidget(T_Selected system_cursor_is_selected) noexcept
 	: m_system_cursors_is_selected(system_cursor_is_selected)
 {
-	this->SetDefaultCharacteristics();
+	this->SetDefaultCharacteristic();
 }
 
-inline void CursorsOfWidget::SetDefaultCharacteristics() noexcept
+inline void CursorsOfWidget::SetDefaultCharacteristic() noexcept
 {
 	this->SetDefaultOfImagesOfCursors  ();
 	this->SetDefaultOfHotSpotsOfCursors();

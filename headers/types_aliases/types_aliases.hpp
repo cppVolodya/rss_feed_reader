@@ -7,12 +7,12 @@
 
 namespace N_PainterOfRoundedBorderOfWidget
 {
-class CharacteristicsOfPlacementOfPositionalElement;
+class CharacteristicOfPlacementOfPositionalElement;
 }
 
 namespace N_TypesAliases
 {
-using N_PainterOfRoundedBorderOfWidget::CharacteristicsOfPlacementOfPositionalElement;
+using N_PainterOfRoundedBorderOfWidget::CharacteristicOfPlacementOfPositionalElement;
 
 
 using T_Success  = bool;
@@ -26,7 +26,7 @@ using T_Distance   = qreal;
 
 using T_Thickness = T_Position;
 
-using T_ThicknessOfRoundedBorderOfWidget = CharacteristicsOfPlacementOfPositionalElement;
+using T_ThicknessOfRoundedBorderOfWidget = CharacteristicOfPlacementOfPositionalElement;
 }  // namespace N_TypesAliases
 
 #endif  // TYPES_ALIASES_HPP

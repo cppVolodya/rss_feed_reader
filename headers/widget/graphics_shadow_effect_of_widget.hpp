@@ -7,12 +7,12 @@
 #include <QPainter>
 
 #include "types_aliases.hpp"
-#include "characteristics_of_placement_of_positional_element.hpp"
+#include "characteristic_of_placement_of_positional_element.hpp"
 
 
 namespace N_Widget
 {
-using N_PainterOfRoundedBorderOfWidget::CharacteristicsOfPlacementOfPositionalElement;
+using N_PainterOfRoundedBorderOfWidget::CharacteristicOfPlacementOfPositionalElement;
 
 using N_TypesAliases::T_BlurRadius;
 
@@ -22,15 +22,15 @@ class GraphicsShadowEffectOfWidget : public QGraphicsEffect
 public:
 	explicit inline GraphicsShadowEffectOfWidget(QObject 							      			 *parent      				  = nullptr,
 												 const QColor 							  			 &color 	  				  = QColor(),
-												 const CharacteristicsOfPlacementOfPositionalElement &characteristic_of_placement = CharacteristicsOfPlacementOfPositionalElement(2.0, 2.0, 2.0, 2.0),
+												 const CharacteristicOfPlacementOfPositionalElement &characteristic_of_placement = CharacteristicOfPlacementOfPositionalElement(2.0, 2.0, 2.0, 2.0),
 												 T_BlurRadius 						   	  			  blur_radius 				  = 10.0);
 
 	[[nodiscard]] inline QColor 	  								   GetColor	 				   () const noexcept;
-	[[nodiscard]] inline CharacteristicsOfPlacementOfPositionalElement GetCharacteristicOfPlacement() const noexcept;
+	[[nodiscard]] inline CharacteristicOfPlacementOfPositionalElement GetCharacteristicOfPlacement() const noexcept;
 	[[nodiscard]] inline T_BlurRadius 								   GetBlurRadius			   () const noexcept;
 
 	inline void SetColor	 				(const QColor &						 			  	  ) noexcept;
-	inline void SetCharacteristicOfPlacement(const CharacteristicsOfPlacementOfPositionalElement &) noexcept;
+	inline void SetCharacteristicOfPlacement(const CharacteristicOfPlacementOfPositionalElement &) noexcept;
 	inline void SetBlurRadius				(T_BlurRadius  						 			  	  ) noexcept;
 protected:
 	void draw(QPainter *) override;
@@ -39,7 +39,7 @@ protected:
 private:
 	QColor m_color;
 
-	CharacteristicsOfPlacementOfPositionalElement m_characteristic_of_placement;
+	CharacteristicOfPlacementOfPositionalElement m_characteristic_of_placement;
 
 	T_BlurRadius m_blur_radius;
 private:
@@ -62,7 +62,7 @@ private:
 
 inline GraphicsShadowEffectOfWidget::GraphicsShadowEffectOfWidget(QObject 	   							  	    	  *parent,
 																  const QColor								    	  &color,
-																  const CharacteristicsOfPlacementOfPositionalElement &characteristic_of_placement,
+																  const CharacteristicOfPlacementOfPositionalElement &characteristic_of_placement,
 																  const T_BlurRadius 								   blur_radius)
 	: QGraphicsEffect			   (parent	 				   ),
 	  m_color		 			   (color		 			   ),
@@ -76,7 +76,7 @@ inline GraphicsShadowEffectOfWidget::GraphicsShadowEffectOfWidget(QObject 	   		
 	return this->m_color;
 }
 
-[[nodiscard]] inline CharacteristicsOfPlacementOfPositionalElement GraphicsShadowEffectOfWidget::GetCharacteristicOfPlacement() const noexcept
+[[nodiscard]] inline CharacteristicOfPlacementOfPositionalElement GraphicsShadowEffectOfWidget::GetCharacteristicOfPlacement() const noexcept
 {
 	return this->m_characteristic_of_placement;
 }
@@ -91,7 +91,7 @@ inline void GraphicsShadowEffectOfWidget::SetColor(const QColor	&color) noexcept
 	this->m_color = color;
 }
 
-inline void GraphicsShadowEffectOfWidget::SetCharacteristicOfPlacement(const CharacteristicsOfPlacementOfPositionalElement &characteristic_of_placement) noexcept
+inline void GraphicsShadowEffectOfWidget::SetCharacteristicOfPlacement(const CharacteristicOfPlacementOfPositionalElement &characteristic_of_placement) noexcept
 {
 	this->m_characteristic_of_placement = characteristic_of_placement;
 	this->updateBoundingRect();

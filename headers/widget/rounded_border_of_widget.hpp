@@ -32,7 +32,7 @@ public:
 	explicit RoundedBorderOfWidget(CursorsOfWidget &, QWidget *parent = nullptr);
 
 	void SetDefaultSettings();
-	void SetDefaultCharacteristics();
+	void SetDefaultCharacteristic();
 
 	[[nodiscard]] inline QColor GetColor() const noexcept;
 

@@ -1,7 +1,7 @@
 // Copyright [2023] <Volodymyr Dorozhovets>"
 
-#ifndef CHARACTERISTICS_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP
-#define CHARACTERISTICS_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP
+#ifndef CHARACTERISTIC_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP
+#define CHARACTERISTIC_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP
 
 #include <algorithm>
 
@@ -13,10 +13,10 @@ namespace N_PainterOfRoundedBorderOfWidget
 using N_TypesAliases::T_Position;
 
 
-class CharacteristicsOfPlacementOfPositionalElement
+class CharacteristicOfPlacementOfPositionalElement
 {
 public:
-	explicit constexpr inline CharacteristicsOfPlacementOfPositionalElement(T_Position position_of_top    = 0.0,
+	explicit constexpr inline CharacteristicOfPlacementOfPositionalElement(T_Position position_of_top    = 0.0,
 																			T_Position position_of_bottom = 0.0,
 																			T_Position position_of_left   = 0.0,
 																			T_Position position_of_right  = 0.0) noexcept;
@@ -39,7 +39,7 @@ private:
 	T_Position m_position_of_right;
 };
 
-constexpr inline CharacteristicsOfPlacementOfPositionalElement::CharacteristicsOfPlacementOfPositionalElement(const T_Position position_of_top,
+constexpr inline CharacteristicOfPlacementOfPositionalElement::CharacteristicOfPlacementOfPositionalElement(const T_Position position_of_top,
 																											  const T_Position position_of_bottom,
 																											  const T_Position position_of_left,
 																											  const T_Position position_of_right) noexcept
@@ -50,50 +50,50 @@ constexpr inline CharacteristicsOfPlacementOfPositionalElement::CharacteristicsO
 {
 }
 
-constexpr inline T_Position CharacteristicsOfPlacementOfPositionalElement::GetPositionOfTop() const noexcept
+constexpr inline T_Position CharacteristicOfPlacementOfPositionalElement::GetPositionOfTop() const noexcept
 {
 	return this->m_position_of_top;
 }
 
-constexpr inline T_Position CharacteristicsOfPlacementOfPositionalElement::GetPositionOfBottom() const noexcept
+constexpr inline T_Position CharacteristicOfPlacementOfPositionalElement::GetPositionOfBottom() const noexcept
 {
 	return this->m_position_of_bottom;
 }
 
-constexpr inline T_Position CharacteristicsOfPlacementOfPositionalElement::GetPositionOfLeft() const noexcept
+constexpr inline T_Position CharacteristicOfPlacementOfPositionalElement::GetPositionOfLeft() const noexcept
 {
 	return this->m_position_of_left;
 }
 
-constexpr inline T_Position CharacteristicsOfPlacementOfPositionalElement::GetPositionOfRight() const noexcept
+constexpr inline T_Position CharacteristicOfPlacementOfPositionalElement::GetPositionOfRight() const noexcept
 {
 	return this->m_position_of_right;
 }
 
-inline void CharacteristicsOfPlacementOfPositionalElement::SetPositionOfTop(const T_Position position_of_top) noexcept
+inline void CharacteristicOfPlacementOfPositionalElement::SetPositionOfTop(const T_Position position_of_top) noexcept
 {
 	this->m_position_of_top = position_of_top;
 }
 
-inline void CharacteristicsOfPlacementOfPositionalElement::SetPositionOfBottom(const T_Position position_of_bottom) noexcept
+inline void CharacteristicOfPlacementOfPositionalElement::SetPositionOfBottom(const T_Position position_of_bottom) noexcept
 {
 	this->m_position_of_bottom = position_of_bottom;
 }
 
-inline void CharacteristicsOfPlacementOfPositionalElement::SetPositionOfLeft(const T_Position position_of_left) noexcept
+inline void CharacteristicOfPlacementOfPositionalElement::SetPositionOfLeft(const T_Position position_of_left) noexcept
 {
 	this->m_position_of_left = position_of_left;
 }
 
-inline void CharacteristicsOfPlacementOfPositionalElement::SetPositionOfRight(const T_Position position_of_right) noexcept
+inline void CharacteristicOfPlacementOfPositionalElement::SetPositionOfRight(const T_Position position_of_right) noexcept
 {
 	this->m_position_of_right = position_of_right;
 }
 
-[[nodiscard]] constexpr inline T_Position CharacteristicsOfPlacementOfPositionalElement::GetMaximumValue() const
+[[nodiscard]] constexpr inline T_Position CharacteristicOfPlacementOfPositionalElement::GetMaximumValue() const
 {
 	return std::max({ this->GetPositionOfTop(), this->GetPositionOfBottom(), this->GetPositionOfLeft(), this->GetPositionOfRight() });
 }
 }  // namespace N_PainterOfRoundedBorderOfWidget
 
-#endif  // CHARACTERISTICS_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP
+#endif  // CHARACTERISTIC_OF_PLACEMENT_OF_POSITIONAL_ELEMENT_HPP

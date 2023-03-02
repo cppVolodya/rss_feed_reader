@@ -47,7 +47,7 @@ QRectF GraphicsShadowEffectOfWidget::boundingRectFor(const QRectF &geometry_of_w
 
 [[nodiscard]] QRectF GraphicsShadowEffectOfWidget::GetGeometry(const QRectF &geometry_of_widget) const
 {
-	const CharacteristicsOfPlacementOfPositionalElement &characteristic_of_placement = this->GetCharacteristicOfPlacement();
+	const CharacteristicOfPlacementOfPositionalElement &characteristic_of_placement = this->GetCharacteristicOfPlacement();
 	qreal position_of_top    = characteristic_of_placement.GetPositionOfTop   () + this->GetBlurRadius();
 	qreal position_of_bottom = characteristic_of_placement.GetPositionOfBottom() + this->GetBlurRadius();
 	qreal position_of_left   = characteristic_of_placement.GetPositionOfLeft  () + this->GetBlurRadius();
@@ -89,7 +89,7 @@ QImage GraphicsShadowEffectOfWidget::GetImageWithSetPlacementCharacteristic(cons
 {
 	QSizeF new_size;
 
-	const CharacteristicsOfPlacementOfPositionalElement &characteristic_of_placement = this->GetCharacteristicOfPlacement();
+	const CharacteristicOfPlacementOfPositionalElement &characteristic_of_placement = this->GetCharacteristicOfPlacement();
 
 	new_size.setWidth(static_cast<qreal>(pixel_map_of_source.size().width()) +
 		characteristic_of_placement.GetPositionOfRight() + this->GetCharacteristicOfPlacement().GetPositionOfLeft());

@@ -28,7 +28,7 @@ class ChangingSizeOfWidget
 public:
 	inline ChangingSizeOfWidget() noexcept;
 
-	inline void SetDefaultCharacteristics() noexcept;
+	inline void SetDefaultCharacteristic() noexcept;
 
 	inline void CustomizeLayoutOfSizeBorder(const QRectF &);
 
@@ -86,10 +86,10 @@ enum class ChangingSizeOfWidget::StateOfWidgetResize
 inline ChangingSizeOfWidget::ChangingSizeOfWidget() noexcept
 	: m_state_of_widget_resize(StateOfWidgetResize::IDLE)
 {
-	SetDefaultCharacteristics();
+	SetDefaultCharacteristic();
 }
 
-inline void ChangingSizeOfWidget::SetDefaultCharacteristics() noexcept
+inline void ChangingSizeOfWidget::SetDefaultCharacteristic() noexcept
 {
 	this->m_layout_of_size_border.SetRoundness(RoundnessOfRoundedBorderOfWidget  (10.0, 10.0		    ));
 	this->m_layout_of_size_border.SetThickness(T_ThicknessOfRoundedBorderOfWidget(10.0, 10.0, 10.0, 10.0));
